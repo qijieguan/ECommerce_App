@@ -1,0 +1,72 @@
+* {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.App-Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: black;
+  border: 2px solid black;
+  box-shadow: 1px 1px 1px 1px rgb(77, 77, 77);
+}
+
+.App-Logo {
+  margin-left: 45px;
+  color: white;
+  font-size: 24px;
+  font-family: fantasy;
+  letter-spacing: 1px;
+}
+
+.App-Menu {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-right: 10px;
+}
+
+.Profile-Icon, .Cart-Icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 20px;
+  min-width: 50px;
+  width: auto;
+  height: 50px;
+  color: white;
+}
+
+.Profile-Li {
+  display: none;
+  position: absolute;
+  line-height: 50px;
+  top: 50px;
+  height: 100px;
+  width: 150px;
+  color: black;
+  border: 2px solid black;
+  background-color: black;
+}
+
+.Profile-Icon:hover .Profile-Li {
+  display: block;
+}
+
+.Account-Info, .Sign-Out {
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+.Account-Info:hover, .Sign-Out:hover {
+  color: black;
+  background-color: white;
+  border-bottom: 2px solid black;
+}
+
+
+
