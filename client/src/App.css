@@ -1,7 +1,7 @@
 * {
   font-size: 14px;
   font-weight: bold;
-  text-align: center;
+  text-indent: 10px;
 }
 
 .App-Header {
@@ -14,12 +14,32 @@
   box-shadow: 1px 1px 1px 1px rgb(77, 77, 77);
 }
 
+.Search-Bar {
+  display: flex;
+}
+
+.Search-Input {
+  margin-left: 50px;
+  width: 275px;
+}
+
+.Search-Btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  width: 40px;
+  background-color: green;
+  border-radius: 0 5px 5px 0;
+  border: 1px solid green;
+}
+
 .App-Logo {
-  margin-left: 45px;
   color: white;
-  font-size: 24px;
+  font-size: 30px;
   font-family: fantasy;
   letter-spacing: 1px;
+  margin-right: 275px;
 }
 
 .App-Menu {
@@ -59,6 +79,8 @@
 
 .Account-Info, .Sign-Out {
   color: white;
+  text-indent: 0;
+  text-align: center;
   border-bottom: 2px solid white;
 }
 
@@ -68,5 +90,36 @@
   border-bottom: 2px solid black;
 }
 
+.Home {
+  display: flex;
+  flex-direction: column;
+  top: 50px;
+  min-height: 800px;
+  height: auto;
+  background-color: rgb(235, 235, 235);
+}
 
+.Items-Display {
+  min-height: 300px;
+  height: auto;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
+.Item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 28%;
+  margin-left: 50px;
+  border: 1px solid grey;
+}
+
+input {
+  height: 30px;
+  width: 200px;
+}

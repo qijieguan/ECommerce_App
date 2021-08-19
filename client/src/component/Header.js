@@ -1,16 +1,30 @@
 import { ImLeaf } from 'react-icons/im';
 import { CgProfile } from 'react-icons/cg';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { BsSearch } from 'react-icons/bs';
 
 
 export default function Header() {
     return (
         <div className="App-Header">
-            <ImLeaf
-                size={24}
-                color="limegreen"
-                style={IconStyle}
-            />
+            <div style={{display: 'flex', alignItems: 'center'}}>
+                <ImLeaf
+                    size={24}
+                    color="limegreen"
+                    style={IconStyle}
+                />
+                <div className="Search-Bar">
+                    <input className="Search-Input"
+                        placeholder="Search product here..."
+                    />
+                    <div className="Search-Btn">
+                        <BsSearch
+                            size={20}
+                            color="white"
+                        />
+                    </div>
+                </div>
+            </div>
             <div className="App-Logo">   
                 Shopping App
             </div>
@@ -37,6 +51,6 @@ export default function Header() {
 }
 
 const IconStyle = {
-    marginLeft: '20px',
+    margin: '0 15px',
     cursor: 'pointer'
 }
