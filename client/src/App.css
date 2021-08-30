@@ -93,6 +93,8 @@
 .Home {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   top: 50px;
   min-height: 800px;
   height: auto;
@@ -100,7 +102,7 @@
 }
 
 .Items-Display {
-  min-height: 300px;
+  min-height: 400px;
   height: auto;
   width: 100%;
   background-color: white;
@@ -109,14 +111,65 @@
   align-items: center;
 }
 
-.Item {
+.Item-Container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 300px;
+  flex-direction: column;
+  height: 400px;
   width: 28%;
   margin-left: 50px;
   border: 1px solid grey;
+  box-shadow: 1px 1px 1px 1px grey;
+}
+
+.Item-Img {
+  height: 70%;
+  width: 100%;
+  border: 1px solid grey;
+}
+
+.Item-Details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 30%;
+  width: 100%;
+  border: 1px solid grey;
+}
+
+.Item-Name {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.Item-Price {
+  color: blue;
+  font-size: 18px;
+}
+
+.Item-Stock {
+  color: green;
+  font-size: 18px;
+}
+
+.Dropzone {
+  margin: 100px 0;
+  text-align: center;
+  line-height: 200px;
+  font-size: 24px;
+  height: 200px;
+  width: 90%;
+  border: 2px dashed green;
+  color: green;
+  background-color: rgb(170, 255, 170);
+}
+
+.Preview {
+  margin: 100px 0;
+  min-height: 400px;
+  height: auto;
+  min-width: 50%;
+  max-width: 90%;
 }
 
 input {
