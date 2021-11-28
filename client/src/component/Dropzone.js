@@ -17,7 +17,7 @@ export default function MyDropzone( {getFiles} ) {
     return(
         <div {...getRootProps()} className="Dropzone" style={isDragActive ? activeStyle : {}}>
             <input {...getInputProps()} />
-            Upload image here
+            Drop item image here 
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './component/Header.js';
-import Home from './component/Home.js'
+import Home from './component/Home.js';
+import Form from './component/Form.js';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { createStore } from 'redux';
 import allReducers from './component/reducers';
@@ -19,6 +20,7 @@ function App() {
           <Header/>
           <Switch>
             <Route path="/" exact component={Home}/>
+            <Route path="/Form" exact component={Form}/>
           </Switch>
         </Router>
       </Provider>
