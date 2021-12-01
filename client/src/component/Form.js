@@ -56,13 +56,15 @@ export default function Form() {
             document.body.scrollTop = document.documentElement.scrollTop = 0;
             return;
         }
+        console.log(document.getElementById("Input-Category").value);
         const addItem = {
             id: uuid(),
             ImageFile: file, 
             Name: name,
             Description: description,
             Stock: stock,
-            Price: price
+            Price: price,
+            Category: document.getElementById("Input-Category").value
         }
         setName("");
         setDesc("");
@@ -135,7 +137,7 @@ export default function Form() {
                             name="stock"
                             type="number"
                             min="0"
-                            style={Object.assign({marginLeft: '10px', width: '12%'}, inputStyle)}
+                            style={Object.assign({marginLeft: '10px', width: '25%'}, inputStyle)}
                             placeholder="0"
                             value={stock}
                             onChange={handleChange}
@@ -143,17 +145,27 @@ export default function Form() {
                 </div>
                 <div className="Input-Price">
                     Price<span style={{fontSize: '20px', color: 'red'}}>*</span>
-                    <span style={{fontSize: "24px", marginLeft: '10px'}}>$</span>
+                    <span style={{fontSize: "24px", marginLeft: '8px'}}>$</span>
                     <input 
                         name="price"
                         type="number"
                         min="0.00"
                         step=".01"
-                        style={Object.assign({marginLeft: '10px',  width: '15%'}, inputStyle)}
+                        style={Object.assign({marginLeft: '5px',  width: '30%'}, inputStyle)}
                         placeholder="0.00"
                         value={price}
                         onChange={handleChange}
                     />
+                </div>
+                <div>
+                    Category<span style={{fontSize: '20px', color: 'red', marginRight: '10px'}}>*</span>
+                    <select id="Input-Category" className="Input-Category">
+                        <option value="default">--Select--</option>
+                        <option value="cloth">Cloth</option>
+                        <option value="electronic">Electronic</option>
+                        <option value="eurnature">Furnature</option>
+                        <option value="food">Food</option>
+                    </select>
                 </div>
             </div>
             <div className="Submit-Form">
