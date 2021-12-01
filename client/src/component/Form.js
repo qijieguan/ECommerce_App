@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import MyDropzone from './Dropzone.js';
 import { AiOutlineCamera } from 'react-icons/ai';
 import { BsPencilSquare } from 'react-icons/bs';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import setList from './actions/index.js';
 import uuid from "react-uuid"; 
 
@@ -16,7 +16,6 @@ export default function Form() {
     const [price, setPrice] = useState("");
     const [isSubmit, setSubmit] = useState(false);
 
-    const items = useSelector(state => state.itemList);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -27,7 +26,6 @@ export default function Form() {
             }, false);
             reader.readAsDataURL(file[0]);
         }
-        console.log(items);
     }
     , [file, preview, isSubmit]);
     
@@ -53,6 +51,11 @@ export default function Form() {
 
     const handleSubmit = event => {
         event.preventDefault();
+        if (!file || !name || !description || !stock || !price) {
+            document.getElementsByClassName("Error-Msg")[0].style.display = "flex";
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+            return;
+        }
         const addItem = {
             id: uuid(),
             ImageFile: file, 
@@ -71,9 +74,10 @@ export default function Form() {
 
     return (
         <form onSubmit={handleSubmit} className="Form-Container">
+            <div className="Error-Msg">Missing image or input fields are empty!</div>
             <div className="Image-Section">
                 <div className="Image-Label"
-                    style={fontStyle}
+                    style={Object.assign({textShadow: '2px 2px rgb(90, 90, 90)'}, fontStyle)}
                 >
                     Add Item Image(s) <AiOutlineCamera
                         size={45}
@@ -94,7 +98,7 @@ export default function Form() {
             </div>
             <div className="Input-Section">
                 <div className="Input-Label"
-                    style={fontStyle}
+                    style={Object.assign({textShadow: '2px 2px gray'}, fontStyle)}
                 >
                     Fill In Item Fields <BsPencilSquare
                         size={45}
@@ -102,46 +106,50 @@ export default function Form() {
                     />
                 </div>
                 <div className="Input-Name">
-                    <div style={{fontSize: '18px'}}>Name</div>
+                    <div>
+                        Name<span style={{fontSize: '20px', color: 'red'}}>*</span>
+                    </div>
                     <input 
                         name="name"
-                        style={inputStyle_1} 
+                        style={Object.assign({height: '50px'}, inputStyle)} 
                         placeholder="Ex. Crispy Banana Chips, 10 Pack, etc..."
                         value={name}
                         onChange={handleChange}
                     />
                 </div>  
                 <div className="Input-Description">
-                    <div style={{fontSize: '18px'}}>Description</div>
+                    <div>
+                        Description<span style={{fontSize: '20px', color: 'red'}}>*</span>
+                    </div>
                     <textarea
                         name="description"
-                        style={textAreaStyle} 
+                        style={Object.assign({height: '200px'}, inputStyle)} 
                         placeholder="Ex. 10 bags of crunchy chips..."
                         value={description}
                         onChange={handleChange} 
                     />
                 </div>
                 <div className="Input-Stock"> 
-                    Stock  
+                    Stock<span style={{fontSize: '20px', color: 'red'}}>*</span>
                         <input 
                             name="stock"
                             type="number"
                             min="0"
-                            style={Object.assign({width: '12%'}, inputStyle_2)}
+                            style={Object.assign({marginLeft: '10px', width: '12%'}, inputStyle)}
                             placeholder="0"
                             value={stock}
                             onChange={handleChange}
                         />
                 </div>
                 <div className="Input-Price">
-                    Price 
+                    Price<span style={{fontSize: '20px', color: 'red'}}>*</span>
                     <span style={{fontSize: "24px", marginLeft: '10px'}}>$</span>
                     <input 
                         name="price"
                         type="number"
                         min="0.00"
                         step=".01"
-                        style={Object.assign({width: '15%'}, inputStyle_2)}
+                        style={Object.assign({marginLeft: '10px',  width: '15%'}, inputStyle)}
                         placeholder="0.00"
                         value={price}
                         onChange={handleChange}
@@ -150,40 +158,25 @@ export default function Form() {
             </div>
             <div className="Submit-Form">
                 <button className="btn">Cancel</button>
-                <button type="submit" className="btn" style={{color: 'white', background: 'limegreen'}}>Finish</button>
+                <button type="submit" className="btn" style={{color: 'white', background: 'limegreen'}}>Add</button>
             </div>
-        </form>
+        </form>   
     );
 }
 
 const fontStyle = {
     fontSize: '40px', 
-    padding: '80px 0 40px 75px', 
+    padding: '80px 0 40px 50px', 
     fontFamily: 'Copperplate',
     display: 'flex',
-    justifyContent: 'unset'
+    justifyContent: 'unset',
 }
 
-const inputStyle_1 = {
-    height: '50px',
+const inputStyle = {
     border: '2px inset grey',
     borderRadius: '5px',
     fontSize: '20px',
+    fontFamily: 'Arial, Helvetica, sans-serif',
     backgroundColor: 'rgb(236,236,236)'
 }
 
-const inputStyle_2 = {
-    marginLeft: '10px',
-    border: '2px inset gray', 
-    borderRadius: '5px', 
-    fontSize: '20px',
-    backgroundColor: 'rgb(236,236,236)'
-}
-
-const textAreaStyle = {
-    height: '200px',
-    border: '2px inset grey',
-    borderRadius: '5px',
-    fontSize: '18px',
-    backgroundColor: 'rgb(236,236,236)'
-}

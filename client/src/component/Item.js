@@ -20,8 +20,11 @@ const Item = ({item}) => {
                     {item.Name}
                 </div>
                 <div style={{display: 'flex', justifyContent: 'space-between', width: '75%'}}>
-                    <div className="Item-Price">Price: ${item.Price}</div>
-                    <div className="Item-Stock">Stock Left: {item.Stock}</div>
+                    <div className="Item-Price">
+                        Price: <span style={{fontSize: "22px", color: "rgb(4, 165, 4)"}}>$</span>
+                        {item.Price}
+                    </div>
+                    <div className="Item-Stock">Stock: {item.Stock}</div>
                 </div>
             </div>
         </div>

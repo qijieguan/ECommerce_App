@@ -1,27 +1,10 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { setList } from './actions/index';
-import Item from './Item.js';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
-
-    const items = useSelector(state => state.itemList);
-    const dispatch = useDispatch();
-
-    useEffect(() => {}
-    , []);
-
-    return (
-        <div className="Home">
-            <div style={customStyle}>On Sale!</div>
-            <div className="Items-Display">
-                {items.map(item => <Item key={item.id} item={item} />)}
-            </div>
+    return(
+        <div className="Homepage">
+            <span className="Home-Intro">Welcome! Lets start customizing your item and publish them!</span>
+            <Link to="/Account"><button className="Home-About">About Me</button></Link>
         </div>
-    );
-}
-
-const customStyle = {
-    margin: '100px 0 50px 20px',
-    fontSize: '50px',
+    )
 }

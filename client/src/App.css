@@ -7,89 +7,174 @@
   height: auto;
   align-items: center;
   justify-content: space-around;
+  overflow-x: hidden;
 }
 
 .App-Header {
   display: flex;
-  height: 50px;
+  flex-direction: column;
   border: 2px solid black;
   box-shadow: 1px 1px 1px 1px rgb(77, 77, 77);
 }
 
 .App-Logo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
   font-size: 30px;
   font-family: fantasy;
+  text-shadow: 3px 3px gray;
   letter-spacing: 1px;
-  margin-left: 350px;
+  border-bottom: 1px solid rgb(31, 31, 31);
+  box-shadow: 1px 1px 1px 1px rgb(22, 22, 22);
+  z-index: 2;
 }
 
-.App-Menu {
+.App-Nav {
   display: flex;
-  flex-direction: row;
-  margin-left: 300px;
+  justify-content: space-between;
+  height: 55px;
+  width: 100%;
+  overflow-y: hidden;
 }
 
-.Profile-Icon, .Cart-Icon {
+.Search-Bar {
+  margin-left: 75px;
+  height: 35px;
+  width: 300px;
+  background-color: white;
+  border-radius: 3px 0 0 3px;
+  border-width: 1px 0 1px 1px;
+  border-style: solid;
+  border-color: grey;
+}
+
+.Search-Btn {
+  height: 39px;
+  width: 75px;
+  background-color: orange;
+  border-radius: 0 3px 3px 0;
+  border-width: 0 2px 2px 0;
+  border-style: solid;
+  border-color: grey;
+}
+
+.Menu-UL {
   display: flex;
-  flex-direction: column;
-  min-width: 50px;
-  height: 50px;
+  height: 56px;
+  width: 75px;
+  border-width: 0 1px 0 1px;
+  border-style: solid;
+  border-color: rgb(46, 46, 46);
 }
 
-.Profile-Li {
-  display: none;
+.Menu-Li {
   position: absolute;
-  line-height: 50px;
-  top: 50px;
-  height: 150px;
-  width: 150px;
+  top: 120px;
+  right: 0;
+  width: 250px;
   color: black;
-  border: 2px solid black;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in;
+  opacity: 0.8;
 }
 
-.Profile-Icon:hover .Profile-Li {
-  display: block;
+.Menu-Li * {
+  font-size: 16px;
+  height: 140px;
+  line-height: 125px;
 }
 
-.Account-Info, .Item-Post, .Sign-Out {
+.Menu-Active {
+  transform: translateX(0%);
+}
+
+.Homepage {
   text-align: center;
-  border-bottom: 2px solid white;
+  background-color: rgb(48, 48, 48);
+  min-height: 800px;
+  width: 100%;
 }
 
-.Account-Info:hover, .Item-Post:hover, .Sign-Out:hover {
+.Homepage * {
+  background-color: rgb(48, 48, 48);
+}
+
+.Home-Intro {
+  margin: 150px 0 0 40px;
+  display: flex;
+  width: 60%;
+  font-size: 50px;
+  font-family: copperplate;
+  text-shadow: 3px 3px black;
+}
+
+.Home-About {
+  font-size: 16px;
+  margin-top: 100px;
+  height: 60px;
+  width: 120px;
+}
+
+.Home-About:hover {
+  opacity: 0.5;
+}
+
+.Home, .View-Items, .Account-Info, .Item-Form, .Sign-Out {
+  display: flex;
+  border-bottom: 1px solid white;
+}
+
+.Home:hover, .View-Items:hover, .Account-Info:hover, .Item-Form:hover, .Sign-Out:hover {
   color: black;
   background-color: white;
-  border-bottom: 2px solid black;
 }
 
-.Home {
-  display: flex;
-  flex-direction: column;
-  top: 50px;
-  min-height: 800px;
+.Menu-Li:hover {
+  opacity: 1;
+}
+
+.View-Page {
+  min-height: 1000px;
   background-color: rgb(235, 235, 235);
 }
 
 .Items-Display {
-  min-height: 400px;
-  width: 100%;
-  background-color: white;
-  display: flex;
-  flex-direction: row;
+  padding-top: 10px; 
+  margin-left: 1%;
+  display: grid;
+  grid-template-columns: 23% 23% 23% 23%;
+  grid-template-rows: repeat(10, auto);
+  grid-gap: 20px 10px;
+  width: 98%;
+  min-height: 500px;
+  background-color: royalblue;
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 10px;
+}
+
+.View-Default {
+  grid-column: 2 / 5;
+  grid-row: 4 / 8;
+  font-size: 60px;
+  font-family: sans-serif;
+  color: cornflowerblue;
+  background-color: royalblue;
 }
 
 .Item-Container {
   display: flex;
   flex-direction: column;
-  height: 400px;
-  width: 45%;
-  margin-left: 50px;
-  box-shadow: 1px 1px 1px 1px grey;
+  height: 275px;
+  box-shadow: 1px 1px 1px 1px rgb(202, 202, 202);
+  border-radius: 5px;
 }
 
 .Item-Img {
   height: 70%;
   width: 100%;
+  border-radius: 5px 5px 0 0;
 }
 
 .Item-Details {
@@ -98,6 +183,7 @@
   height: 30%;
   width: 100%;
   background-color: white;
+  border-radius: 0 0 5px 5px;
 }
 
 .Item-Details * {
@@ -110,13 +196,37 @@
 }
 
 .Item-Price {
-  color: blue;
+  color: rgb(4, 165, 4);
   font-size: 18px;
 }
 
 .Item-Stock {
-  color: green;
+  color: black;
   font-size: 18px;
+}
+
+.Account-Page {
+  display: flex;
+  flex-direction: row;
+  min-height: 600px;
+  background-color: rgb(236, 236, 236);
+}
+
+.Profile-Img {
+  height: 350px;
+  border: 1px solid rgb(201, 201, 201);
+  border-radius: 200px;
+}
+
+.Profile-Info * {
+  color: black;
+  background-color: rgb(236, 236, 236);
+}
+
+.Name {
+  padding-top: 50px;
+  font-size: 70px;
+  text-shadow: 2px 2px gray;
 }
 
 .Form-Container {
@@ -125,16 +235,28 @@
   background-color: rgb(236, 236, 236);
 }
 
+.Error-Msg {
+  display: none;
+  margin-top: 40px;
+  height: 50px;
+  width: 90%;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: red;
+  background-color: wheat;
+  border-radius: 8px;
+  border: 1px solid rgb(255, 213, 136);
+}
+
 .Image-Section {
   display: flex;
-  margin-top: 75px;
+  margin-top: 70px;
   padding-bottom: 100px;
   display: grid;
   width: 95%;
   grid-template-columns: 25% 65%;
   grid-template-rows: auto auto;
   border-radius: 20px 20px 0 0;
-  background-color: black;
 }
 
 .Image-Label {
@@ -148,10 +270,11 @@
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   font-size: 22px;
+  text-shadow: 1px 1px gray;
   height: 400px;
   color: rgb(255, 255, 255);
   background-color: orange;
-  box-shadow: 3px 3px 3px 3px rgb(53, 53, 53);
+  box-shadow: 1px 1px 1px 1px rgb(53, 53, 53);
   border-radius: 50px;
 }
 
@@ -166,6 +289,7 @@
 
 .Preview-Default {
   font-size: 24px;
+  text-shadow: 1px 1px rgb(160, 160, 160);
   color: rgb(180, 180, 180);
   background-color: rgb(250, 250, 255);
 }
@@ -190,6 +314,7 @@
 
 .Input-Section * {
   color: black;
+  font-size: 18px;
   background-color: rgb(255, 180, 41);
 }
 
@@ -202,7 +327,7 @@
 .Input-Name {
   margin-left: 10%;
   grid-column: 1 / 3;
-  grid-row: 2 / 3
+  grid-row: 2 / 3;
 }
 
 .Input-Description {
@@ -215,13 +340,11 @@
   margin-left: 30%;
   grid-column: 1 / 2;
   grid-row: 4 / 5;
-  font-size: 18px;
 }
 
 .Input-Price {
   grid-column: 2 / 3;
   grid-row: 4 / 5;
-  font-size: 18px;
 }
 
 .Submit-Form {
@@ -229,7 +352,7 @@
   display: flex;
   width: 95%;
   height: 150px;
-  background-color: rgb(201, 201, 201);
+  background-color: rgb(182, 182, 182);
   border-radius: 0 0 20px 20px;
 }
 
@@ -238,11 +361,16 @@
   height: 50px;
   line-height: 50px;
   width: 125px;
-  border: 2px solid grey;
+  border: 1px solid grey;
   border-radius: 5px;
   background-color: rgb(205, 205, 255);
   color: rgb(80, 80, 80);
   cursor: pointer;
+  overflow-y: hidden;
+}
+
+.btn:hover {
+  opacity: .5;
 }
 
 input {
