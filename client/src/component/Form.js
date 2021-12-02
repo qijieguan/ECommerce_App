@@ -51,12 +51,11 @@ export default function Form() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        if (!file || !name || !description || !stock || !price) {
+        if (!file || !name || !description || !stock || !price || document.getElementById("Input-Category").value === "default") {
             document.getElementsByClassName("Error-Msg")[0].style.display = "flex";
             document.body.scrollTop = document.documentElement.scrollTop = 0;
             return;
         }
-        console.log(document.getElementById("Input-Category").value);
         const addItem = {
             id: uuid(),
             ImageFile: file, 
@@ -163,7 +162,7 @@ export default function Form() {
                         <option value="default">--Select--</option>
                         <option value="cloth">Cloth</option>
                         <option value="electronic">Electronic</option>
-                        <option value="eurnature">Furnature</option>
+                        <option value="furnature">Furnature</option>
                         <option value="food">Food</option>
                     </select>
                 </div>

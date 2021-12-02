@@ -18,7 +18,7 @@ export default function Header() {
                         className="Search-Bar"
                         placeholder="Search item here..."
                     />
-                    <button className="Search-Btn">Enter</button>
+                    <button className="Search-Btn">Find</button>
                 </div>
                 <Menu/>
             </div>
