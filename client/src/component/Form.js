@@ -3,7 +3,7 @@ import MyDropzone from './Dropzone.js';
 import { AiOutlineCamera } from 'react-icons/ai';
 import { BsPencilSquare } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
-import setList from './actions/index.js';
+import { setList } from './actions/index.js';
 import uuid from "react-uuid"; 
 
 export default function Form() {
@@ -178,7 +178,7 @@ export default function Form() {
 const fontStyle = {
     fontSize: '40px', 
     padding: '80px 0 40px 50px', 
-    fontFamily: 'Copperplate',
+    fontFamily: 'copperplate',
     display: 'flex',
     justifyContent: 'unset',
 }

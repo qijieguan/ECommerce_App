@@ -1,7 +1,31 @@
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setSearch } from './actions/index.js';
 import { ImLeaf } from 'react-icons/im';
 import Menu from './Menu.js';
 
 export default function Header() {
+
+    const [word, setWord] = useState("");
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+
+    }, [])
+
+    const handleChange = event => {
+        event.preventDefault();
+        setWord(event.target.value);
+    }
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        if (word) {
+            dispatch(setSearch(word));
+            setWord("");
+        }
+    }
+
     return (
         <div className="App-Header">
             <div className="App-Logo">   
@@ -17,8 +41,10 @@ export default function Header() {
                     <input
                         className="Search-Bar"
                         placeholder="Search item here..."
+                        value={word}
+                        onChange={handleChange}
                     />
-                    <button className="Search-Btn">Find</button>
+                    <button className="Search-Btn" onClick={handleSubmit}>Find</button>
                 </div>
                 <Menu/>
             </div>

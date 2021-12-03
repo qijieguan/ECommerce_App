@@ -5,29 +5,57 @@ import Item from './Item.js';
 export default function View() {
 
     const items = useSelector(state => state.itemList);
+    const word = useSelector(state => state.word);
+
+    const [prevWord, setPrevWord] = useState("");
+    const [status, setStatus] = useState("");
+    const [update, setUpdate] = useState(false);
     const [list, setList] = useState(items);
 
     useEffect(() => {
+        if (word && status !== "Filter" && prevWord !== word) {
+            setPrevWord(word);
+            resetActive();
+            setList(items.filter(item => item.Name === word));
+        }   
+        setStatus("Done");
+    }, [update, status, prevWord, word, items]);
+
+    const resetActive = () => {
+        let list = document.getElementsByClassName("Filter-Li");
         
-    }, [list]);
+        for (let i = 0; i < list.length; ++i) {
+            list[i].style.backgroundColor = "white";
+            list[i].style.color = "black";
+        }
+    }
 
     const handleClick = event => {
+        event.preventDefault();
+        resetActive();
+
+        document.getElementById(event.target.id).style.color = "white";
+        document.getElementById(event.target.id).style.backgroundColor = "rgb(255, 174, 24)";
+
         if (event.target.id !== "all") {
             let result = items.filter(item => event.target.id === item.Category);
             setList(result);
-            return;
         }
-        setList(items);
+        else {
+            setList(items);
+        }
+        setStatus("Filter");
+        setUpdate(!update);
     }
 
     return (
         <div className="View-Page">
             <div className="Filter-Panel">
-                <div id="all" onClick={handleClick}>all</div>
-                <div id="cloth" onClick={handleClick}>cloth</div>
-                <div id="electronic" onClick={handleClick}>electronic</div>
-                <div id="furnature" onClick={handleClick}>furnature</div>
-                <div id="food" onClick={handleClick}>food</div>
+                <div className="Filter-Li" id="all" onClick={handleClick}>all</div>
+                <div className="Filter-Li" id="cloth" onClick={handleClick}>cloth</div>
+                <div className="Filter-Li" id="electronic" onClick={handleClick}>electronic</div>
+                <div className="Filter-Li" id="furnature" onClick={handleClick}>furnature</div>
+                <div className="Filter-Li" id="food" onClick={handleClick}>food</div>
             </div>
             <div style={customStyle}>View Items!</div>
             <div className="Items-Display">

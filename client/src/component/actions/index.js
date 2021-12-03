@@ -1,9 +1,14 @@
-
-const setList = list => {
+export const setList = list => {
     return {
         type: 'SET_LIST',
         payload: list
     }
 }
 
-export default setList;
+export const setSearch = word => {
+    return {
+        type: 'SET_WORD',
+        payload: word
+    }
+}
+
