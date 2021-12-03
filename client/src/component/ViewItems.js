@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSearch } from './actions/index.js';
 import Item from './Item.js';
 
 export default function View() {
 
+    const dispatch = useDispatch();
     const items = useSelector(state => state.itemList);
     const word = useSelector(state => state.word);
 
@@ -13,10 +15,11 @@ export default function View() {
     const [list, setList] = useState(items);
 
     useEffect(() => {
-        if (word && status !== "Filter" && prevWord !== word) {
+        if (word && status !== "Filter") {
             setPrevWord(word);
             resetActive();
             setList(items.filter(item => item.Name === word));
+            return;
         }   
         setStatus("Done");
     }, [update, status, prevWord, word, items]);
@@ -46,6 +49,7 @@ export default function View() {
         }
         setStatus("Filter");
         setUpdate(!update);
+        dispatch(setSearch(""));
     }
 
     return (
