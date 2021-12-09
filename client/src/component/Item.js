@@ -10,14 +10,30 @@ const Item = ({item}) => {
             setSource(reader.result);
         }, false);
         reader.readAsDataURL(item.ImageFile[0]);
-    }, [item.ImageFile])
+
+        let backgroundColor;
+        if (item.Category === "cloth") {
+            backgroundColor = "navy";
+        }
+        else if (item.Category === "electronic") {
+            backgroundColor = "yellow";
+        }
+        else if (item.Category === "furnature") {
+            backgroundColor = "black";
+        }
+        else {
+            backgroundColor = "red";
+        }
+        document.getElementById(item.id).style.backgroundColor = backgroundColor;
+
+    }, [item])
 
     return(
         <div className="Item-Container">
             <img className="Item-Img" src={source} alt=""/>
             <div className="Item-Details">
                 <div className="Item-Name">
-                    {item.Name} <div className="Item-Category">{item.Category}</div>
+                    {item.Name} <div className="Item-Category" id={item.id}>{item.Category}</div>
                 </div>
                 <div style={{display: 'flex', justifyContent: 'space-between', width: '95%'}}>
                     <div className="Item-Price">

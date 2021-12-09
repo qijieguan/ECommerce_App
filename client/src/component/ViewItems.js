@@ -9,28 +9,32 @@ export default function View() {
     const items = useSelector(state => state.itemList);
     const word = useSelector(state => state.word);
 
+    const [onLoad, setLoad] = useState(true);
     const [prevWord, setPrevWord] = useState("");
     const [status, setStatus] = useState("");
     const [update, setUpdate] = useState(false);
     const [list, setList] = useState(items);
 
     useEffect(() => {
-        if (word && status !== "Filter") {
-            setPrevWord(word);
-            resetActive();
-            setList(items.filter(item => item.Name === word));
-            return;
-        }   
-        setStatus("Done");
-    }, [update, status, prevWord, word, items]);
+        if (onLoad) {
+            const Filter = document.querySelector(".Filter-Panel");
+            Filter.classList.toggle("transformY");
+            setLoad(false);
+        }
+        if (!word || status === "Filter") {setStatus("Done"); return;}   
+        setPrevWord(word);
+        resetActive();
+        setList(items.filter(item => item.Name === word));
+     
+    }, [onLoad, update, status, prevWord, word, items]);
 
     const resetActive = () => {
-        let list = document.getElementsByClassName("Filter-Li");
+        let list = document.querySelectorAll(".Filter-Li");
         
-        for (let i = 0; i < list.length; ++i) {
-            list[i].style.backgroundColor = "white";
-            list[i].style.color = "black";
-        }
+        list.forEach(el => {
+            el.style.backgroundColor = "white";
+            el.style.color = "black";
+        });
     }
 
     const handleClick = event => {
@@ -74,10 +78,10 @@ export default function View() {
 }
 
 const customStyle = {
-    padding: '90px 0 70px 80px',
+    padding: '145px 0 70px 80px',
     fontSize: '70px',
     fontFamily: '"Times New Roman", Times, serif',
-    textShadow: '1px 1px limegreen',
-    color: 'lime',
-    backgroundColor: 'rgb(235, 235, 235)',
+    textShadow: '1px 1px midnightblue',
+    color: 'orange',
+    backgroundColor: 'rgb(220, 220, 220)',
 }

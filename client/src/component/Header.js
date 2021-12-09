@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setSearch } from './actions/index.js';
-import { ImLeaf } from 'react-icons/im';
 import Menu from './Menu.js';
 
 export default function Header() {
@@ -9,32 +8,24 @@ export default function Header() {
     const [word, setWord] = useState("");
     const dispatch = useDispatch();
 
-    useEffect(() => {
-
-    }, [])
-
     const handleChange = event => {
         event.preventDefault();
+        
         setWord(event.target.value);
     }
 
     const handleSubmit = event => {
         event.preventDefault();
-        if (word) {
-            dispatch(setSearch(word));
-            setWord("");
-        }
+
+        if (!word) {return}
+        dispatch(setSearch(word));
+        setWord("");
     }
 
     return (
         <div className="App-Header">
             <div className="App-Logo">   
                 Shopping App
-                <ImLeaf
-                    size={24}
-                    color="limegreen"
-                    style={IconStyle}
-                />
             </div>
             <div className="App-Nav">
                 <div className="Search">
@@ -50,9 +41,4 @@ export default function Header() {
             </div>
         </div>
     );
-}
-
-const IconStyle = {
-    margin: '0 20px',
-    cursor: 'pointer'
 }

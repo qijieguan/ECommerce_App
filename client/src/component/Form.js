@@ -19,13 +19,13 @@ export default function Form() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (file) {
-            const reader = new FileReader();
-            reader.addEventListener("load", () => {
-                setPreview(reader.result);
-            }, false);
-            reader.readAsDataURL(file[0]);
-        }
+        if (!file) {return}
+
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+            setPreview(reader.result);
+        }, false);
+        reader.readAsDataURL(file[0]);  
     }
     , [file, preview, isSubmit]);
     
@@ -35,6 +35,7 @@ export default function Form() {
 
     const handleChange = event => {
         event.preventDefault();
+
         if (event.target.name === "name") {
             setName(event.target.value);
         }
@@ -51,6 +52,7 @@ export default function Form() {
 
     const handleSubmit = event => {
         event.preventDefault();
+
         if (!file || !name || !description || !stock || !price || document.getElementById("Input-Category").value === "default") {
             document.getElementsByClassName("Error-Msg")[0].style.display = "flex";
             document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -65,17 +67,23 @@ export default function Form() {
             Price: price,
             Category: document.getElementById("Input-Category").value
         }
+        setFile("");
+        setPreview("");
         setName("");
         setDesc("");
         setStock("");
         setPrice("");
+        
+        document.getElementById("Input-Category").value = "default";
+        document.getElementsByClassName("Error-Msg")[0].style.display = "none";
+
         dispatch(setList(addItem));
         setSubmit(!isSubmit);
     }
 
     return (
         <form onSubmit={handleSubmit} className="Form-Container">
-            <div className="Error-Msg">Missing image or input fields are empty!</div>
+            <div className="Error-Msg">*Missing image or input fields are empty*</div>
             <div className="Image-Section">
                 <div className="Image-Label"
                     style={Object.assign({textShadow: '2px 2px rgb(90, 90, 90)'}, fontStyle)}
@@ -85,17 +93,19 @@ export default function Form() {
                         style={{marginLeft: '10px'}}
                     />
                 </div>
-                <div className="Dropzone-Panel"><MyDropzone getFiles={getFiles}/></div>
-                <div className="Preview-Display">
-                    {
-                        preview ?
-                        <img className="Preview-Image" src={preview} alt=""/>
-                        :
-                        <div className="Preview-Default">
-                            Item Preview Here
-                        </div>
-                    }       
-                </div> 
+                <div style={flexStyle}>
+                    <div className="Dropzone-Panel"><MyDropzone getFiles={getFiles}/></div>
+                    <div className="Preview-Display">
+                        {
+                            preview ?
+                            <img className="Preview-Image" src={preview} alt=""/>
+                            :
+                            <div className="Preview-Default">
+                                Item Preview Here
+                            </div>
+                        }       
+                    </div> 
+                </div>
             </div>
             <div className="Input-Section">
                 <div className="Input-Label"
@@ -106,66 +116,50 @@ export default function Form() {
                         style={{marginLeft: '10px'}}
                     />
                 </div>
-                <div className="Input-Name">
-                    <div>
-                        Name<span style={{fontSize: '20px', color: 'red'}}>*</span>
-                    </div>
-                    <input 
-                        name="name"
+                <div className="Input-Fields">
+
+                    <div className="Name-Label">Name<span style={dotStyle}>*</span></div>
+                    <input className="Input-Name" name="name"
                         style={Object.assign({height: '50px'}, inputStyle)} 
-                        placeholder="Ex. Crispy Banana Chips, 10 Pack, etc..."
                         value={name}
+                        placeholder="Enter name here..."
                         onChange={handleChange}
                     />
-                </div>  
-                <div className="Input-Description">
-                    <div>
-                        Description<span style={{fontSize: '20px', color: 'red'}}>*</span>
-                    </div>
-                    <textarea
-                        name="description"
+
+                    <div className="Description-Label">Description<span style={dotStyle}>*</span></div>
+                    <textarea className="Input-Description" name="description"
                         style={Object.assign({height: '200px'}, inputStyle)} 
-                        placeholder="Ex. 10 bags of crunchy chips..."
                         value={description}
+                        placeholder="Enter description here..."
                         onChange={handleChange} 
                     />
-                </div>
-                <div className="Input-Stock"> 
-                    Stock<span style={{fontSize: '20px', color: 'red'}}>*</span>
-                        <input 
-                            name="stock"
-                            type="number"
-                            min="0"
-                            style={Object.assign({marginLeft: '10px', width: '25%'}, inputStyle)}
-                            placeholder="0"
-                            value={stock}
-                            onChange={handleChange}
-                        />
-                </div>
-                <div className="Input-Price">
-                    Price<span style={{fontSize: '20px', color: 'red'}}>*</span>
-                    <span style={{fontSize: "24px", marginLeft: '8px'}}>$</span>
-                    <input 
-                        name="price"
-                        type="number"
-                        min="0.00"
-                        step=".01"
-                        style={Object.assign({marginLeft: '5px',  width: '30%'}, inputStyle)}
-                        placeholder="0.00"
-                        value={price}
+
+                    <div className="Stock-Label">Stock<span style={dotStyle}>*</span></div>
+                    <input className="Input-Stock" name="stock" type="number" min="0"
+                        style={Object.assign({width: '25%'}, inputStyle)}
+                        value={stock}
+                        placeholder="0"
                         onChange={handleChange}
                     />
-                </div>
-                <div>
-                    Category<span style={{fontSize: '20px', color: 'red', marginRight: '10px'}}>*</span>
-                    <select id="Input-Category" className="Input-Category">
-                        <option value="default">--Select--</option>
+
+                    <div className="Price-Label">Price<span style={dotStyle}>*</span></div>
+                    <input className="Input-Price" name="price" type="number" min="0.00" step=".01"
+                        style={Object.assign({width: '25%'}, inputStyle)}
+                        value={price}
+                        placeholder="$0.00"
+                        onChange={handleChange}
+                    />
+
+                    <div className="Category-Label">Category<span style={dotStyle}>*</span></div>
+                    <select id="Input-Category" className="Input-Category"> 
+                        <option value="default">----Please Select a Category For The Item-----</option>
                         <option value="cloth">Cloth</option>
                         <option value="electronic">Electronic</option>
                         <option value="furnature">Furnature</option>
                         <option value="food">Food</option>
                     </select>
-                </div>
+
+                </div>  
             </div>
             <div className="Submit-Form">
                 <button className="btn">Cancel</button>
@@ -183,9 +177,17 @@ const fontStyle = {
     justifyContent: 'unset',
 }
 
+const dotStyle = {
+    fontSize: '20px', 
+    color: 'red',
+}
+
+const flexStyle = {
+    display: 'flex',
+    justifyContent: 'space-around'
+}
+
 const inputStyle = {
-    border: '2px inset grey',
-    borderRadius: '5px',
     fontSize: '20px',
     fontFamily: 'Arial, Helvetica, sans-serif',
     backgroundColor: 'rgb(236,236,236)'
