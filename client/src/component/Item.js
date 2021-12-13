@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Item = ({item}) => {
 
@@ -24,13 +25,15 @@ const Item = ({item}) => {
         else {
             backgroundColor = "red";
         }
-        document.getElementById(item.id).style.backgroundColor = backgroundColor;
+        
+        let element = document.getElementById(item.id).querySelector(".Item-Category");
+        element.style.backgroundColor = backgroundColor;
 
-    }, [item])
+    }, [item]);
 
     return(
-        <div className="Item-Container">
-            <img className="Item-Img" src={source} alt=""/>
+        <Link to={{pathname: `/View/${item.id}`, state: {item: item}}} className="Item-Container" id={item.id}>
+            <img className="Item-Image" src={source} alt=""/>
             <div className="Item-Details">
                 <div className="Item-Name">
                     {item.Name} <div className="Item-Category" id={item.id}>{item.Category}</div>
@@ -38,12 +41,14 @@ const Item = ({item}) => {
                 <div style={{display: 'flex', justifyContent: 'space-between', width: '95%'}}>
                     <div className="Item-Price">
                         Price: <span style={{fontSize: "22px", color: "rgb(4, 165, 4)"}}>$</span>
-                        {item.Price}
+                        <span style={{color: "rgb(4, 165, 4)", fontSize: '20px'}}>{item.Price}</span>
                     </div>
-                    <div className="Item-Stock">Stock: {item.Stock}</div>
+                    <div className="Item-Stock">
+                        Stock: <span style={{color: "blue", fontSize: '22px'}}>{item.Stock}</span>
+                    </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
 

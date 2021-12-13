@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setSearch } from './actions/index.js';
 import Menu from './Menu.js';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
 
@@ -10,7 +11,7 @@ export default function Header() {
 
     const handleChange = event => {
         event.preventDefault();
-        
+
         setWord(event.target.value);
     }
 
@@ -35,7 +36,7 @@ export default function Header() {
                         value={word}
                         onChange={handleChange}
                     />
-                    <button className="Search-Btn" onClick={handleSubmit}>Find</button>
+                    <div className="Search-Btn" onClick={handleSubmit}><Link to="/View">Find</Link></div>
                 </div>
                 <Menu/>
             </div>

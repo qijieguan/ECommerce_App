@@ -35,7 +35,7 @@ export default function Form() {
 
     const handleChange = event => {
         event.preventDefault();
-
+        
         if (event.target.name === "name") {
             setName(event.target.value);
         }
@@ -88,7 +88,7 @@ export default function Form() {
                 <div className="Image-Label"
                     style={Object.assign({textShadow: '2px 2px rgb(90, 90, 90)'}, fontStyle)}
                 >
-                    Add Item Image(s) <AiOutlineCamera
+                    Add Item Image <AiOutlineCamera
                         size={45}
                         style={{marginLeft: '10px'}}
                     />

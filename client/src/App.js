@@ -1,8 +1,9 @@
 import './App.css';
 import Header from './component/Header.js';
 import Home from './component/Home.js';
-import Form from './component/Form.js';
 import View from './component/ViewItems.js';
+import ItemExpand from './component/ItemExpand.js';
+import Form from './component/Form.js';
 import Account from './component/Account.js';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { createStore } from 'redux';
@@ -22,8 +23,9 @@ function App() {
           <Header/>
           <Switch>
             <Route path="/" exact component={Home}/>
-            <Route path="/Form" exact component={Form}/>
             <Route path="/View" exact component={View}/>
+            <Route path="/View/:id" exact component={ItemExpand}/>
+            <Route path="/Form" exact component={Form}/>
             <Route path="/Account" exact component={Account}/>
           </Switch>
         </Router>

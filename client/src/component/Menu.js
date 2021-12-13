@@ -15,8 +15,8 @@ const Menu = () => {
                     />
                     <div className="Menu-Li">
                         <Link className="Home" to="/">Home</Link>
-                        <Link className="Item-Form" to="/Form">Item Form</Link>
                         <Link className="View-Items" to="/View">View Items</Link>
+                        <Link className="Item-Form" to="/Form">Item Form</Link>
                         <Link className="Sign-Out" to="/">Sign Out </Link>
                     </div>
                 </div>
