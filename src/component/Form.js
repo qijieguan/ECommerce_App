@@ -86,7 +86,7 @@ export default function Form() {
             <div className="Error-Msg">*Missing image or input fields are empty*</div>
             <div className="Image-Section">
                 <div className="Image-Label"
-                    style={Object.assign({textShadow: '2px 2px rgb(90, 90, 90)'}, fontStyle)}
+                    style={Object.assign({textShadow: '2px 2px rgb(90, 90, 90)', color: 'orange'}, fontStyle)}
                 >
                     Add Item Image <AiOutlineCamera
                         size={45}
@@ -170,7 +170,7 @@ export default function Form() {
 }
 
 const fontStyle = {
-    fontSize: '40px', 
+    fontSize: '50px', 
     padding: '80px 0 40px 50px', 
     fontFamily: 'copperplate',
     display: 'flex',

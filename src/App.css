@@ -1,7 +1,7 @@
 * {
+  font-family: 'Poppin', sans-serif;
   font-size: 14px;
   font-weight: bold;
-  color: white;
   background-color: black;
   width: auto;
   height: auto;
@@ -9,13 +9,14 @@
   justify-content: space-around;
   overflow-x: hidden;
   text-overflow: ellipsis;
+  box-sizing: border-box;
 }
 
 .App-Header {
   display: flex;
   flex-direction: column;
   border: 2px solid black;
-  box-shadow: 1px 1px 1px 1px rgb(77, 77, 77);
+  box-shadow: 1px 1px 1px;
 }
 
 .App-Logo {
@@ -25,19 +26,18 @@
   height: 60px;
   font-size: 30px;
   font-family: fantasy;
+  color: white;
   text-shadow: 3px 3px gray;
   letter-spacing: 1px;
   border-bottom: 1px solid rgb(31, 31, 31);
-  box-shadow: 1px 1px 1px 1px rgb(22, 22, 22);
-  z-index: 2;
+  box-shadow: 1px 1px 1px;
 }
 
 .App-Nav {
   display: flex;
   justify-content: space-between;
-  height: 55px;
+  height: 60px;
   width: 100%;
-  z-index: 2;
 }
 
 .Search {
@@ -46,17 +46,19 @@
 
 .Search-Bar {
   margin-left: 75px;
-  height: 35px;
+  height: 40px;
   width: 300px;
   background-color: white;
   border: 0;
   border-radius: 3px 0 0 3px;
+  outline: none;
 }
 
 .Search-Btn * {
   display: flex;
-  height: 37px;
+  height: 40px;
   width: 75px;
+  color: white;
   background-color: orange;
   border-radius: 0 3px 3px 0;
   border-width: 0 0 0 1px;
@@ -66,7 +68,7 @@
 
 .Menu-UL {
   display: flex;
-  height: 55px;
+  height: 60px;
   width: 75px;
   border-width: 0 1px 0 1px;
   border-style: solid;
@@ -77,9 +79,9 @@
   position: absolute;
   top: 119px;
   right: 0;
-  color: black;
   transform: translateX(100%);
   transition: transform 0.5s ease-in;
+  z-index: 2;
 }
 
 .Menu-Li * {
@@ -88,10 +90,22 @@
   height: 140px;
   line-height: 125px;
   width: 250px;
+  color: white;
 }
 
 .Menu-UL:hover .Menu-Li{
   transform: translateX(0%);
+}
+
+.Menu-Icon {
+  padding: 15px 25px;
+  color: white;
+}
+
+.Menu-UL:hover .Menu-Icon {
+  color: black;
+  background-color: white;
+  opacity: 0.8;
 }
 
 .Menu-Li *:hover {
@@ -101,6 +115,7 @@
 
 .Homepage {
   text-align: center;
+  color: white;
   background-color: rgb(48, 48, 48);
   min-height: 800px;
   width: 100%;
@@ -124,6 +139,7 @@
   margin-top: 100px;
   height: 60px;
   width: 120px;
+  color: white;
 }
 
 .Home-About:hover {
@@ -141,7 +157,7 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  background-color: rgb(207, 207, 207);
+  background-color: rgb(0, 0, 92);
   transform: translateY(-100%);
   transition: transform 0.3s ease-in;
 }
@@ -168,17 +184,12 @@
 }
 
 .Items-Display {
-  padding-top: 30px; 
-  margin-left: 1%;
   display: grid;
   grid-template-columns: repeat(4, 22%);
   grid-template-rows: repeat(10, auto);
-  grid-gap: 20px 10px;
-  width: 98%;
-  min-height: 600px;
+  width: 100%;
+  min-height: 750px;
   background-color: midnightblue;
-  border: 1px solid rgb(202, 202, 202);
-  border-radius: 30px;
 }
 
 .View-Default {
@@ -191,13 +202,12 @@
 }
 
 .Item-Container {
-  padding: 5px;
   display: flex;
   flex-direction: column;
-  height: 280px;
-  width: 260px;
-  border-radius: 5px;
-  background-color: white;
+  height: 350px;
+  width: 100%;
+  background-color: rgb(218, 218, 218);
+  box-shadow: 1px 1px 1px black;
 }
 
 .Item-Container:hover .Item-Image {
@@ -215,12 +225,12 @@
   flex-direction: column;
   height: 30%;
   width: 100%;
-  background-color: white;
+  background-color: rgb(218, 218, 218);
   border-radius: 0 0 5px 5px;
 }
 
 .Item-Details * {
-  background-color: white;
+  background-color: rgb(218, 218, 218);
 }
 
 .Item-Name {
@@ -244,6 +254,7 @@
   height: 30px;
   line-height: 30px;
   border-radius: 5px;
+  color: white;
   background-color: red;
 }
 
@@ -281,7 +292,6 @@
 }
 
 .Form-Container {
-  padding-top: 50px;
   display: flex;
   flex-direction: column;
   min-height: 800px;
@@ -290,9 +300,8 @@
 
 .Error-Msg {
   display: none;
-  margin-top: 40px;
   height: 60px;
-  width: 95%;
+  width: 100%;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
   color: red;
@@ -302,14 +311,8 @@
 }
 
 .Image-Section {
-  margin-top: 80px;
-  padding-bottom: 100px;
-  width: 95%;
-  border-radius: 20px 20px 0 0;
-}
-
-.Image-Label {
-  border-radius: 20px 20px 0 0;
+  padding: 100px 0;
+  width: 100%;
 }
 
 .Dropzone-Panel {
@@ -331,7 +334,7 @@
   display: flex;
   height: 600px;
   width: 65%;
-  background-color: white;
+  background-color: rgb(238, 238, 238);
   border-radius: 10px;
 }
 
@@ -339,7 +342,7 @@
   font-size: 24px;
   text-shadow: 1px 1px rgb(160, 160, 160);
   color: rgb(180, 180, 180);
-  background-color: rgb(250, 250, 255);
+  background-color: rgb(238, 238, 238);
 }
 
 .Preview-Image {
@@ -352,7 +355,7 @@
 
 .Input-Section {
   padding-bottom: 20px;
-  width: 95%;
+  width: 100%;
   background-color: rgb(255, 180, 41);
 }
 
@@ -383,12 +386,10 @@
 }
 
 .Submit-Form {
-  margin-bottom: 50px;
   display: flex;
-  width: 95%;
+  width: 100%;
   height: 150px;
   background-color: rgb(190, 190, 190);
-  border-radius: 0 0 20px 20px;
 }
 
 .btn {
@@ -396,10 +397,11 @@
   height: 50px;
   line-height: 50px;
   width: 125px;
-  border: 1px solid grey;
-  border-radius: 5px;
   background-color: rgb(205, 205, 255);
   color: rgb(80, 80, 80);
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px black;
   cursor: pointer;
   overflow-y: hidden;
 }
@@ -408,21 +410,14 @@
   opacity: .5;
 }
 
-input {
-  color: black;
-  height: 40px;
-  border: 1px solid grey;
-  width: 90%;
-  border-radius: 5px;
-  text-indent: 10px;
-}
 
-textarea {
-  height: 150px;
+input, textarea {
+  text-indent: 10px;
+  height: 40px;
+  width: 90%;
+  background-color: rgb(238, 238, 238);
   border: 1px solid grey;
   border-radius: 5px;
-  text-indent: 10px;
-  width: 90%;
 }
 
 select {

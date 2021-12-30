@@ -78,10 +78,11 @@ export default function View() {
 }
 
 const customStyle = {
-    padding: '140px 0 70px 80px',
+    padding: '120px 0 50px 80px',
     fontSize: '70px',
     fontFamily: '"Times New Roman", Times, serif',
     textShadow: '1px 1px midnightblue',
     color: 'orange',
-    backgroundColor: 'rgb(220, 220, 220)',
+    backgroundColor: 'midnightblue',
+    borderBottom: '2px solid grey'
 }
