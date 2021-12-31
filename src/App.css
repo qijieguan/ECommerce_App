@@ -185,8 +185,9 @@
 
 .Items-Display {
   display: grid;
-  grid-template-columns: repeat(4, 22%);
+  grid-template-columns: repeat(4, 24%);
   grid-template-rows: repeat(10, auto);
+  grid-gap: 0 0 0 10px;
   width: 100%;
   min-height: 750px;
   background-color: midnightblue;
@@ -204,14 +205,17 @@
 .Item-Container {
   display: flex;
   flex-direction: column;
-  height: 350px;
-  width: 100%;
+  height: 325px;
+  margin-left: 5%;
+  width: 90%;
   background-color: rgb(218, 218, 218);
   box-shadow: 1px 1px 1px black;
 }
 
-.Item-Container:hover .Item-Image {
-  opacity: 0.8;
+.Item-Container:hover{
+  margin: 0;
+  height: 375px;
+  width: 100%;
 }
 
 .Item-Image {
@@ -253,9 +257,9 @@
   font-size: 16px;
   height: 30px;
   line-height: 30px;
-  border-radius: 5px;
   color: white;
   background-color: red;
+  border-radius: 5px;
 }
 
 .Item-Expand {
