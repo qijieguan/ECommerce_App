@@ -98,14 +98,13 @@
 }
 
 .Menu-Icon {
-  padding: 15px 25px;
+  padding: 18px 26px;
   color: white;
 }
 
 .Menu-UL:hover .Menu-Icon {
   color: black;
   background-color: white;
-  opacity: 0.8;
 }
 
 .Menu-Li *:hover {
