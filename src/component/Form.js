@@ -172,7 +172,6 @@ export default function Form() {
 const fontStyle = {
     fontSize: '50px', 
     padding: '80px 0 40px 50px', 
-    fontFamily: 'copperplate',
     display: 'flex',
     justifyContent: 'unset',
 }
@@ -189,7 +188,6 @@ const flexStyle = {
 
 const inputStyle = {
     fontSize: '20px',
-    fontFamily: 'Arial, Helvetica, sans-serif',
     backgroundColor: 'rgb(236,236,236)'
 }
 

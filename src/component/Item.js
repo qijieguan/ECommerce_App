@@ -40,11 +40,11 @@ const Item = ({item}) => {
                 </div>
                 <div style={{display: 'flex', justifyContent: 'space-between', width: '95%'}}>
                     <div className="Item-Price">
-                        Price: <span style={{fontSize: "22px", color: "rgb(4, 165, 4)"}}>$</span>
+                        Price: <span style={{fontSize: "22px", color: "rgb(4, 165, 4)", fontWeight: 'bold'}}>$</span>
                         <span style={{color: "rgb(4, 165, 4)", fontSize: '20px'}}>{item.Price}</span>
                     </div>
                     <div className="Item-Stock">
-                        Stock: <span style={{color: "blue", fontSize: '22px'}}>{item.Stock}</span>
+                        Stock: <span style={{color: "blue", fontSize: '22px', fontWeight: 'bold'}}>{item.Stock}</span>
                     </div>
                 </div>
             </div>

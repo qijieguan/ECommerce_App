@@ -79,8 +79,7 @@ export default function View() {
 
 const customStyle = {
     padding: '120px 0 50px 80px',
-    fontSize: '70px',
-    fontFamily: '"Times New Roman", Times, serif',
+    fontSize: '65px',
     textShadow: '1px 1px midnightblue',
     color: 'orange',
     backgroundColor: 'midnightblue',
