@@ -4,7 +4,6 @@
   font-family: 'Poppin', sans-serif;
   font-size: 14px;
   font-weight: bold;
-  background-color: black;
   width: auto;
   height: auto;
   align-items: center;
@@ -17,6 +16,7 @@
 .App-Header {
   display: flex;
   flex-direction: column;
+  background: black;
   border: 2px solid black;
   box-shadow: 1px 1px 1px;
 }
@@ -31,7 +31,7 @@
   color: white;
   text-shadow: 2px 2px gray;
   border-bottom: 1px solid rgb(31, 31, 31);
-  box-shadow: 1px 1px 1px;
+  box-shadow: 0px 2px 3px black;
 }
 
 .App-Nav {
@@ -39,6 +39,7 @@
   justify-content: space-between;
   height: 60px;
   width: 100%;
+  background: rgb(10, 10, 10);
 }
 
 .Search {
@@ -74,12 +75,14 @@
   border-width: 0 1px 0 1px;
   border-style: solid;
   border-color: rgb(46, 46, 46);
+  z-index: 10;
 }
 
 .Menu-Li {
   position: absolute;
   top: 122px;
   right: 0;
+  background: black;
   transform: translateX(100%);
   transition: transform 0.5s ease-in;
   z-index: 2;
@@ -114,11 +117,21 @@
 }
 
 .Homepage {
+  position: relative;
   text-align: center;
   color: white;
-  background-color: rgb(48, 48, 48);
+  background-image: url("https://images.pexels.com/photos/1050244/pexels-photo-1050244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
   min-height: 800px;
   width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0.5;
 }
 
 .Homepage * {
@@ -126,32 +139,43 @@
 }
 
 .Home-Intro {
+  position: absolute;
   margin: 150px 0 0 40px;
   display: flex;
   width: 60%;
   font-size: 50px;
   text-shadow: 3px 3px black;
+  background: transparent;
+  animation: fadeIn 3s linear infinite alternate;
 }
 
 .Home-About {
+  position: absolute;
   font-size: 16px;
-  margin-top: 100px;
-  height: 60px;
-  width: 120px;
+  margin: 30% 0 0 50%;
+  height: 45px;
+  line-height: 45px;
+  width: 150px;
   color: white;
-}
-
-.Home-About:hover {
+  background: grey;
+  border: 2px solid white;
+  overflow-y: hidden;
+  border-radius: 10px;
   opacity: 0.5;
 }
 
+.Home-About:hover {
+  opacity: 1;
+}
+
 .View-Page, .Item-Expand {
+  position: relative;
   min-height: 1000px;
   background-color: rgb(235, 235, 235);
+  background-image: url("https://images.pexels.com/photos/1050244/pexels-photo-1050244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 }
 
 .Filter-Panel {
-  position: absolute;
   height: 60px;
   width: 100%;
   display: flex;
@@ -159,6 +183,7 @@
   background-color: rgb(0, 0, 92);
   transform: translateY(-100%);
   transition: transform 0.3s ease-in;
+  z-index: 3;
 }
 
 .Filter-Panel * {
@@ -182,13 +207,15 @@
 }
 
 .Items-Display {
+  margin-top: 20%;
   display: grid;
   grid-template-columns: repeat(4, 24%);
   grid-template-rows: repeat(10, auto);
   grid-gap: 0 0 0 10px;
   width: 100%;
   min-height: 750px;
-  background-color: midnightblue;
+  background: transparent;
+  z-index: 2;
 }
 
 .View-Default {
@@ -196,7 +223,8 @@
   grid-row: 4 / 8;
   font-size: 60px;
   color: azure;
-  background-color: midnightblue;
+  background: transparent;
+  z-index: 2;
 }
 
 .Item-Container {
@@ -204,14 +232,16 @@
   flex-direction: column;
   height: 325px;
   margin-left: 5%;
-  width: 90%;
-  background-color: rgb(218, 218, 218);
-  box-shadow: 1px 1px 1px black;
+  width: 95%;
+  background-color: #dadada;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+  z-index: 2;
 }
 
 .Item-Container:hover{
   margin: 0;
-  height: 375px;
+  height: 350px;
   width: 100%;
 }
 
@@ -219,6 +249,7 @@
   height: 70%;
   width: 100%;
   border-radius: 5px 5px 0 0;
+  box-shadow: 0 2px 2px grey;
 }
 
 .Item-Details {
@@ -313,6 +344,7 @@
 .Image-Section {
   padding: 100px 0;
   width: 100%;
+  background: rgb(36, 36, 36);
 }
 
 .Dropzone-Panel {
@@ -410,7 +442,6 @@
   opacity: .5;
 }
 
-
 input, textarea {
   text-indent: 10px;
   height: 40px;
@@ -426,4 +457,13 @@ select {
 
 a {
   text-decoration: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

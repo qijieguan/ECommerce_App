@@ -4,7 +4,7 @@ export default function Home() {
     return(
         <div className="Homepage">
             <span className="Home-Intro">Welcome! Lets start customizing your items and publish them!</span>
-            <Link to="/Account"><button className="Home-About">About Me</button></Link>
+            <Link to="/Account"><div className="Home-About">About Me</div></Link>
         </div>
     )
 }

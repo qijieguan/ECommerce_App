@@ -58,6 +58,7 @@ export default function View() {
 
     return (
         <div className="View-Page">
+            <div className='overlay'/>
             <div className="Filter-Panel">
                 <div className="Filter-Li" id="all" onClick={handleClick}>all</div>
                 <div className="Filter-Li" id="cloth" onClick={handleClick}>cloth</div>
@@ -78,10 +79,11 @@ export default function View() {
 }
 
 const customStyle = {
+    position: 'absolute',
     padding: '120px 0 50px 80px',
     fontSize: '65px',
     textShadow: '1px 1px midnightblue',
     color: 'orange',
-    backgroundColor: 'midnightblue',
-    borderBottom: '2px solid grey'
+    background: 'transparent',
+    zIndex: '2'
 }
