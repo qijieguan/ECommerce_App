@@ -7,27 +7,18 @@ const Item = ({item}) => {
 
     useEffect(() => {
         const reader = new FileReader();
-        reader.addEventListener("load", () => {
-            setSource(reader.result);
-        }, false);
+        
+        reader.addEventListener("load", () => {setSource(reader.result);}, false);
         reader.readAsDataURL(item.ImageFile[0]);
 
-        let backgroundColor;
-        if (item.Category === "cloth") {
-            backgroundColor = "navy";
-        }
-        else if (item.Category === "electronic") {
-            backgroundColor = "yellow";
-        }
-        else if (item.Category === "furnature") {
-            backgroundColor = "black";
-        }
-        else {
-            backgroundColor = "red";
-        }
+        let background;
+        if (item.Category === "cloth") {background = "navy";}
+        else if (item.Category === "electronic") {background = "yellow";}
+        else if (item.Category === "furnature") {background = "black";}
+        else {background = "red";}
         
         let element = document.getElementById(item.id).querySelector(".Item-Category");
-        element.style.backgroundColor = backgroundColor;
+        element.style.background = background;
 
     }, [item]);
 

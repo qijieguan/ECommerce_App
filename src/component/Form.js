@@ -22,38 +22,23 @@ export default function Form() {
         if (!file) {return}
 
         const reader = new FileReader();
-        reader.addEventListener("load", () => {
-            setPreview(reader.result);
-        }, false);
+        reader.addEventListener("load", () => {setPreview(reader.result);}, false);
         reader.readAsDataURL(file[0]);  
-    }
-    , [file, preview, isSubmit]);
+    }, [file, preview, isSubmit]);
     
-    const getFiles = (img) => {
-        setFile(img);
-    }
+    const getFiles = (img) => {setFile(img);}
 
     const handleChange = event => {
-        event.preventDefault();
-        
-        if (event.target.name === "name") {
-            setName(event.target.value);
-        }
-        else if (event.target.name === "description") {
-            setDesc(event.target.value);
-        }
-        else if (event.target.name === "stock") {
-            setStock(event.target.value);
-        }
-        else {
-            setPrice(event.target.value);
-        }
+        if (event.target.name === "name") {setName(event.target.value);}
+        else if (event.target.name === "description") {setDesc(event.target.value);}
+        else if (event.target.name === "stock") {setStock(event.target.value);}
+        else {setPrice(event.target.value);}
     }
 
     const handleSubmit = event => {
         event.preventDefault();
 
-        if (!file || !name || !description || !stock || !price || document.getElementById("Input-Category").value === "default") {
+        if (!file || !name || !description || !stock || !price || document.getElementById("Input-Category").value === "Default") {
             document.getElementsByClassName("Error-Msg")[0].style.display = "flex";
             document.body.scrollTop = document.documentElement.scrollTop = 0;
             return;
@@ -74,7 +59,7 @@ export default function Form() {
         setStock("");
         setPrice("");
         
-        document.getElementById("Input-Category").value = "default";
+        document.getElementById("Input-Category").value = "Default";
         document.getElementsByClassName("Error-Msg")[0].style.display = "none";
 
         dispatch(setList(addItem));
@@ -88,33 +73,24 @@ export default function Form() {
                 <div className="Image-Label"
                     style={Object.assign({textShadow: '2px 2px rgb(90, 90, 90)', color: 'orange'}, fontStyle)}
                 >
-                    Add Item Image <AiOutlineCamera
-                        size={45}
-                        style={{marginLeft: '10px'}}
-                    />
+                    Add Item Image 
+                    <AiOutlineCamera size={45} style={{marginLeft: '10px'}}/>
                 </div>
                 <div style={flexStyle}>
                     <div className="Dropzone-Panel"><MyDropzone getFiles={getFiles}/></div>
                     <div className="Preview-Display">
-                        {
-                            preview ?
+                        {preview ?
                             <img className="Preview-Image" src={preview} alt=""/>
                             :
-                            <div className="Preview-Default">
-                                Item Preview Here
-                            </div>
+                            <div className="Preview-Default">Item Preview Here</div>
                         }       
                     </div> 
                 </div>
             </div>
             <div className="Input-Section">
-                <div className="Input-Label"
-                    style={Object.assign({textShadow: '2px 2px gray'}, fontStyle)}
-                >
-                    Fill In Item Fields <BsPencilSquare
-                        size={45}
-                        style={{marginLeft: '10px'}}
-                    />
+                <div className="Input-Label" style={Object.assign({textShadow: '2px 2px gray'}, fontStyle)}>
+                    Fill In Item Fields 
+                    <BsPencilSquare size={45} style={{marginLeft: '10px'}}/>
                 </div>
                 <div className="Input-Fields">
 
@@ -152,13 +128,12 @@ export default function Form() {
 
                     <div className="Category-Label">Category<span style={dotStyle}>*</span></div>
                     <select id="Input-Category" className="Input-Category"> 
-                        <option value="default">----Please Select a Category For The Item-----</option>
-                        <option value="cloth">Cloth</option>
-                        <option value="electronic">Electronic</option>
-                        <option value="furnature">Furnature</option>
-                        <option value="food">Food</option>
+                        <option value="Default">----Please Select a Category For The Item-----</option>
+                        <option value="Cloth">Cloth</option>
+                        <option value="Electronic">Electronic</option>
+                        <option value="Furnature">Furnature</option>
+                        <option value="Food">Food</option>
                     </select>
-
                 </div>  
             </div>
             <div className="Submit-Form">
@@ -188,6 +163,6 @@ const flexStyle = {
 
 const inputStyle = {
     fontSize: '20px',
-    backgroundColor: 'rgb(236,236,236)'
+    background: 'rgb(236,236,236)'
 }
 

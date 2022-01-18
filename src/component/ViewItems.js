@@ -32,7 +32,7 @@ export default function View() {
         let list = document.querySelectorAll(".Filter-Li");
         
         list.forEach(el => {
-            el.style.backgroundColor = "white";
+            el.style.background = "white";
             el.style.color = "black";
         });
     }
@@ -42,15 +42,13 @@ export default function View() {
         resetActive();
 
         document.getElementById(event.target.id).style.color = "white";
-        document.getElementById(event.target.id).style.backgroundColor = "rgb(255, 174, 24)";
+        document.getElementById(event.target.id).style.background = "rgb(255, 174, 24)";
 
-        if (event.target.id !== "all") {
+        if (event.target.id !== "All") {
             let result = items.filter(item => event.target.id === item.Category);
             setList(result);
         }
-        else {
-            setList(items);
-        }
+        else {setList(items);}
         setStatus("Filter");
         setUpdate(!update);
         dispatch(setSearch(""));
@@ -58,15 +56,13 @@ export default function View() {
 
     return (
         <div className="View-Page">
-            <div className='overlay'/>
             <div className="Filter-Panel">
-                <div className="Filter-Li" id="all" onClick={handleClick}>all</div>
-                <div className="Filter-Li" id="cloth" onClick={handleClick}>cloth</div>
-                <div className="Filter-Li" id="electronic" onClick={handleClick}>electronic</div>
-                <div className="Filter-Li" id="furnature" onClick={handleClick}>furnature</div>
-                <div className="Filter-Li" id="food" onClick={handleClick}>food</div>
+                <div className="Filter-Li" id="All" onClick={handleClick}>All</div>
+                <div className="Filter-Li" id="Cloth" onClick={handleClick}>Cloth</div>
+                <div className="Filter-Li" id="Electronic" onClick={handleClick}>Electronic</div>
+                <div className="Filter-Li" id="Furnature" onClick={handleClick}>Furnature</div>
+                <div className="Filter-Li" id="Food" onClick={handleClick}>Food</div>
             </div>
-            <div style={customStyle}>View Items!</div>
             <div className="Items-Display">
                 {list.length ?
                     list.map(item => <Item key={item.id} item={item} />)
@@ -76,14 +72,4 @@ export default function View() {
             </div>
         </div>
     );
-}
-
-const customStyle = {
-    position: 'absolute',
-    padding: '120px 0 50px 80px',
-    fontSize: '65px',
-    textShadow: '1px 1px midnightblue',
-    color: 'orange',
-    background: 'transparent',
-    zIndex: '2'
 }
