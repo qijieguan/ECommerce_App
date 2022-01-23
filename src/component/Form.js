@@ -38,7 +38,7 @@ export default function Form() {
     const handleSubmit = event => {
         event.preventDefault();
 
-        if (!file || !name || !description || !stock || !price || document.getElementById("Input-Category").value === "Default") {
+        if (!file || !name || !description || !stock || !price || document.getElementById("Input-Tag").value === "Default") {
             document.getElementsByClassName("Error-Msg")[0].style.display = "flex";
             document.body.scrollTop = document.documentElement.scrollTop = 0;
             return;
@@ -50,7 +50,7 @@ export default function Form() {
             Description: description,
             Stock: stock,
             Price: price,
-            Category: document.getElementById("Input-Category").value
+            Tag: document.getElementById("Input-Tag").value
         }
         setFile("");
         setPreview("");
@@ -59,7 +59,7 @@ export default function Form() {
         setStock("");
         setPrice("");
         
-        document.getElementById("Input-Category").value = "Default";
+        document.getElementById("Input-Tag").value = "Default";
         document.getElementsByClassName("Error-Msg")[0].style.display = "none";
 
         dispatch(setList(addItem));
@@ -76,7 +76,7 @@ export default function Form() {
                     Add Item Image 
                     <AiOutlineCamera size={45} style={{marginLeft: '10px'}}/>
                 </div>
-                <div style={flexStyle}>
+                <div style={{display: 'flex'}}>
                     <div className="Dropzone-Panel"><MyDropzone getFiles={getFiles}/></div>
                     <div className="Preview-Display">
                         {preview ?
@@ -126,13 +126,16 @@ export default function Form() {
                         onChange={handleChange}
                     />
 
-                    <div className="Category-Label">Category<span style={dotStyle}>*</span></div>
-                    <select id="Input-Category" className="Input-Category"> 
-                        <option value="Default">----Please Select a Category For The Item-----</option>
-                        <option value="Cloth">Cloth</option>
+                    <div className="Tag-Label">Tag<span style={dotStyle}>*</span></div>
+                    <select id="Input-Tag" className="Input-Tag"> 
+                        <option value="Default">----Please Select a Tag For The Item-----</option>
+                        <option value="Beauty">Beauty</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Clothed">Clothed</option>
                         <option value="Electronic">Electronic</option>
                         <option value="Furnature">Furnature</option>
                         <option value="Food">Food</option>
+                        <option value="Drinks">Drinks</option>
                     </select>
                 </div>  
             </div>
@@ -154,11 +157,6 @@ const fontStyle = {
 const dotStyle = {
     fontSize: '20px', 
     color: 'red',
-}
-
-const flexStyle = {
-    display: 'flex',
-    justifyContent: 'space-around'
 }
 
 const inputStyle = {

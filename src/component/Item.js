@@ -3,43 +3,52 @@ import { Link } from 'react-router-dom';
 
 const Item = ({item}) => {
 
-    const [source, setSource] = useState("");
+    const [url, setURL] = useState("");
 
     useEffect(() => {
-        const reader = new FileReader();
-        
-        reader.addEventListener("load", () => {setSource(reader.result);}, false);
-        reader.readAsDataURL(item.ImageFile[0]);
-
-        let background;
-        if (item.Category === "cloth") {background = "navy";}
-        else if (item.Category === "electronic") {background = "yellow";}
-        else if (item.Category === "furnature") {background = "black";}
-        else {background = "red";}
-        
-        let element = document.getElementById(item.id).querySelector(".Item-Category");
-        element.style.background = background;
-
+        if (typeof(item.ImageFile) === "string") {setURL(item.ImageFile);}
+        else {
+            const reader = new FileReader();  
+            reader.addEventListener("load", () => {setURL(reader.result);}, false);
+            reader.readAsDataURL(item.ImageFile[0]);
+        }
+        setTagColor();
     }, [item]);
 
+    const setTagColor = () => {
+        let background;
+        if (item.Tag === "Beauty") {background = "plum"}
+        else if (item.Tag === "Cleaning") {background = "royalblue"}
+        else if (item.Tag === "Cloth") {background = "black";}
+        else if (item.Tag === "Electronic") {background = "yellow";}
+        else if (item.Tag === "Furnature") {background = "brown";}
+        else if (item.Tag === "Food") {background = "limegreen";}
+        else if (item.Tag === "Drinks") {background = "limegreen";}
+        else {background = "red";}
+        
+        let element = document.getElementById(item.id).querySelector(".Item-Tag");
+        element.style.background = background;
+    }
+
     return(
-        <Link to={{pathname: `/View/${item.id}`, state: {item: item}}} className="Item-Container" id={item.id}>
-            <img className="Item-Image" src={source} alt=""/>
-            <div className="Item-Details">
-                <div className="Item-Name">
-                    {item.Name} <div className="Item-Category" id={item.id}>{item.Category}</div>
-                </div>
-                <div style={{display: 'flex', justifyContent: 'space-between', width: '95%'}}>
-                    <div className="Item-Price">
-                        Price: <span style={{fontSize: "22px", color: "rgb(4, 165, 4)", fontWeight: 'bold'}}>$</span>
-                        <span style={{color: "rgb(4, 165, 4)", fontSize: '20px'}}>{item.Price}</span>
-                    </div>
-                    <div className="Item-Stock">
-                        Stock: <span style={{color: "blue", fontSize: '22px', fontWeight: 'bold'}}>{item.Stock}</span>
+        <div className="Item-Container">
+            <div className="Item" id={item.id}>
+                <img className="Item-Image" src={url} alt=""/>
+                <div className="Item-Tag" id={item.id}>{item.Tag}</div>
+                <div className="Item-Details">
+                    <h1 className="Item-Name">{item.Name} </h1>
+                    <div style={{display: 'flex', justifyContent: 'space-between', width: '95%', height: '50px'}}>
+                        <div className="Item-Price">
+                            Price: <span style={{fontSize: "22px", color: "rgb(4, 165, 4)", fontWeight: 'bold'}}>$</span>
+                            <span style={{color: "rgb(4, 165, 4)", fontSize: '20px'}}>{item.Price}</span>
+                        </div>
+                        <div className="Item-Stock">
+                            Stock: <span style={{color: "navy", fontSize: '20px', fontWeight: 'bold'}}>{item.Stock}</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 }
 

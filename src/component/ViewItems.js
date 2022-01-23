@@ -45,7 +45,7 @@ export default function View() {
         document.getElementById(event.target.id).style.background = "rgb(255, 174, 24)";
 
         if (event.target.id !== "All") {
-            let result = items.filter(item => event.target.id === item.Category);
+            let result = items.filter(item => event.target.id === item.Tag);
             setList(result);
         }
         else {setList(items);}
@@ -58,10 +58,13 @@ export default function View() {
         <div className="View-Page">
             <div className="Filter-Panel">
                 <div className="Filter-Li" id="All" onClick={handleClick}>All</div>
-                <div className="Filter-Li" id="Cloth" onClick={handleClick}>Cloth</div>
+                <div className='Filter-Li' id= "Beauty" onClick={handleClick}>Beauty</div>
+                <div className="Filter-Li" id="Cleaning" onClick={handleClick}>Cleaning</div>
+                <div className="Filter-Li" id="Clothes" onClick={handleClick}>Clothes</div>
                 <div className="Filter-Li" id="Electronic" onClick={handleClick}>Electronic</div>
                 <div className="Filter-Li" id="Furnature" onClick={handleClick}>Furnature</div>
                 <div className="Filter-Li" id="Food" onClick={handleClick}>Food</div>
+                <div className='Filter-Li' id="Drinks" onClick={handleClick}>Drinks</div>
             </div>
             <div className="Items-Display">
                 {list.length ?

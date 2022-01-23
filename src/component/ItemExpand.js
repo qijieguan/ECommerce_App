@@ -10,7 +10,7 @@ const ItemExpand = () => {
         const reader = new FileReader();
         reader.addEventListener("load", () => {setSource(reader.result);}, false);
         reader.readAsDataURL(item.ImageFile[0]);
-    }, [item])
+    }, [item]);
  
     return(
         <div className="Item-Expand">
@@ -19,7 +19,7 @@ const ItemExpand = () => {
             <div>Description: {item.Description}</div>
             <div>Price: ${item.Price}</div>
             <div>Stock: {item.Stock}</div>
-            <div>Category: {item.Category}</div>
+            <div>Tag: {item.Tag}</div>
         </div>
     );
 }

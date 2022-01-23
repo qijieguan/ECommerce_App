@@ -13,12 +13,6 @@
   overflow-x: hidden;
 }
 
-.App {
-  min-height: 800px;
-  background-image: url("https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-  background-size: cover;
-}
-
 .App-Logo {
   display: flex;
   width: 100%;
@@ -103,9 +97,11 @@
   background: white;}
 
 .Homepage {
-  min-height: 800px;
   position: relative;
+  min-height: 700px;
   color: white;
+  background-image: url("https://images.pexels.com/photos/3551355/pexels-photo-3551355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
 }
 
 .overlay {
@@ -122,7 +118,6 @@
   width: 60%;
   font-size: 50px;
   background: transparent;
-  animation: fadeIn 3s linear infinite alternate;
 }
 
 .Home-About {
@@ -147,8 +142,8 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  background: rgb(173, 173, 255);
-  box-shadow: 0 2px 2px;
+  background: rgb(255, 214, 139);
+  box-shadow: 0 2px 2px grey;
   transform: translateY(-100%);
   transition: transform 0.3s ease-in;
   z-index: 3;
@@ -180,6 +175,7 @@
   width: 100%;
   background: rgb(235, 235, 235);
   box-shadow: 0 0 5px;
+  overflow: unset
 }
 
 .View-Default {
@@ -194,20 +190,31 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 5% 0 0 5%;
-  height: 325px;
-  width: 90%;
+  margin: 5% 0 0 2.5%;
+  height: 450px;
+  width: 95%;
   box-shadow: 0 0 3px black;
   border-radius: 3px;
+  overflow: unset
 }
 
-.Item-Container:hover {
+.Item {
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.Item:hover {
   position: absolute;
-  width: auto;
-  height: auto;
+  margin-left: 175px;
+  min-height: 500px;
+  min-width: 500px;
+  box-shadow: 0 0 3px black;
+  z-index: 2;
 }
 
 .Item-Image {
+  position: relative;
   height: 70%;
   width: 100%;
   border-radius: 3px 3px 0 0;
@@ -215,10 +222,27 @@
   object-fit: cover;
 }
 
+.Item-Tag {
+  position: absolute;
+  margin: 10px 10px 0 0;
+  top: 0;
+  right: 0;
+  display: flex;
+  font-size: 18px;
+  font-family: italic;
+  height: 30px;
+  line-height: 30px;
+  min-width: 80px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 3px grey;
+}
+
 .Item-Details {
   padding: 5px;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   height: 30%;
   width: 100%;
   background: white;
@@ -226,30 +250,16 @@
 }
 
 .Item-Name {
-  display: flex; 
-  justify-content: space-between;
-  height: 50px;
-  width: 95%;
+  text-align: center;
+  font-size: 24px;
+  word-wrap: break-word;
   color: black;
-  font-size: 26px;
+  overflow-y: hidden;
 }
 
 .Item-Price, .Item-Stock {
-  color: black;
+  color: grey;
   font-size: 18px;
-}
-
-.Item-Category {
-  padding: 0 3px;
-  text-align: center;
-  font-size: 18px;
-  font-family: italic;
-  height: 30px;
-  line-height: 30px;
-  color: white;
-  background: red;
-  border-radius: 5px;
-  box-shadow: 0 0 5px grey;
 }
 
 .Item-Expand {
@@ -316,11 +326,11 @@
 
 .Dropzone {
   display: flex;
-  font-size: 24px;
+  font-size: 26px;
   text-shadow: 1px 1px gray;
-  height: 400px;
+  height: 450px;
   background: orange;
-  border-radius: 50px;
+  border-radius: 10px;
   box-shadow: 0 0 4px rgb(53, 53, 53);
 }
 
@@ -364,14 +374,14 @@
   grid-template-rows: repeat(7, auto);
 }
 
-.Name-Label, .Description-Label, .Stock-Label, .Price-Label, .Category-Label {text-align: right;}
+.Name-Label, .Description-Label, .Stock-Label, .Price-Label, .Tag-Label {text-align: right;}
 
-.Input-Category { 
+.Input-Tag { 
   width: 50%;
   background: rgb(236, 236, 236);
 }
 
-.Input-Category * {background: rgb(236, 236, 236);}
+.Input-Tag * {background: rgb(236, 236, 236);}
 
 .Submit-Form {
   display: flex;
