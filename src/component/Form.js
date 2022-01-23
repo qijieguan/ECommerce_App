@@ -136,6 +136,7 @@ export default function Form() {
                         <option value="Furnature">Furnature</option>
                         <option value="Food">Food</option>
                         <option value="Drinks">Drinks</option>
+                        <option value="Toy">Toy</option>
                     </select>
                 </div>  
             </div>

@@ -27,6 +27,15 @@ const defaultList = [
         Stock: 20,
         Price: 90.00,
         Tag: 'Beauty'
+    },
+    {
+        id: uuid(),
+        ImageFile: "https://live.staticflickr.com/65535/50984391773_ed0491f1e9_b.jpg",
+        Name: '1 Set of Airpods',
+        Description: 'Put it on when you drive',
+        Stock: 20,
+        Price: 100.00,
+        Tag: 'Electronic'
     }
 ]
 

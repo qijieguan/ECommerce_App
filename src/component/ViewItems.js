@@ -65,6 +65,7 @@ export default function View() {
                 <div className="Filter-Li" id="Furnature" onClick={handleClick}>Furnature</div>
                 <div className="Filter-Li" id="Food" onClick={handleClick}>Food</div>
                 <div className='Filter-Li' id="Drinks" onClick={handleClick}>Drinks</div>
+                <div className='Filter-Li' id="Toy" onClick={handleClick}>Toy</div>
             </div>
             <div className="Items-Display">
                 {list.length ?

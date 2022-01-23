@@ -166,7 +166,7 @@
 .Filter-Panel *:hover {opacity: 0.8;}
 
 .Items-Display {
-  margin-top: 10%;
+  margin: 10% 0;
   display: grid;
   grid-template-columns: repeat(4, 24%);
   grid-template-rows: repeat(10, auto);
@@ -190,7 +190,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 5% 0 0 2.5%;
+  margin: 5% 0 5% 2.5%;
   height: 450px;
   width: 95%;
   box-shadow: 0 0 3px black;
@@ -206,7 +206,6 @@
 
 .Item:hover {
   position: absolute;
-  margin-left: 175px;
   min-height: 500px;
   min-width: 500px;
   box-shadow: 0 0 3px black;
@@ -255,6 +254,12 @@
   word-wrap: break-word;
   color: black;
   overflow-y: hidden;
+}
+
+.Item-Description {
+  display: none;
+  font-style: italic;
+  color: gray;
 }
 
 .Item-Price, .Item-Stock {
