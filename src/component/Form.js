@@ -38,7 +38,7 @@ export default function Form() {
     const handleSubmit = event => {
         event.preventDefault();
 
-        if (!file || !name || !description || !stock || !price || document.getElementById("Input-Tag").value === "Default") {
+        if (!file || document.getElementById("Input-Tag").value === "Default") {
             document.getElementsByClassName("Error-Msg")[0].style.display = "flex";
             document.body.scrollTop = document.documentElement.scrollTop = 0;
             return;
@@ -95,19 +95,20 @@ export default function Form() {
                 <div className="Input-Fields">
 
                     <div className="Name-Label">Name<span style={dotStyle}>*</span></div>
-                    <input className="Input-Name" name="name"
-                        style={Object.assign({height: '50px'}, inputStyle)} 
+                    <input className="Input-Name" name="name" style={Object.assign({height: '50px'}, inputStyle)} 
                         value={name}
                         placeholder="Enter name here..."
                         onChange={handleChange}
+                        required
                     />
 
                     <div className="Description-Label">Description<span style={dotStyle}>*</span></div>
-                    <textarea className="Input-Description" name="description"
+                    <textarea className="Input-Description" name="description" 
                         style={Object.assign({height: '200px'}, inputStyle)} 
                         value={description}
                         placeholder="Enter description here..."
                         onChange={handleChange} 
+                        required
                     />
 
                     <div className="Stock-Label">Stock<span style={dotStyle}>*</span></div>
@@ -116,6 +117,7 @@ export default function Form() {
                         value={stock}
                         placeholder="0"
                         onChange={handleChange}
+                        required
                     />
 
                     <div className="Price-Label">Price<span style={dotStyle}>*</span></div>
@@ -124,6 +126,7 @@ export default function Form() {
                         value={price}
                         placeholder="$0.00"
                         onChange={handleChange}
+                        required
                     />
 
                     <div className="Tag-Label">Tag<span style={dotStyle}>*</span></div>

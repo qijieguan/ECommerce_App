@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Item = ({item}) => {
 
     const [url, setURL] = useState("");
-    const [delayHandler, setDelayhandler] = useState(null);
 
     useEffect(() => {
         if (typeof(item.ImageFile) === "string") {setURL(item.ImageFile);}
@@ -33,16 +33,13 @@ const Item = ({item}) => {
     }
 
     const onEnter = () => {
-        setDelayhandler(setTimeout(() => {
-            let element = document.getElementById(item.id);
-            if (element.getClientRects()[0].x < 100) {element.style.marginLeft = '175px';}
-            if (element.getClientRects()[0].x > 800) {element.style.marginRight = '175px';}
-            element.getElementsByClassName("Item-Description")[0].style.display = "flex";
-        }, 200));
+        let element = document.getElementById(item.id);
+        if (element.getClientRects()[0].x < 100) {element.style.marginLeft = '175px';}
+        else if (element.getClientRects()[0].x > 800) {element.style.marginRight = '175px';}
+        element.getElementsByClassName("Item-Description")[0].style.display = "flex";
     }
 
     const onLeave = () => {
-        clearTimeout(delayHandler);
         let element = document.getElementById(item.id);
         element.style.margin = '0';
         element.getElementsByClassName("Item-Description")[0].style.display = "none";
@@ -50,9 +47,7 @@ const Item = ({item}) => {
 
     return(
         <Link className="Item-Container" to={{pathname: `/View/${item.id}`, state: {item: item}}}>
-            <div className="Item" id={item.id} onMouseEnter={onEnter} onMouseLeave={onLeave} 
-                onClick={clearTimeout(delayHandler)}
-            >
+            <div className="Item" id={item.id} onMouseEnter={onEnter} onMouseLeave={onLeave}>
                 <img className="Item-Image" src={url} alt=""/>
                 <div className="Item-Tag" id={item.id}>{item.Tag}</div>
                 <div className="Item-Details">

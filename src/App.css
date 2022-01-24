@@ -273,7 +273,6 @@
 .Expand-Item {
   padding-top: 50px;
   display: flex;
-  justify-content: space-around;
   min-height: 700px;
   background: orange;
 }
