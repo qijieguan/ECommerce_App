@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 const Item = ({item}) => {
 
     const [url, setURL] = useState("");
+    const [delayHandler, setDelayhandler] = useState(null);
 
     useEffect(() => {
         if (typeof(item.ImageFile) === "string") {setURL(item.ImageFile);}
@@ -32,14 +33,16 @@ const Item = ({item}) => {
     }
 
     const onEnter = () => {
-        let element = document.getElementById(item.id);
-
-        if (element.getClientRects()[0].x < 0) {element.style.marginLeft = '175px';}
-        else if (element.getClientRects()[0].x > 500) {element.style.marginRight = '175px';}
-        element.getElementsByClassName("Item-Description")[0].style.display = "flex";
+        setDelayhandler(setTimeout(() => {
+            let element = document.getElementById(item.id);
+            if (element.getClientRects()[0].x < 100) {element.style.marginLeft = '175px';}
+            if (element.getClientRects()[0].x > 800) {element.style.marginRight = '175px';}
+            element.getElementsByClassName("Item-Description")[0].style.display = "flex";
+        }, 200));
     }
 
     const onLeave = () => {
+        clearTimeout(delayHandler);
         let element = document.getElementById(item.id);
         element.style.margin = '0';
         element.getElementsByClassName("Item-Description")[0].style.display = "none";
@@ -55,7 +58,7 @@ const Item = ({item}) => {
                     <div className="Item-Description">{item.Description}</div>
                     <div style={{display: 'flex', justifyContent: 'space-between', width: '95%', height: '50px'}}>
                         <div className="Item-Price">
-                            Price: <span style={{fontSize: "22px", color: "rgb(4, 165, 4)", fontWeight: 'bold'}}>$</span>
+                            Price: <span style={{fontSize: "20px", color: "rgb(4, 165, 4)", fontWeight: 'bold'}}>$</span>
                             <span style={{color: "rgb(4, 165, 4)", fontSize: '20px'}}>{item.Price}</span>
                         </div>
                         <div className="Item-Stock">

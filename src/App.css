@@ -142,7 +142,7 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  background: rgb(255, 214, 139);
+  background:midnightblue;
   box-shadow: 0 2px 2px grey;
   transform: translateY(-100%);
   transition: transform 0.3s ease-in;
@@ -170,7 +170,6 @@
   display: grid;
   grid-template-columns: repeat(4, 24%);
   grid-template-rows: repeat(10, auto);
-  grid-gap: 0 0 0 10px;
   min-height: 600px;
   width: 100%;
   background: rgb(235, 235, 235);
@@ -190,7 +189,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 5% 0 5% 2.5%;
+  margin: 5% 2.5%;
   height: 450px;
   width: 95%;
   box-shadow: 0 0 3px black;
@@ -202,14 +201,16 @@
   height: 100%;
   width: 100%;
   overflow-y: hidden;
+  transition: 0.5s all;
 }
 
 .Item:hover {
   position: absolute;
-  min-height: 500px;
-  min-width: 500px;
+  height: 500px;
+  width: 500px;
   box-shadow: 0 0 3px black;
   z-index: 2;
+  transition-delay: 0.5s;
 }
 
 .Item-Image {
@@ -260,6 +261,7 @@
   display: none;
   font-style: italic;
   color: gray;
+  overflow-y: hidden;
 }
 
 .Item-Price, .Item-Stock {
