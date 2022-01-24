@@ -31,7 +31,7 @@ export default function Header() {
                         value={word}
                         onChange={handleChange}
                     />
-                    <div className="Search-Btn" onClick={handleSubmit}>
+                    <button className="Search-Btn" onClick={handleSubmit}>
                         <Link to="/View">
                             <AiOutlineSearch
                                 style={{display: 'flex'}}
@@ -39,7 +39,7 @@ export default function Header() {
                                 color='white'
                             />
                         </Link>
-                    </div>
+                    </button>
                 </div>
                 <Menu/>
             </div>

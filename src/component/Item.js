@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 
 const Item = ({item}) => {
 
@@ -49,8 +49,10 @@ const Item = ({item}) => {
     }
 
     return(
-        <div className="Item-Container">
-            <div className="Item" id={item.id} onMouseEnter={onEnter} onMouseLeave={onLeave}>
+        <Link className="Item-Container" to={{pathname: `/View/${item.id}`, state: {item: item}}}>
+            <div className="Item" id={item.id} onMouseEnter={onEnter} onMouseLeave={onLeave} 
+                onClick={clearTimeout(delayHandler)}
+            >
                 <img className="Item-Image" src={url} alt=""/>
                 <div className="Item-Tag" id={item.id}>{item.Tag}</div>
                 <div className="Item-Details">
@@ -67,7 +69,7 @@ const Item = ({item}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
 

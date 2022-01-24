@@ -38,7 +38,6 @@
   height: 40px;
   width: 400px;
   background: white;
-  border: 0;
   border-radius: 3px 0 0 3px;
   outline: none;
 }
@@ -213,6 +212,8 @@
   transition-delay: 0.5s;
 }
 
+.Item:hover .Item-Tag {display: none;}
+
 .Item-Image {
   position: relative;
   height: 70%;
@@ -269,14 +270,50 @@
   font-size: 18px;
 }
 
-.Item-Expand {
+.Expand-Item {
+  padding-top: 50px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  min-height: 700px;
+  background: orange;
 }
 
-.Item-Expand * {
-  color: black;
-  background: rgb(235, 235, 235);
+.Expand-Image {
+  max-height: 600px;
+  max-width: 55%;
+  box-shadow: 0 0 5px;
+  border-radius: 3px;
+}
+
+.Expand-Details {
+  align-self: flex-start;
+  width: 40%;
+}
+
+.Expand-Li {
+  font-size: 18px;
+  color: white;
+}
+
+.Expand-Name {
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.Expand-Description {
+  margin: 125px 0;
+  font-size: 20px;
+  font-family: monospace;
+}
+
+.Add-Cart {
+  margin: 30px 0;
+  padding: 0 10px;
+  height: 40px;
+  color: white;
+  background: limegreen;
+  box-shadow: 0 0 5px green;
+  border-radius: 3px;
 }
 
 .Account-Page {
@@ -404,13 +441,14 @@
   width: 125px;
   background: rgb(205, 205, 255);
   color: rgb(80, 80, 80);
-  border: 0;
   border-radius: 5px;
   box-shadow: 1px 1px 1px;
   overflow-y: hidden;
 }
 
-.btn:hover {opacity: .5;}
+.btn:hover, .Expand-Image:hover, button:hover {opacity: 0.5;}
+
+button {border: 0}
 
 input, textarea {
   font-size: 16px;
