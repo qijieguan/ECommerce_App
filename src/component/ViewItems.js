@@ -2,12 +2,15 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearch } from './actions/index.js';
 import Item from './Item.js';
+import Cart from './Cart.js';
+
 
 export default function View() {
 
     const dispatch = useDispatch();
     const items = useSelector(state => state.itemList);
     const word = useSelector(state => state.word);
+    const cart = useSelector(state => state.cart);
 
     const [onLoad, setLoad] = useState(true);
     const [prevWord, setPrevWord] = useState("");
@@ -25,8 +28,7 @@ export default function View() {
         setPrevWord(word);
         resetActive();
         setList(items.filter(item => item.Name === word));
-     
-    }, [onLoad, update, status, prevWord, word, items]);
+    }, [onLoad, update, status, prevWord, word, items, cart]);
 
     const resetActive = () => {
         let list = document.querySelectorAll(".Filter-Li");
@@ -67,6 +69,7 @@ export default function View() {
                 <div className='Filter-Li' id="Drinks" onClick={handleClick}>Drinks</div>
                 <div className='Filter-Li' id="Toy" onClick={handleClick}>Toy</div>
             </div>
+            <Cart/>
             <div className="Items-Display">
                 {list.length ?
                     list.map(item => <Item key={item.id} item={item} />)

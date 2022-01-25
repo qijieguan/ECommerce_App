@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { setSearch } from './actions/index.js';
 import Menu from './Menu.js';
 import { Link } from 'react-router-dom';
-import { AiOutlineSearch } from 'react-icons/ai'
+import { AiOutlineSearch } from 'react-icons/ai';
 
 export default function Header() {
 

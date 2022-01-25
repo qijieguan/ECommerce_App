@@ -164,6 +164,36 @@
 
 .Filter-Panel *:hover {opacity: 0.8;}
 
+.Cart {
+  display: none;
+  justify-content: flex-start;
+  height: 100px;
+  width: 100%;
+  background: rgb(197, 197, 197);
+  box-shadow: 0 0 3px black;
+  overflow-y: hidden;
+}
+
+.Cart-Label {
+  display: flex;
+  font-family: copperplate;
+  font-size: 30px;
+  height: 100%;
+  width: 200px;
+  color: white;
+  background: black;
+  box-shadow: 0 0 3px black;
+  border-radius: 3px;
+}
+
+.Cart-Li {
+  margin-left: 50px;
+  color: white;
+  max-height: 95px;
+  max-width: 100px;
+  box-shadow: 0 0 3px black;
+}
+
 .Items-Display {
   margin: 10% 0;
   display: grid;

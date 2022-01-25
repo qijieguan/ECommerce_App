@@ -3,7 +3,7 @@ import MyDropzone from './Dropzone.js';
 import { AiOutlineCamera } from 'react-icons/ai';
 import { BsPencilSquare } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
-import { setList } from './actions/index.js';
+import { addList } from './actions/index.js';
 import uuid from "react-uuid"; 
 
 export default function Form() {
@@ -62,7 +62,7 @@ export default function Form() {
         document.getElementById("Input-Tag").value = "Default";
         document.getElementsByClassName("Error-Msg")[0].style.display = "none";
 
-        dispatch(setList(addItem));
+        dispatch(addList(addItem));
         setSubmit(!isSubmit);
     }
 
@@ -130,8 +130,8 @@ export default function Form() {
                     />
 
                     <div className="Tag-Label">Tag<span style={dotStyle}>*</span></div>
-                    <select id="Input-Tag" className="Input-Tag"> 
-                        <option value="Default">----Please Select a Tag For The Item-----</option>
+                    <select id="Input-Tag" className="Input-Tag" required> 
+                        <option value="">----Please Select a Tag For The Item-----</option>
                         <option value="Beauty">Beauty</option>
                         <option value="Cleaning">Cleaning</option>
                         <option value="Clothed">Clothed</option>

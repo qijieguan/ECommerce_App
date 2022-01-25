@@ -41,7 +41,7 @@ const defaultList = [
 
 const listReducer = (state = defaultList, action) => {
     switch (action.type) {
-        case 'SET_LIST': 
+        case 'ADD_LIST': 
             return [...state, action.payload];
         default:
             return state;
