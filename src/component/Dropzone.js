@@ -22,7 +22,4 @@ export default function MyDropzone( {getFiles} ) {
     );
 }
 
-const activeStyle = {
-    borderStyle: "solid",
-    opacity: "0.5"
-}
+const activeStyle = { borderStyle: "solid", opacity: "0.5" }

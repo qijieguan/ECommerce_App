@@ -19,3 +19,17 @@ export const addCart = item => {
     }
 }
 
+export const deleteCart = id => {
+    return {
+        type: 'DELETE_CART',
+        payload: id
+    }
+}
+
+export const clearCart = () => {
+    return {
+        type: 'CLEAR_CART',
+        payload: ""
+    }
+}
+

@@ -22,7 +22,4 @@ export default function Account() {
     )
 }
 
-const fontStyle = {
-    fontSize: "24px",
-    color: "green",
-}
+const fontStyle = { fontSize: "24px", color: "green", }

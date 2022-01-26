@@ -158,13 +158,7 @@ const fontStyle = {
     justifyContent: 'unset',
 }
 
-const dotStyle = {
-    fontSize: '20px', 
-    color: 'red',
-}
+const dotStyle = { fontSize: '20px',  color: 'red', }
 
-const inputStyle = {
-    fontSize: '20px',
-    background: 'rgb(236,236,236)'
-}
+const inputStyle = { fontSize: '20px', background: 'rgb(236,236,236)' }
 
