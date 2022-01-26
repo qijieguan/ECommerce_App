@@ -241,7 +241,7 @@
 
 .Review-Initial::before { content: "Subtotal: "; }
 
-.Review-Tax::before { content: "Tax: "; }
+.Review-Tax::before { content: "Tax: + "; }
 
 .Review-Final::before { content: "Total: "; color: black }
 
