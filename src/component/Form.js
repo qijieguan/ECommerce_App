@@ -19,6 +19,7 @@ export default function Form() {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        document.getElementById("header").style.background = 'black';
         if (!file) {return}
 
         const reader = new FileReader();

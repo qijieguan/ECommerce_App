@@ -19,8 +19,9 @@ export default function View() {
     const [list, setList] = useState(items);
 
     useEffect(() => {
+        document.getElementById('header').style.background = 'black';
         if (onLoad) {
-            const Filter = document.querySelector(".Filter-Panel");
+            const Filter = document.querySelector("#Filter-Panel");
             Filter.classList.toggle("transformY");
             setLoad(false);
         }
@@ -57,8 +58,9 @@ export default function View() {
     }
 
     return (
-        <div className="View-Page">
-            <div className="Filter-Panel">
+        <div id="View-Page">
+            <Cart/>
+            <div id="Filter-Panel">
                 <div className="Filter-Li" id="All" onClick={handleClick}>All</div>
                 <div className='Filter-Li' id= "Beauty" onClick={handleClick}>Beauty</div>
                 <div className="Filter-Li" id="Cleaning" onClick={handleClick}>Cleaning</div>
@@ -69,12 +71,11 @@ export default function View() {
                 <div className='Filter-Li' id="Drinks" onClick={handleClick}>Drinks</div>
                 <div className='Filter-Li' id="Toy" onClick={handleClick}>Toy</div>
             </div>
-            <Cart/>
-            <div className="Items-Display">
+            <div id="Items-Display">
                 {list.length ?
                     list.map(item => <Item key={item.id} item={item} />)
                     :
-                    <div className="View-Default">No Items to Display</div>
+                    <div id="View-Default">No Items to Display</div>
                 }
             </div>
         </div>
