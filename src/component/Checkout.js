@@ -36,23 +36,23 @@ const Checkout = () => {
         setMessage("Thank you for shopping! Happy New Year!");
         dispatch(clearCart());
         setPaid(true);
-        document.getElementsByClassName("Checkout-Msg")[0].firstChild.style.color = "green";
+        document.getElementById("checkout-msg").firstChild.style.color = "green";
     };
 
     return (
         <div style={{display: 'flex', marginTop: '100px'}}>
-            <div className="Checkout-Msg" style={{display: cart.length === 0 ? 'flex' : 'none', flexDirection: 'column'}}>   
+            <div id="checkout-msg" style={{display: cart.length === 0 ? 'flex' : 'none', flexDirection: 'column'}}>   
                 <div style={{margin: '40px 0', fontSize: '50px', color: "gray"}}>{message}</div>
                 <AiOutlineShoppingCart size={225} color='gray' style={{display: paid ? 'none' : 'block'}}/>
                 <BsCheckCircle size={225} color='green' style={{display: paid ? 'block' : 'none'}}/>
             </div>
             <div style={{display: cart.length > 0 ? 'flex' : 'none', width: '80%'}}>
-                <div className='Cart-Items'>
+                <div id='cart-items'>
                     {cart.map(item => 
-                        <div className='Cart-Item'>
-                            <img src={getURL(item)} className="Cart-Img" alt=""/>
-                            <div className='Cart-Price'>${item.Price.toFixed(2)}</div>
-                            <FaTrashAlt className="Trash-Btn" style={{margin: '0 10px 30px 0'}}
+                        <div className='cart-item'>
+                            <img src={getURL(item)} className="cart-img" alt=""/>
+                            <div className='cart-price'>${item.Price.toFixed(2)}</div>
+                            <FaTrashAlt className="trash-btn" style={{margin: '0 10px 30px 0'}}
                                 size={24} 
                                 color='grey'
                                 onClick={() => {dispatch(deleteCart(item.id))}}
@@ -60,14 +60,14 @@ const Checkout = () => {
                         </div>
                     )}
                 </div>
-                <div className="Review">
-                    <div className='Review-Initial'>${cost.toFixed(2)}</div>
-                    <div className='Review-Tax'>${(cost*.1).toFixed(2)}</div>
+                <div id="review">
+                    <div id='review-initial'>${cost.toFixed(2)}</div>
+                    <div id='review-tax'>${(cost*.1).toFixed(2)}</div>
                     <div style={{border: '2px solid grey', width: '80%'}}/>
-                    <div className='Review-Final' style={{fontSize: '24px', color: 'black'}}>
+                    <div id='review-final' style={{fontSize: '24px', color: 'black'}}>
                         ${(cost + (cost*.1)).toFixed(2)}
                     </div>
-                    <button className='Pay-Btn' onClick={handlePay}>Proceed to Pay</button>
+                    <button id='pay-btn' onClick={handlePay}>Proceed to Pay</button>
                 </div>
             </div>
         </div>

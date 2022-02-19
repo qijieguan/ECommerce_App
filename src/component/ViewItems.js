@@ -12,7 +12,6 @@ export default function View() {
     const word = useSelector(state => state.word);
     const cart = useSelector(state => state.cart);
 
-    const [onLoad, setLoad] = useState(true);
     const [prevWord, setPrevWord] = useState("");
     const [status, setStatus] = useState("");
     const [update, setUpdate] = useState(false);
@@ -20,24 +19,16 @@ export default function View() {
 
     useEffect(() => {
         document.getElementById('header').style.background = 'black';
-        if (onLoad) {
-            const Filter = document.querySelector("#Filter-Panel");
-            Filter.classList.toggle("transformY");
-            setLoad(false);
-        }
-        if (!word || status === "Filter") {setStatus("Done"); return;}   
+
+        if (!word || status === "Filter") { setStatus("Done"); return; }   
         setPrevWord(word);
         resetActive();
         setList(items.filter(item => item.Name === word));
-    }, [onLoad, update, status, prevWord, word, items, cart]);
+    }, [ update, status, prevWord, word, items, cart]);
 
     const resetActive = () => {
-        let list = document.querySelectorAll(".Filter-Li");
-        
-        list.forEach(el => {
-            el.style.background = "white";
-            el.style.color = "black";
-        });
+        let list = document.querySelectorAll(".filter-li");
+        list.forEach(el => { el.style.background = "white"; el.style.color = "black"; });
     }
 
     const handleClick = event => {
@@ -51,31 +42,31 @@ export default function View() {
             let result = items.filter(item => event.target.id === item.Tag);
             setList(result);
         }
-        else {setList(items);}
+        else { setList(items); }
         setStatus("Filter");
         setUpdate(!update);
         dispatch(setSearch(""));
     }
 
     return (
-        <div id="View-Page">
+        <div id="view-page">
             <Cart/>
-            <div id="Filter-Panel">
-                <div className="Filter-Li" id="All" onClick={handleClick}>All</div>
-                <div className='Filter-Li' id= "Beauty" onClick={handleClick}>Beauty</div>
-                <div className="Filter-Li" id="Cleaning" onClick={handleClick}>Cleaning</div>
-                <div className="Filter-Li" id="Clothes" onClick={handleClick}>Clothes</div>
-                <div className="Filter-Li" id="Electronic" onClick={handleClick}>Electronic</div>
-                <div className="Filter-Li" id="Furnature" onClick={handleClick}>Furnature</div>
-                <div className="Filter-Li" id="Food" onClick={handleClick}>Food</div>
-                <div className='Filter-Li' id="Drinks" onClick={handleClick}>Drinks</div>
-                <div className='Filter-Li' id="Toy" onClick={handleClick}>Toy</div>
-            </div>
-            <div id="Items-Display">
+            <div id="items-display">
+                <div id="filter-interface">
+                    <div className="filter-li" id="All" onClick={handleClick}>All</div>
+                    <div className='filter-li' id= "Beauty" onClick={handleClick}>Beauty</div>
+                    <div className="filter-li" id="Cleaning" onClick={handleClick}>Cleaning</div>
+                    <div className="filter-li" id="Clothes" onClick={handleClick}>Clothes</div>
+                    <div className="filter-li" id="Electronic" onClick={handleClick}>Electronic</div>
+                    <div className="filter-li" id="Furnature" onClick={handleClick}>Furnature</div>
+                    <div className="filter-li" id="Food" onClick={handleClick}>Food</div>
+                    <div className='filter-li' id="Drinks" onClick={handleClick}>Drinks</div>
+                    <div className='filter-li' id="Toy" onClick={handleClick}>Toy</div>
+                </div>
                 {list.length ?
                     list.map(item => <Item key={item.id} item={item} />)
                     :
-                    <div id="View-Default">No Items to Display</div>
+                    <div id="view-default">No Items to Display</div>
                 }
             </div>
         </div>

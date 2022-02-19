@@ -28,7 +28,7 @@ const Item = ({item}) => {
         else if (item.Tag === "Toy") {background = "limegreen";}
         else {background = "red";}
         
-        let element = document.getElementById(item.id).querySelector(".Item-Tag");
+        let element = document.getElementById(item.id).querySelector(".item-tag");
         element.style.background = background;
     }
 
@@ -36,29 +36,29 @@ const Item = ({item}) => {
         let element = document.getElementById(item.id);
         if (element.getClientRects()[0].x < 100) {element.style.marginLeft = '175px';}
         else if (element.getClientRects()[0].x > 800) {element.style.marginRight = '175px';}
-        element.getElementsByClassName("Item-Description")[0].style.display = "flex";
+        element.getElementsByClassName("item-description")[0].style.display = "flex";
     }
 
     const onLeave = () => {
         let element = document.getElementById(item.id);
         element.style.margin = '0';
-        element.getElementsByClassName("Item-Description")[0].style.display = "none";
+        element.getElementsByClassName("item-description")[0].style.display = "none";
     }
 
     return(
-        <Link className="Item-Container" to={{pathname: `/View/${item.id}`, state: {item: item}}}>
-            <div className="Item" id={item.id} onMouseEnter={onEnter} onMouseLeave={onLeave}>
-                <img className="Item-Image" src={url} alt=""/>
-                <div className="Item-Tag" id={item.id}>{item.Tag}</div>
-                <div className="Item-Details">
-                    <h1 className="Item-Name">{item.Name} </h1>
-                    <div className="Item-Description">{item.Description}</div>
+        <Link className="item-container" to={{pathname: `/View/${item.id}`, state: {item: item}}}>
+            <div className="item" id={item.id} onMouseEnter={onEnter} onMouseLeave={onLeave}>
+                <img className="item-image" src={url} alt=""/>
+                <div className="item-tag" id={item.id}>{item.Tag}</div>
+                <div className="item-details">
+                    <h1 className="item-name">{item.Name} </h1>
+                    <div className="item-description">{item.Description}</div>
                     <div style={{display: 'flex', justifyContent: 'space-between', width: '95%', height: '50px'}}>
-                        <div className="Item-Price">
+                        <div className="item-price">
                             Price: <span style={{fontSize: "20px", color: "rgb(4, 165, 4)", fontWeight: 'bold'}}>$</span>
                             <span style={{color: "rgb(4, 165, 4)", fontSize: '20px'}}>{item.Price}</span>
                         </div>
-                        <div className="Item-Stock">
+                        <div className="item-stock">
                             Stock: <span style={{color: "navy", fontSize: '20px', fontWeight: 'bold'}}>{item.Stock}</span>
                         </div>
                     </div>

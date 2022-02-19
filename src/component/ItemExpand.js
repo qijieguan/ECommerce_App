@@ -12,6 +12,8 @@ const ItemExpand = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        document.getElementById('header').style.background = 'orange';
+        
         if (typeof(item.ImageFile) === "string") {setURL(item.ImageFile);}
         else {
             const reader = new FileReader();  
@@ -28,15 +30,15 @@ const ItemExpand = () => {
     return(
         <div>
             <Cart/>
-            <div className="Expand-Item">
-                <img className="Expand-Image" src={url} alt=""/>
-                <div className="Expand-Details">
-                    <h1 className="Expand-Name Expand-Li">{item.Name}</h1>
-                    <h1 className='Expand-Description Expand-Li'>{item.Description}</h1><br/>
-                    <button className='Add-Cart' onClick={handleAddCart}>Add to Cart</button>
-                    <div className='Expand-Li'>Price ${item.Price}</div>
-                    <div className='Expand-Li'>Stock: {item.Stock}</div>
-                    <div className='Expand-Li'>Tag: {item.Tag}</div>
+            <div className="expand-item">
+                <img className="expand-image" src={url} alt=""/>
+                <div className="expand-details">
+                    <h1 className="expand-name expand-li">{item.Name}</h1>
+                    <h1 className='expand-description expand-li'>{item.Description}</h1><br/>
+                    <button className='add-cart' onClick={handleAddCart}>Add to Cart</button>
+                    <div className='expand-li'>Price ${item.Price}</div>
+                    <div className='expand-li'>Stock: {item.Stock}</div>
+                    <div className='expand-li'>Tag: {item.Tag}</div>
                 </div>
             </div>
         </div>
