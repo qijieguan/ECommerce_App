@@ -12,19 +12,25 @@ export default function View() {
     const word = useSelector(state => state.word);
     const cart = useSelector(state => state.cart);
 
-    const [prevWord, setPrevWord] = useState("");
     const [status, setStatus] = useState("");
     const [update, setUpdate] = useState(false);
     const [list, setList] = useState(items);
+    const [onLoad, setLoad] = useState(true);
 
     useEffect(() => {
-        document.getElementById('header').style.background = 'wheat';
-
+        if (onLoad) { 
+            document.getElementById('header').style.background = 'wheat';   
+            document.getElementById("All").style.color = "white";
+            document.getElementById("All").style.background = "rgb(255, 174, 24)";
+            setLoad(false);
+        }
+        
         if (!word || status === "Filter") { setStatus("Done"); return; }   
-        setPrevWord(word);
         resetActive();
         setList(items.filter(item => item.Name === word));
-    }, [ update, status, prevWord, word, items, cart]);
+        dispatch(setSearch(""));
+
+    }, [ update, status, word, items, cart]);
 
     const resetActive = () => {
         let list = document.querySelectorAll(".filter-li");

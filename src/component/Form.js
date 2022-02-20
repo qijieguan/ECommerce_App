@@ -51,7 +51,7 @@ export default function Form() {
             Description: description,
             Stock: stock,
             Price: price,
-            Tag: document.getElementById("Input-Tag").value
+            Tag: document.getElementById("input-tag").value
         }
         setFile("");
         setPreview("");
