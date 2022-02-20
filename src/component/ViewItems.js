@@ -18,7 +18,7 @@ export default function View() {
     const [list, setList] = useState(items);
 
     useEffect(() => {
-        document.getElementById('header').style.background = 'black';
+        document.getElementById('header').style.background = 'wheat';
 
         if (!word || status === "Filter") { setStatus("Done"); return; }   
         setPrevWord(word);

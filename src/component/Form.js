@@ -72,9 +72,8 @@ export default function Form() {
             <div id="error-msg">*Missing image or input fields are empty*</div>
             <div id="image-section">
                 <div id="image-label"
-                    style={Object.assign({textShadow: '2px 2px rgb(90, 90, 90)', color: 'orange'}, fontStyle)}
-                >
-                    Add Item Image 
+                    style={{textShadow: '2px 2px rgb(90, 90, 90)', color: 'orange'}}
+                >   Add Item Image 
                     <AiOutlineCamera size={45} style={{marginLeft: '10px'}}/>
                 </div>
                 <div style={{display: 'flex'}}>
@@ -89,7 +88,7 @@ export default function Form() {
                 </div>
             </div>
             <div id="input-section">
-                <div id="input-label" style={Object.assign({textShadow: '2px 2px gray'}, fontStyle)}>
+                <div id="input-label" style={{ textShadow: '2px 2px gray' }} >
                     Fill In Item Fields 
                     <BsPencilSquare size={45} style={{marginLeft: '10px'}}/>
                 </div>
@@ -150,13 +149,6 @@ export default function Form() {
             </div>
         </form>   
     );
-}
-
-const fontStyle = {
-    fontSize: '50px', 
-    padding: '80px 0 40px 50px', 
-    display: 'flex',
-    justifyContent: 'unset',
 }
 
 const dotStyle = { fontSize: '20px',  color: 'red', }
