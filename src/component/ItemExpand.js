@@ -28,20 +28,20 @@ const ItemExpand = () => {
     };
  
     return(
-        <div>
+        <div id="expand-page">
             <Cart/>
-            <div className="expand-item">
-                <img className="expand-image" src={url} alt=""/>
-                <div className="expand-details">
-                    <h1 className="expand-name expand-li">{item.Name}</h1>
-                    <h1 className='expand-description expand-li'>{item.Description}</h1><br/>
-                    <button className='add-cart' onClick={handleAddCart}>Add to Cart</button>
-                    <div className='expand-li'>Price ${item.Price}</div>
-                    <div className='expand-li'>Stock: {item.Stock}</div>
-                    <div className='expand-li'>Tag: {item.Tag}</div>
+            <div id='expand-item'>
+                <img id="expand-image" src={url} alt=""/>
+                <div id="expand-details">
+                    <h1 id="expand-name">{item.Name}</h1>
+                    <h1 id='expand-description'>{item.Description}</h1><br/>
+                    <button id='add-cart' onClick={handleAddCart}>Add to Cart</button>
+                    <div id='expand-1'>Price: ${item.Price}</div>
+                    <div id='expand-2'>Stock: {item.Stock}</div>
+                    <div id='expand-3'>Tag: {item.Tag}</div>
                 </div>
             </div>
-        </div>
+        </div>    
     );
 }
 
