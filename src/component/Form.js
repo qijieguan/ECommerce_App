@@ -88,7 +88,7 @@ export default function Form() {
                 </div>
             </div>
             <div id="input-section">
-                <div id="input-label" style={{ textShadow: '2px 2px gray' }} >
+                <div id="input-label" style={{ textShadow: '2px 2px gray', fontSize: '45px' }}>
                     Fill In Item Fields 
                     <BsPencilSquare size={45} style={{marginLeft: '10px'}}/>
                 </div>

@@ -15,7 +15,15 @@
   box-sizing: border-box;
 }
 
-#header { position: absolute; top: 0; display: flex; min-height: 60px; width: 100%;  z-index: 1; }
+#header { 
+  position: absolute; 
+  top: 0; 
+  display: flex; 
+  min-height: 60px; 
+  width: 100%;  
+  background: transparent; 
+  z-index: 1; 
+}
 
 #logo {
   display: flex;
@@ -74,22 +82,20 @@
   background-position: top center;
 }
 
-#view-page { margin-top: 60px; min-height: 700px; background: black; }
+#view-page { margin-top: 60px; min-height: 700px; background: wheat; }
 
 #items-display {
   position: relative;
   display: flex;
   min-height: 700px;
   width: 100%;
-  background: wheat;
-  box-shadow: 0 0 5px black;
 }
 
 #view-default { font-size: 60px; font-style: italic; color: grey; }
 
 .item-container {
   position: relative;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   height: 450px;
   width: 22%;
@@ -215,8 +221,10 @@
   justify-content: flex-end;
   height: 100px;
   width: 100%;
+  background: white;
   box-shadow: 0 0 3px black;
   overflow-y: hidden;
+  z-index: 2;
 }
 
 #cart-label {

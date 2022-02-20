@@ -27,7 +27,7 @@ const Cart = () => {
 
     return (
         <div id='cart' style={{display: cart.length > 0 ? "flex" : "none"}}>
-            <h1 id='cart-label'>Cart</h1>
+            <div id='cart-label'>Cart</div>
             {cart.map(item => <img src={getURL(item)} key={item.id} className='cart-li' alt=""/>)}
             <div id='cost'>${total.toFixed(2)}</div>
             <Link to={{pathname: "/Checkout", state: {cost: total}}}><button id='checkout-btn'>Proceed to Checkout</button></Link>

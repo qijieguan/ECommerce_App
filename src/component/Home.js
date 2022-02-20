@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
 
-    useEffect(() => { document.getElementById("header").style.background = 'unset' }, []);
+    useEffect(() => { document.getElementById("header").style.background = 'transparent' }, []);
 
     return(
         <div id="home">
