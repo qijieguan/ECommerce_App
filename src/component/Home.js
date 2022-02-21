@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
 
-    useEffect(() => { document.getElementById("header").style.background = 'transparent' }, []);
+    useEffect(() => { 
+        document.getElementById("header").style.background = 'transparent';
+        document.getElementById("search").style.display = 'none';
+    }, []);
 
     return(
         <div id="home">

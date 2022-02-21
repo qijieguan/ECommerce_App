@@ -20,6 +20,7 @@ export default function Form() {
 
     useEffect(() => {
         document.getElementById("header").style.background = 'black';
+        document.getElementById("search").style.display = 'none';
         if (!file) {return}
 
         const reader = new FileReader();

@@ -16,21 +16,22 @@ export default function View() {
     const [update, setUpdate] = useState(false);
     const [list, setList] = useState(items);
     const [onLoad, setLoad] = useState(true);
-
+    
     useEffect(() => {
-        if (onLoad) { 
+        if (onLoad) {
             document.getElementById('header').style.background = 'wheat';   
             document.getElementById("All").style.color = "white";
             document.getElementById("All").style.background = "rgb(255, 174, 24)";
+            document.getElementById("search").style.display = 'flex';
             setLoad(false);
         }
-        
-        if (!word || status === "Filter") { setStatus("Done"); return; }   
+          
+        if (!word || !word.length || status === "Filter") { setStatus("Done"); return; }   
         resetActive();
         setList(items.filter(item => item.Name === word));
         dispatch(setSearch(""));
-
-    }, [ update, status, word, items, cart]);
+        
+    }, [ onLoad, word, update, status, items, cart]);
 
     const resetActive = () => {
         let list = document.querySelectorAll(".filter-li");
@@ -69,7 +70,7 @@ export default function View() {
                     <div className='filter-li' id="Drinks" onClick={handleClick}>Drinks</div>
                     <div className='filter-li' id="Toy" onClick={handleClick}>Toy</div>
                 </div>
-                {list.length ?
+                {list && list.length  ?
                     list.map(item => <Item key={item.id} item={item} />)
                     :
                     <div id="view-default">No Items to Display</div>
