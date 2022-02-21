@@ -31,7 +31,7 @@ export default function View() {
         setList(items.filter(item => item.Name === word));
         dispatch(setSearch(""));
         
-    }, [ onLoad, word, update, status, items, cart]);
+    }, [ dispatch, onLoad, word, update, status, items, cart]);
 
     const resetActive = () => {
         let list = document.querySelectorAll(".filter-li");

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addCart } from './actions/index.js';
 import Cart from './Cart.js';
 

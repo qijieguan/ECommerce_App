@@ -53,16 +53,26 @@
 
 #nav-links button:hover { color: brown; }
 
-#home { min-height: 700px; background: black; }
+#home { background: rgb(5,5,5); }
 
-#home-text { position: absolute; top: 25%; left: 10%; width: 40%; z-index: 1; color: white; }
+#home-intro { 
+  vertical-align: top; 
+  text-align: left;
+  margin-left: 5%;
+  display: inline-flex; 
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 700px; 
+  width: 45%; 
+  color: white;
+  z-index: 1;  
+}
 
-#intro h1 { font-size: 50px; color: orange; animation: fadeSlideDown 0.5s linear; }
+#intro h1 { margin-bottom: 30px; font-size: 50px; color: orange; animation: fadeSlideDown 0.5s linear; }
 
-#intro span { font-size: 20px; animation: fadeIn 0.5s linear; }
+#intro span { font-size: 18px; animation: fadeIn 0.5s linear; }
 
 #about-btn {
-  margin-top: 50px;
   padding: 10px 22px;
   color: orange;
   background: transparent;
@@ -74,13 +84,33 @@
 #about-btn:hover { background: rgb(255, 239, 208); }
 
 #home-background {
-  position: absolute;
-  height: 100%;
-  width: 100%;
+  display: inline-flex;
+  height: 700px;
+  width: 50%;
   background: url("https://images.pexels.com/photos/264547/pexels-photo-264547.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-size: cover;
-  background-position: top center;
 }
+
+#home-content {
+  position: relative;
+  display: flex;
+  height: 900px;
+  width: 100%;
+  background: url("https://images.pexels.com/photos/4553278/pexels-photo-4553278.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#home-content h1 {
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+  width: 60%;
+  color: white;
+  animation: fadeSlideDown 1s linear;
+}
+
+#home-content h1 span { font-size: 50px; font-family: 'Lobster', cursive; color: aquamarine; }
 
 #view-page { margin-top: 60px; min-height: 800px; background: wheat; }
 

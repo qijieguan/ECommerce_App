@@ -9,27 +9,27 @@ export default function Header() {
 
     const [word, setWord] = useState("");
     const dispatch = useDispatch();
-
-    const form = document.getElementById('search');
-    const search = document.getElementById('search-bar');
+    
     const history = useHistory();
 
     const handleChange = event => { setWord(event.target.value); }
-    
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            if (!search.value) { return; }
-            dispatch(setSearch(search.value));   
-            history.push("/View");
-        });   
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        if (!word) { return; }
+        dispatch(setSearch(word));   
+        history.push("/View");
     }
 
     return (
         <header id='header'>
             <div id="logo">Shopping App</div>
-            <form id="search">
-                <input id="search-bar" placeholder="Search item here" value={word} onChange={handleChange}/> 
+            <form id="search" onSubmit={handleSubmit}>
+                <input id="search-bar" 
+                    placeholder="Search item here" 
+                    value={word} 
+                    onChange={handleChange}
+                /> 
                 <button id="search-btn" type="submit">
                     <AiOutlineSearch style={{display: 'flex'}} size={25} color='black'/>
                 </button>  

@@ -11,7 +11,7 @@ export default function Home() {
 
     return(
         <div id="home">
-            <div id="home-text">
+            <div id="home-intro">
                 <h1 id="intro">
                     <h1>Welcome To My Ecommerce App</h1> 
                     <span>Post Items Effortlessly To Be Seen On The Webpage</span>
@@ -19,6 +19,9 @@ export default function Home() {
                 <Link to="/Account"><button id="about-btn">About Me</button></Link>
             </div>
             <div id="home-background"/>
+            <div id='home-content'>
+                <h1>The Right Furnatures Can <span>Enrich</span> Your Living Space</h1>
+            </div>
         </div>
     )
 }
