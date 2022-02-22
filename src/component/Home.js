@@ -25,7 +25,7 @@ export default function Home() {
                 </h1>
             </div>
             <div id="home-content">
-                <div className='slide-side' id="slide-text">
+                <div className='slide-side slide-text'>
                     <h1>What Are The Right Furnatures For You?</h1>
                     <span>
                         Living Space Affects <span>Mood</span> And <span>Mind</span>. 
@@ -35,7 +35,7 @@ export default function Home() {
                         And Give You A Peace Of Mind.
                     </span>
                 </div>
-                <div className='slide-side' id="slide-image"/>
+                <div className='slide-side slide-image'/>
             </div>
         </div>
     )

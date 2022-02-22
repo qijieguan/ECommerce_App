@@ -26,13 +26,27 @@ export default function Header() {
     const activeObserver = () => {
         const faders = document.querySelectorAll('.fade-slide');
         const sliders = document.querySelectorAll('.slide-side');
-        const appearOptions = { threshold: 0, rootMargin: '0px' }; 
+        const appearOptions = { threshold: 0, rootMargin: '0px 0px -200px 0px' }; 
 
         const appearOnScroll = new IntersectionObserver (
             function( entries ) {
                 entries.forEach(entry => {
-                    if (!entry.isIntersecting) { entry.target.classList.remove('appear'); }
-                    else { entry.target.classList.add('appear'); }
+                    if (!entry.isIntersecting) { 
+                        entry.target.classList.remove('appear'); 
+                        if (entry.boundingClientRect.height === 500) {
+                            entry.target.classList.add('left'); 
+                            entry.target.classList.remove('right'); 
+                        }
+                        else {
+                            entry.target.classList.add('right');
+                            entry.target.classList.remove('left'); 
+                        }
+                    }
+                    else { 
+                        entry.target.classList.remove('left'); 
+                        entry.target.classList.remove('right'); 
+                        entry.target.classList.add('appear');  
+                    }
                 });
             },
         appearOptions);  
