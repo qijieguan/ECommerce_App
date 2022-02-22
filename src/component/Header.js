@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setSearch } from './actions/index.js';
 import Nav from './Nav.js';
@@ -19,6 +19,24 @@ export default function Header() {
         if (!word) { return; }
         dispatch(setSearch(word));   
         history.push("/View");
+    }
+
+    useEffect(() => { activeObserver();});
+
+    const activeObserver = () => {
+        const faders = document.querySelectorAll('.fade-slide');
+        const appearOptions = { threshold: 0, rootMargin: '0px' }; 
+
+        const appearOnScroll = new IntersectionObserver (
+            function( entries ) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) { entry.target.classList.remove('appear'); }
+                    else { entry.target.classList.add('appear'); }
+                });
+            },
+        appearOptions);  
+
+        faders.forEach(fader => { appearOnScroll.observe(fader); });
     }
 
     return (

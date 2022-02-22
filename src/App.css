@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap');
 
 
 * {
@@ -62,15 +63,18 @@
   display: inline-flex; 
   justify-content: space-evenly;
   flex-direction: column;
+  font-family: 'Source Serif Pro', serif;
   height: 700px; 
   width: 45%; 
   color: white;
   z-index: 1;  
 }
 
-#intro h1 { margin-bottom: 30px; font-size: 50px; color: orange; }
+#intro h1 { margin-bottom: 30px; font-size: 50px; color: wheat; }
 
-#intro span { font-size: 18px; animation: fadeIn 0.5s linear; }
+#intro h1 span { font-size: 50px; color: orange; }
+
+#intro span { font-size: 18px; font-family: 'Source Serif Pro', serif; animation: fadeIn 0.5s linear; }
 
 #about-btn {
   padding: 10px 22px;
@@ -109,14 +113,7 @@
   color: white;
 }
 
-.fade-in {
-  opacity: 0;
-  transition: opacity 1s ease-in;
-}
-
-.fade-in.appear{
-  opacity: 1;
-}
+.fade-slide.appear{ animation: fadeSlideDown 1s linear; }
 
 #home-content h1 span { font-size: 50px; font-family: 'Lobster', cursive; color: aquamarine; }
 
@@ -351,11 +348,6 @@
   animation: fadeSlideRight 0.5s linear;
 }
 
-@keyframes fadeSlideRight {
-  0% { opacity: 0; transform: translateX(-8%); }
-  100% { opacity: 1; transform: translateX(0%); }
-}
-
 #error-msg {
   display: none;
   height: 60px;
@@ -450,6 +442,11 @@ a { text-decoration: none; }
 }
 
 @keyframes fadeSlideDown {
-  0% { opacity: 0; transform: translateY(-10%);}
+  0% { opacity: 0; transform: translateY(-20%);}
   100% { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeSlideRight {
+  0% { opacity: 0; transform: translateX(-8%); }
+  100% { opacity: 1; transform: translateX(0%); }
 }
