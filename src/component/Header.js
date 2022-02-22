@@ -25,6 +25,7 @@ export default function Header() {
 
     const activeObserver = () => {
         const faders = document.querySelectorAll('.fade-slide');
+        const sliders = document.querySelectorAll('.slide-side');
         const appearOptions = { threshold: 0, rootMargin: '0px' }; 
 
         const appearOnScroll = new IntersectionObserver (
@@ -37,6 +38,7 @@ export default function Header() {
         appearOptions);  
 
         faders.forEach(fader => { appearOnScroll.observe(fader); });
+        sliders.forEach(slider => { appearOnScroll.observe(slider); });
     }
 
     return (

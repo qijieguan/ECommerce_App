@@ -130,6 +130,7 @@
   color: black;
   background: white;
   border: 1px solid teal;
+  transform: translateX(-80%);
 }
 
 #slide-text h1 { margin-left: 10%; font-size: 30px; width: 90%; color: teal }
@@ -144,6 +145,17 @@
   background: url("https://images.pexels.com/photos/6438762/pexels-photo-6438762.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
   background-size: cover;
   box-shadow: 0 0 5px gray;
+  transform: translateX(80%);
+}
+
+.slide-side.appear {
+  animation: slideBoth 1s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideBoth { 
+  0% {}
+  100% { transform: translateX(0); }
 }
 
 #view-page { margin-top: 60px; min-height: 800px; background: wheat; }
