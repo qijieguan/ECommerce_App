@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setSearch } from './actions/index.js';
 import Nav from './Nav.js';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 
 export default function Header() {
@@ -21,7 +21,7 @@ export default function Header() {
         history.push("/View");
     }
 
-    useEffect(() => { activeObserver();});
+    useEffect(() => { activeObserver();}, [useLocation()]);
 
     const activeObserver = () => {
         const faders = document.querySelectorAll('.fade-slide');
