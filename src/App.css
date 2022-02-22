@@ -68,7 +68,7 @@
   z-index: 1;  
 }
 
-#intro h1 { margin-bottom: 30px; font-size: 50px; color: orange; animation: fadeSlideDown 0.5s linear; }
+#intro h1 { margin-bottom: 30px; font-size: 50px; color: orange; }
 
 #intro span { font-size: 18px; animation: fadeIn 0.5s linear; }
 
@@ -107,7 +107,15 @@
   font-size: 50px;
   width: 60%;
   color: white;
-  animation: fadeSlideDown 1s linear;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-in.appear{
+  opacity: 1;
 }
 
 #home-content h1 span { font-size: 50px; font-family: 'Lobster', cursive; color: aquamarine; }
