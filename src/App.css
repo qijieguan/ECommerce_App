@@ -14,6 +14,7 @@
   justify-content: space-around;
   text-overflow: ellipsis;
   box-sizing: border-box;
+  line-height: 1.5;
 }
 
 #header { 
