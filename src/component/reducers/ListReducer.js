@@ -3,40 +3,31 @@ import uuid from "react-uuid";
 const defaultList = [
     {
         id: uuid(),
-        ImageFile: "https://images.pexels.com/photos/3963086/pexels-photo-3963086.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        Name: '1 Roll of Toilet Paperrrrrrrrrrrrrrrrrrrrrrr',
-        Description: 'Rare Commodity. Buy now!',
+        ImageFile: "https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        Name: 'Large Soft Brown Sofa',
+        Description: 'Very Sturdy For Multiple People To Bounce On',
         Stock: 10,
-        Price: 20.00,
-        Tag: 'Cleaning'
+        Price: 300.00,
+        Tag: 'Furnature'
     },
     {
         id: uuid(),
-        ImageFile: "https://images.pexels.com/photos/5367428/pexels-photo-5367428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        Name: '1 Bottle of Jack Daniel',
-        Description: 'Get drunk everydayyyyyyyyy',
+        ImageFile: "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        Name: 'Queen Size Bed',
+        Description: 'Soft and Comfy To Sleep On Forever',
         Stock: 10,
-        Price: 10.00,
-        Tag: 'Drinks'
+        Price: 400.00,
+        Tag: 'Furnature'
     },
     {
         id: uuid(),
-        ImageFile: "https://images.pexels.com/photos/1557980/pexels-photo-1557980.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        Name: '1 Bottle of Chanel Perfume',
+        ImageFile: "https://images.pexels.com/photos/7606067/pexels-photo-7606067.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        Name: 'Office Set',
         Description: 'Smells gooddddddd',
         Stock: 20,
-        Price: 90.00,
-        Tag: 'Beauty'
+        Price: 200.00,
+        Tag: 'Furnature'
     },
-    {
-        id: uuid(),
-        ImageFile: "https://live.staticflickr.com/65535/50984391773_ed0491f1e9_b.jpg",
-        Name: '1 Set of Airpods',
-        Description: 'Put it on when you drive',
-        Stock: 20,
-        Price: 100.00,
-        Tag: 'Electronic'
-    }
 ]
 
 const listReducer = (state = defaultList, action) => {

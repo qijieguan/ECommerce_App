@@ -198,6 +198,7 @@
 .item-tag {
   position: absolute;
   margin: 10px 10px 0 0;
+  padding: 0 3px;
   top: 0;
   right: 0;
   display: flex;
