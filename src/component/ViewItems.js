@@ -19,7 +19,7 @@ export default function View() {
     
     useEffect(() => {
         if (onLoad) {
-            document.getElementById('header').style.background = 'wheat';   
+            document.getElementById('header').style.background = 'slategrey';   
             document.getElementById("All").style.color = "white";
             document.getElementById("All").style.background = "rgb(255, 174, 24)";
             document.getElementById("search").style.display = 'flex';
