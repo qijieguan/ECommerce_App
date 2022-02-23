@@ -8,7 +8,7 @@ const defaultList = [
         Description: 'Very Sturdy For Multiple People To Bounce On',
         Stock: 10,
         Price: 300.00,
-        Tag: 'Furnature'
+        Tag: 'Furniture'
     },
     {
         id: uuid(),
@@ -17,7 +17,7 @@ const defaultList = [
         Description: 'Soft and Comfy To Sleep On Forever',
         Stock: 10,
         Price: 400.00,
-        Tag: 'Furnature'
+        Tag: 'Furniture'
     },
     {
         id: uuid(),
@@ -26,7 +26,7 @@ const defaultList = [
         Description: 'Helps Passing Time Quickly And Become Smart',
         Stock: 20,
         Price: 200.00,
-        Tag: 'Furnature'
+        Tag: 'Furniture'
     },
 ]
 

@@ -21,17 +21,17 @@ export default function Home() {
             <div id="home-background"/>
             <div id='home-slide'>
                 <h1 className='fade-slide'>
-                    The <span>Right</span> Furnatures Can <span>Enrich</span> Your Living Space
+                    The <span>Right</span> Furnitures Can <span>Enrich</span> Your Living Space
                 </h1>
             </div>
             <div id="home-content">
                 <div className='slide-side slide-text'>
-                    <h1>What Are The Right Furnatures For You?</h1>
+                    <h1>What Are The Right Furnitures For You?</h1>
                     <span>
                         Living Space Affects <span>Mood</span> And <span>Mind</span>. 
-                        Different Furnatures Are Capable of Shaping Variety Of Homes To 
-                        Give The Individual Their <span>Inner Satisfaction</span>. The 
-                        Right Furnatures Can Manifest Your <span>Ideal Atmosphere </span> 
+                        Different Furnitures Are Capable of Shaping Variety Of Homes To 
+                        Give Individuals Their <span>Inner Satisfaction</span>. The 
+                        Right Furnitures Can Manifest Your <span>Ideal Atmosphere </span> 
                         And Give You A Peace Of Mind.
                     </span>
                 </div>
