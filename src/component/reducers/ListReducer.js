@@ -23,7 +23,7 @@ const defaultList = [
         id: uuid(),
         ImageFile: "https://images.pexels.com/photos/7606067/pexels-photo-7606067.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         Name: 'Office Set',
-        Description: 'Smells gooddddddd',
+        Description: 'Helps Passing Time Quickly And Become Smart',
         Stock: 20,
         Price: 200.00,
         Tag: 'Furnature'
