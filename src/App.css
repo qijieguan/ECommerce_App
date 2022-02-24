@@ -38,7 +38,6 @@
 }
 
 #search { margin-right: 50px; display: flex; justify-content: center; }
-
 #search-bar { width: 300px; border-radius: 3px 0 0 3px; }
 
 #search-btn {
@@ -164,9 +163,7 @@
 .slide-side.appear { transform: translateX(0); }
 
 #view-page { margin-top: 60px; min-height: 800px; background-color: slategrey; }
-
 #items-display { padding-bottom: 100px; position: relative; min-height: 700px; width: 100%; }
-
 #view-default { display: flex; margin-top: 150px; font-size: 60px; font-style: italic; color: grey; }
 
 .item-container {
@@ -368,11 +365,8 @@
 }
 
 #account-page { display: flex; min-height: 700px; background: rgb(236, 236, 236); }
-
 #profile-img { height: 350px; box-shadow: 0 0 5px grey; border: 1px solid gray; border-radius: 200px; }
-
 #profile-info * { color: black; background: rgb(236, 236, 236); }
-
 #name { padding-top: 50px; font-size: 70px; text-shadow: 2px 2px gray; }
 
 #form-container { display: flex; flex-direction: column; min-height: 800px; background: rgb(236, 236, 236); }
@@ -458,17 +452,10 @@
 
 button { box-shadow: 0 0 3px grey; border: 0; }
 
-input, textarea {
-  text-indent: 8px;
-  height: 40px;
-  width: 90%;
-  border: 1px solid rgb(196, 196, 196);
-}
-
+input, textarea { text-indent: 8px; height: 40px; width: 90%; border: 1px solid rgb(196, 196, 196); }
 input:focus, textarea:focus { outline-color: orange; }
 
 select { height: 35px; }
-
 a { text-decoration: none; }
 
 @keyframes fadeIn {
