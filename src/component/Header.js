@@ -32,8 +32,7 @@ export default function Header() {
             function( entries ) {
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) { 
-                        entry.target.classList.remove('appear'); 
-                        if (entry.boundingClientRect.height === 500) {
+                        if (entry.target.classList.contains('slide-text')) {
                             entry.target.classList.add('left'); 
                             entry.target.classList.remove('right'); 
                         }

@@ -28,14 +28,26 @@ export default function Home() {
                 <div className='slide-side slide-text'>
                     <h1>What Are The Right Furnitures For You?</h1>
                     <span>
-                        Living Space Affects <span>Mood</span> And <span>Mind</span>. 
-                        Different Furnitures Are Capable of Shaping Variety Of Homes To 
+                        Living Space Affects <span>Emotion</span> And <span>Mind</span>. 
+                        Different Furnitures Are Capable of Decorating Variety Of Homes To 
                         Give Individuals Their <span>Inner Satisfaction</span>. The 
                         Right Furnitures Can Manifest Your <span>Ideal Atmosphere </span> 
                         And Give You A Peace Of Mind.
                     </span>
                 </div>
-                <div className='slide-side slide-image'/>
+                <div className='slide-side slide-image-1'/>
+            </div>
+            <div id="home-content" style={{borderTop: '0'}}>
+                <div className='slide-side slide-text'>
+                    <h1>What Do You Mostly Sell?</h1>
+                    <span>
+                        We Specialize In Furnitures. Most Of Our Furnitures Are Imported 
+                        <span> From Foreign Countries</span> And Are Limited In Quantity. What 
+                        You Can Expect Are Furnitures With <span>Unique Designs</span> That
+                        Create Curiosity And Attention.
+                    </span>
+                </div>
+                <div className='slide-side slide-image-2'/>
             </div>
         </div>
     )

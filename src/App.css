@@ -118,7 +118,7 @@
 
 #home-slide h1 span { font-size: 50px; font-family: 'Lobster', cursive; color: aquamarine; }
 
-#home-content { display: flex; min-height: 700px; background: rgb(231, 231, 231);}
+#home-content { display: flex; min-height: 700px; background: rgb(231, 231, 231); border: 5px solid teal;}
 
 .slide-text {  
   display: flex;
@@ -139,11 +139,22 @@
 
 .slide-text span span { color: teal; }
 
-.slide-image {
+.slide-image-1 {
   height: 400px;
-  width: 50%;
-  background: url("https://images.pexels.com/photos/6438762/pexels-photo-6438762.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  width: 40%;
+  background: url("https://images.pexels.com/photos/4498220/pexels-photo-4498220.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-size: cover;
+  box-shadow: 0 0 5px gray;
+  transform: translateX(80%);
+  transition: transform 0.5s ease-in;
+}
+
+.slide-image-2 {
+  height: 500px;
+  width: 30%;
+  background: url("https://images.pexels.com/photos/3965514/pexels-photo-3965514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
+  background-position: bottom;
   box-shadow: 0 0 5px gray;
   transform: translateX(80%);
   transition: transform 0.5s ease-in;
