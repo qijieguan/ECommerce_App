@@ -337,7 +337,7 @@
   box-shadow: 0 0 2px;
 }
 
-.cart-img { margin-right: auto; width: 150px; }
+.cart-img { object-fit: contain; margin-right: auto; width: 150px; }
 .cart-price { margin: 75px 10px 0 0; color: gray; }
 .cart-price::before { content: "Price: "; color: grey; }
 

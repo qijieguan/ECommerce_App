@@ -29,7 +29,7 @@ const Item = ({item}) => {
         else {background = "red";}
         
         let element = document.getElementById(item.id).querySelector(".item-tag");
-        element.style.background = background;
+        if (element) { element.style.background = background; }
     }
 
     const onEnter = () => {
@@ -49,14 +49,16 @@ const Item = ({item}) => {
         <Link className="item-container" to={{pathname: `/View/${item.id}`, state: {item: item}}}>
             <div className="item" id={item.id} onMouseEnter={onEnter} onMouseLeave={onLeave}>
                 <img className="item-image" src={url} alt=""/>
-                <div className="item-tag" id={item.id}>{item.Tag}</div>
+                <div className="item-tag">{item.Tag}</div>
                 <div className="item-details">
                     <h1 className="item-name">{item.Name} </h1>
                     <div className="item-description">{item.Description}</div>
                     <div style={{display: 'flex', justifyContent: 'space-between', width: '95%', height: '50px'}}>
                         <div className="item-price">
                             Price: <span style={{fontSize: "20px", color: "rgb(4, 165, 4)", fontWeight: 'bold'}}>$</span>
-                            <span style={{color: "rgb(4, 165, 4)", fontSize: '20px'}}>{item.Price.toFixed(2)}</span>
+                            <span style={{color: "rgb(4, 165, 4)", fontSize: '20px'}}>
+                                {parseFloat(item.Price).toFixed(2)}
+                            </span>
                         </div>
                         <div className="item-stock">
                             Stock: <span style={{color: "navy", fontSize: '20px', fontWeight: 'bold'}}>{item.Stock}</span>

@@ -13,7 +13,7 @@ export default function Form() {
     const [name, setName] = useState("");
     const [description, setDesc] = useState("")
     const [stock, setStock] = useState("");
-    const [price, setPrice] = useState("");
+    const [price, setPrice] = useState(0);
     const [isSubmit, setSubmit] = useState(false);
 
     const dispatch = useDispatch();

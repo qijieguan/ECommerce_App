@@ -36,7 +36,7 @@ const ItemExpand = () => {
                     <h1 id="expand-name">{item.Name}</h1>
                     <h1 id='expand-description'>{item.Description}</h1><br/>
                     <button id='add-cart' onClick={handleAddCart}>Add to Cart</button>
-                    <div id='expand-1'>Price: ${item.Price.toFixed(2)}</div>
+                    <div id='expand-1'>Price: ${parseFloat(item.Price).toFixed(2)}</div>
                     <div id='expand-2'>Stock: {item.Stock}</div>
                     <div id='expand-3'>Tag: {item.Tag}</div>
                 </div>
