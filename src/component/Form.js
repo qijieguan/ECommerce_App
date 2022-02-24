@@ -137,7 +137,7 @@ export default function Form() {
                         <option value="Cleaning">Cleaning</option>
                         <option value="Clothed">Clothed</option>
                         <option value="Electronic">Electronic</option>
-                        <option value="Furnature">Furnature</option>
+                        <option value="Furniture">Furniture</option>
                         <option value="Food">Food</option>
                         <option value="Drinks">Drinks</option>
                         <option value="Toy">Toy</option>

@@ -56,7 +56,7 @@ const Item = ({item}) => {
                     <div style={{display: 'flex', justifyContent: 'space-between', width: '95%', height: '50px'}}>
                         <div className="item-price">
                             Price: <span style={{fontSize: "20px", color: "rgb(4, 165, 4)", fontWeight: 'bold'}}>$</span>
-                            <span style={{color: "rgb(4, 165, 4)", fontSize: '20px'}}>{item.Price}</span>
+                            <span style={{color: "rgb(4, 165, 4)", fontSize: '20px'}}>{item.Price.toFixed(2)}</span>
                         </div>
                         <div className="item-stock">
                             Stock: <span style={{color: "navy", fontSize: '20px', fontWeight: 'bold'}}>{item.Stock}</span>

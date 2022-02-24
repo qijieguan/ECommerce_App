@@ -65,7 +65,7 @@ export default function View() {
                     <div className="filter-li" id="Cleaning" onClick={handleClick}>Cleaning</div>
                     <div className="filter-li" id="Clothes" onClick={handleClick}>Clothes</div>
                     <div className="filter-li" id="Electronic" onClick={handleClick}>Electronic</div>
-                    <div className="filter-li" id="Furnature" onClick={handleClick}>Furnature</div>
+                    <div className="filter-li" id="Furniture" onClick={handleClick}>Furniture</div>
                     <div className="filter-li" id="Food" onClick={handleClick}>Food</div>
                     <div className='filter-li' id="Drinks" onClick={handleClick}>Drinks</div>
                     <div className='filter-li' id="Toy" onClick={handleClick}>Toy</div>
