@@ -39,7 +39,7 @@ export default function Home() {
             </div>
             <div id="home-content" style={{borderTop: '0'}}>
                 <div className='slide-side slide-text'>
-                    <h1>What Do You Mostly Sell?</h1>
+                    <h1>What Do We Mostly Sell?</h1>
                     <span>
                         We Specialize In Furnitures. Most Of Our Furnitures Are Imported 
                         <span> From Foreign Countries</span> And Are Limited In Quantity. What 

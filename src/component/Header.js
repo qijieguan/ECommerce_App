@@ -32,7 +32,10 @@ export default function Header() {
             function( entries ) {
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) { 
-                        if (entry.target.classList.contains('slide-text')) {
+                        if (entry.target.classList.contains('fade-slide')) { 
+                            entry.target.classList.remove('appear');
+                        }
+                        else if (entry.target.classList.contains('slide-text')) {
                             entry.target.classList.add('left'); 
                             entry.target.classList.remove('right'); 
                         }
@@ -40,6 +43,7 @@ export default function Header() {
                             entry.target.classList.add('right');
                             entry.target.classList.remove('left'); 
                         }
+                        return;
                     }
                     else { 
                         entry.target.classList.remove('left'); 
