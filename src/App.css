@@ -34,6 +34,7 @@
   font-family: 'Lobster', cursive;
   font-size: 24px;
   color: white;
+  text-shadow: 0 0 3px grey;
 }
 
 #search { margin-right: 50px; display: flex; justify-content: center; }
@@ -50,9 +51,13 @@
 }
 
 #nav-links { margin-right: 50px; }
-
-#nav-links button { margin-right: 30px; color: white; background: transparent; box-shadow: none; }
-
+#nav-links button { 
+  margin-right: 30px; 
+  text-shadow: 0 0 3px grey; 
+  color: white; 
+  background: transparent;
+  box-shadow: none; 
+}
 #nav-links button:hover { color: brown; }
 
 #home { background: rgb(5,5,5); }
@@ -72,9 +77,7 @@
 }
 
 #intro-text h1 { margin-bottom: 30px; font-size: 50px; color: wheat; }
-
 #intro-text h1 span { font-size: 50px; color: orange; }
-
 #intro-text span { font-size: 18px; font-family: 'Source Serif Pro', serif; animation: fadeIn 0.5s linear; }
 
 #about-btn {
@@ -106,21 +109,21 @@
   background-repeat: no-repeat;
 }
 
-#home-slide h1 {
-  text-align: center;
-  font-family: 'Lobster', cursive;
-  font-size: 50px;
-  width: 60%;
-  color: white;
-}
-
 .fade-slide.appear{ animation: fadeSlideDown 1s ease-in; }
+
+#home-slide h1 { 
+  text-align: center; 
+  font-family: 'Lobster', cursive; 
+  font-size: 50px; 
+  width: 60%; 
+  color: white; 
+}
 
 #home-slide h1 span { font-size: 50px; font-family: 'Lobster', cursive; color: aquamarine; }
 
 #home-content { display: flex; min-height: 700px; background: rgb(231, 231, 231); border: 5px solid teal}
 
-.slide-text {  
+.from-left {  
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -133,13 +136,11 @@
   transition: transform 0.5s ease-in;
 }
 
-.slide-text h1 { font-size: 30px; width: 80%; color: teal }
+.from-left h1 { font-size: 30px; width: 80%; color: teal }
+.from-left span { font-size: 16px; width: 80%; color: rgb(65, 65, 65); }
+.from-left span span { color: teal; }
 
-.slide-text span { font-size: 16px; width: 80%; color: rgb(65, 65, 65); }
-
-.slide-text span span { color: teal; }
-
-.slide-image-1 {
+.from-right-1 {
   height: 400px;
   width: 40%;
   background: url("https://images.pexels.com/photos/4498220/pexels-photo-4498220.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
@@ -149,7 +150,7 @@
   transition: transform 0.5s ease-in;
 }
 
-.slide-image-2 {
+.from-right-2 {
   height: 500px;
   width: 30%;
   background: url("https://images.pexels.com/photos/3965514/pexels-photo-3965514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
@@ -161,9 +162,6 @@
 }
 
 .slide-side.appear { transform: translateX(0); }
-.slide-side.left { transform: translate(-80%); }
-.slide-side.right { transform: translate(80%); }
-
 
 #view-page { margin-top: 60px; min-height: 800px; background-color: slategrey; }
 
@@ -247,17 +245,11 @@
 .item-price, .item-stock { color: grey; font-size: 18px; }
 
 #expand-page { margin-top: 60px; display: flex;  flex-direction: column; min-height: 700px; background: orange; }
-
 #expand-item { display: flex; }
-
 #expand-image { max-height: 600px; max-width: 55%; box-shadow: 0 0 5px; border-radius: 3px; }
-
 #expand-details { align-self: flex-start; width: 40%; }
-
 #expand-details div { display: inline-flex; margin: 30px 150px 0 0; font-size: 18px; color: rgb(54, 54, 54); }
-
 #expand-name { font-size: 40px; font-weight: bolder; }
-
 #expand-description { margin: 125px 0; font-size: 20px; font-family: 'Roboto', sans-serif; }
 
 #add-cart {
@@ -349,9 +341,7 @@
 }
 
 .cart-img { margin-right: auto; width: 150px; }
-
 .cart-price { margin: 75px 10px 0 0; color: gray; }
-
 .cart-price::before { content: "Price: "; color: grey; }
 
 #review {
@@ -364,11 +354,8 @@
 }
 
 #review div { font-size: 16px; color: gray; }
-
 #review-initial::before { content: "Subtotal: "; }
-
 #review-tax::before { content: "Tax: + "; }
-
 #review-final::before { content: "Total: "; color: black }
 
 #pay-btn {
@@ -439,10 +426,9 @@
   background: rgb(238, 238, 238);
 }
 
-#preview-image { object-fit: cover; border-radius: 10px; }
+#preview-image { height: 100%; width: 100%; object-fit: contain; border-radius: 10px; }
 
 #input-section { padding-bottom: 20px; width: 100%; background: rgb(255, 180, 41); }
-
 #input-section * { color: black; font-size: 18px; background: rgb(255, 180, 41); }
 
 #input-fields {
@@ -455,7 +441,6 @@
 #name-label, #description-label, #stock-label, #price-label, #tag-label { text-align: right; }
 
 #input-tag { width: 50%; background: rgb(236, 236, 236); }
-
 #input-tag * {background: rgb(236, 236, 236);}
 
 #submit-form { display: flex; width: 100%; height: 150px; background: black; }

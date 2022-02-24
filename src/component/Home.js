@@ -25,7 +25,7 @@ export default function Home() {
                 </h1>
             </div>
             <div id="home-content">
-                <div className='slide-side slide-text'>
+                <div className='slide-side from-left'>
                     <h1>What Are The Right Furnitures For You?</h1>
                     <span>
                         Living Space Affects <span>Emotion</span> And <span>Mind</span>. 
@@ -35,10 +35,10 @@ export default function Home() {
                         And Give You A Peace Of Mind.
                     </span>
                 </div>
-                <div className='slide-side slide-image-1'/>
+                <div className='slide-side from-right-1'/>
             </div>
             <div id="home-content" style={{borderTop: '0'}}>
-                <div className='slide-side slide-text'>
+                <div className='slide-side from-left'>
                     <h1>What Do We Mostly Sell?</h1>
                     <span>
                         We Specialize In Furnitures. Most Of Our Furnitures Are Imported 
@@ -47,7 +47,7 @@ export default function Home() {
                         Create Curiosity And Attention.
                     </span>
                 </div>
-                <div className='slide-side slide-image-2'/>
+                <div className='slide-side from-right-2'/>
             </div>
         </div>
     )

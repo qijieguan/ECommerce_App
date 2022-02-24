@@ -21,7 +21,7 @@ export default function Header() {
         history.push("/View");
     }
 
-    useEffect(() => { activeObserver();}, [useLocation()]);
+    useEffect(() => { activeObserver(); }, [useLocation()]);
 
     const activeObserver = () => {
         const faders = document.querySelectorAll('.fade-slide');
@@ -31,25 +31,8 @@ export default function Header() {
         const appearOnScroll = new IntersectionObserver (
             function( entries ) {
                 entries.forEach(entry => {
-                    if (!entry.isIntersecting) { 
-                        if (entry.target.classList.contains('fade-slide')) { 
-                            entry.target.classList.remove('appear');
-                        }
-                        else if (entry.target.classList.contains('slide-text')) {
-                            entry.target.classList.add('left'); 
-                            entry.target.classList.remove('right'); 
-                        }
-                        else {
-                            entry.target.classList.add('right');
-                            entry.target.classList.remove('left'); 
-                        }
-                        return;
-                    }
-                    else { 
-                        entry.target.classList.remove('left'); 
-                        entry.target.classList.remove('right'); 
-                        entry.target.classList.add('appear');  
-                    }
+                    if (!entry.isIntersecting) { entry.target.classList.remove('appear'); }
+                    else { entry.target.classList.add('appear'); }
                 });
             },
         appearOptions);  
@@ -62,7 +45,8 @@ export default function Header() {
         <header id='header'>
             <div id="logo">Shopping App</div>
             <form id="search" onSubmit={handleSubmit}>
-                <input id="search-bar" 
+                <input 
+                    id="search-bar" 
                     placeholder="Search item here" 
                     value={word} 
                     onChange={handleChange}
