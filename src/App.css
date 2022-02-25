@@ -228,6 +228,7 @@
   width: 100%;
   background: white;
   border-radius: 0 0 3px 3px;
+  color: gray
 }
 
 .item-name {
@@ -238,9 +239,8 @@
   overflow-y: hidden;
 }
 
-.item-description { display: none; font-style: italic; color: gray; overflow-y: hidden; }
-
-.item-price, .item-stock { color: grey; font-size: 18px; }
+.item-description { display: none; font-style: italic; overflow-y: hidden; }
+.item-price, .item-stock { font-size: 18px; }
 
 #expand-page { margin-top: 60px; display: flex;  flex-direction: column; min-height: 700px; background: orange; }
 #expand-item { display: flex; }
