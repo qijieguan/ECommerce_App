@@ -22,8 +22,10 @@ const Cart = () => {
         else {
             const reader = new FileReader();  
             reader.addEventListener("load", () => {
-                let select = document.getElementById(`${item.id}`);
-                if (select) {select.src = reader.result;}
+                let select = document.getElementsByClassName(item.id);
+                if (select) {
+                    for (let i = 0; i < select.length; ++i) { select[i].src = reader.result; }
+                }
             }, false);
             reader.readAsDataURL(item.ImageFile[0]);
         }
@@ -32,9 +34,9 @@ const Cart = () => {
     return (
         <div id='cart' style={{display: cart.length > 0 ? "flex" : "none"}}>
             <div id='cart-label'>Cart</div>
-            {cart.map(item => <img src={getURL(item)} key={uuid()} id={item.id} className="cart-li" alt=""/>)}
+            {cart.map(item => <img src={getURL(item)} key={uuid()} className={item.id} id='cart-li' alt=""/>)}
             <div id='cost'>${parseFloat(total).toFixed(2)}</div>
-            <Link to={{pathname: "/Checkout", state: {cost: total}}}><button id='checkout-btn'>Proceed to Checkout</button></Link>
+            <Link to={{pathname: "/Checkout", state: {cost: parseFloat(total).toFixed(2)}}}><button id='checkout-btn'>Proceed to Checkout</button></Link>
         </div>     
     );
 }

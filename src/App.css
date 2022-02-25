@@ -306,7 +306,7 @@
   box-shadow: 0 0 3px rgb(65, 65, 65);
 }
 
-.cart-li {
+#cart-li {
   margin-right: 40px;
   color: white;
   max-height: 95px;
@@ -328,7 +328,7 @@
 
 #cart-items { width: 350px; border: 1px solid gray; border-radius: 3px; box-shadow: 0 0 3px; }
 
-.cart-item {
+#cart-item {
   display: flex;
   max-height: 100px;
   width: 100%;
@@ -337,9 +337,9 @@
   box-shadow: 0 0 2px;
 }
 
-.cart-img { object-fit: contain; margin-right: auto; width: 150px; }
-.cart-price { margin: 75px 10px 0 0; color: gray; }
-.cart-price::before { content: "Price: "; color: grey; }
+#cart-img { object-fit: contain; margin-right: auto; width: 150px; }
+#cart-price { margin: 75px 10px 0 0; color: gray; }
+#cart-price::before { content: "Price: "; color: grey; }
 
 #review {
   display: flex;

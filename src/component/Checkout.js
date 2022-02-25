@@ -20,7 +20,7 @@ const Checkout = () => {
     useEffect(() => {
         if (cart.length === 0) {setCost(0); return;} 
         let subtotal = 0;
-        cart.forEach(item => {subtotal += parseFloat(item.Price); console.log(subtotal)});
+        cart.forEach(item => {subtotal += parseFloat(item.Price);});
         setCost(subtotal);
     }, [cart]);
 
@@ -29,8 +29,10 @@ const Checkout = () => {
         else {
             const reader = new FileReader();  
             reader.addEventListener("load", () => {
-                let select = document.getElementById(`${item.id}`);
-                if (select) {select.src = reader.result;}
+                let select = document.getElementsByClassName(item.id);
+                if (select) {
+                    for (let i = 0; i < select.length; ++i) { select[i].src = reader.result; }
+                }
             }, false);
             reader.readAsDataURL(item.ImageFile[0]);
         }
@@ -53,10 +55,10 @@ const Checkout = () => {
             <div style={{display: cart.length > 0 ? 'flex' : 'none', width: '80%'}}>
                 <div id='cart-items'>
                     {cart.map(item => 
-                        <div className='cart-item' key={uuid()}>
-                            <img src={getURL(item)} id={item.id} className="cart-img" alt=""/>
-                            <div className='cart-price'>${parseFloat(item.Price).toFixed(2)}</div>
-                            <FaTrashAlt className="trash-btn" style={{margin: '0 10px 30px 0'}}
+                        <div id='cart-item' key={uuid()}>
+                            <img src={getURL(item)} className={item.id} id="cart-img" alt=""/>
+                            <div id='cart-price'>${parseFloat(item.Price).toFixed(2)}</div>
+                            <FaTrashAlt id="trash-btn" style={{margin: '0 10px 30px 0'}}
                                 size={24} 
                                 color='grey'
                                 onClick={() => {dispatch(deleteCart(item.id))}}
