@@ -16,13 +16,14 @@ const Checkout = () => {
     const [cost, setCost] = useState(useLocation().state.cost);
     const [message, setMessage] = useState("Cart is Empty. Happy shopping!");
     const [paid, setPaid] = useState(false);
+    const [update, setUpdate] = useState(false);
 
     useEffect(() => {
         if (cart.length === 0) {setCost(0); return;} 
         let subtotal = 0;
         cart.forEach(item => {subtotal += parseFloat(item.Price);});
         setCost(subtotal);
-    }, [cart]);
+    }, [cart, update]);
 
     const getURL = (item) => {
         if (typeof(item.ImageFile) === "string") {return item.ImageFile;}
@@ -52,17 +53,19 @@ const Checkout = () => {
                 <AiOutlineShoppingCart size={225} color='gray' style={{display: paid ? 'none' : 'block'}}/>
                 <BsCheckCircle size={225} color='green' style={{display: paid ? 'block' : 'none'}}/>
             </div>
-            <div style={{display: cart.length > 0 ? 'flex' : 'none', width: '80%'}}>
+            {cart && cart.length ?
+                <div style={{display: 'flex', width: '80%'}}>
                 <div id='cart-items'>
                     {cart.map(item => 
                         <div id='cart-item' key={uuid()}>
                             <img src={getURL(item)} className={item.id} id="cart-img" alt=""/>
-                            <div id='cart-price'>${parseFloat(item.Price).toFixed(2)}</div>
-                            <FaTrashAlt id="trash-btn" style={{margin: '0 10px 30px 0'}}
-                                size={24} 
-                                color='grey'
-                                onClick={() => {dispatch(deleteCart(item.id))}}
-                            />
+                            <div id='cart-details'>
+                                <h1 id='cart-name'>{item.Name}</h1>
+                                <div id='cart-price'>${parseFloat(item.Price).toFixed(2)}</div>
+                                <FaTrashAlt id="trash-icon" 
+                                    onClick={() => {dispatch(deleteCart(item.id)); setUpdate(!update)}}
+                                />
+                            </div>
                         </div>
                     )}
                 </div>
@@ -75,7 +78,8 @@ const Checkout = () => {
                     </div>
                     <button id='pay-btn' onClick={handlePay}>Proceed to Pay</button>
                 </div>
-            </div>
+                </div>:''
+            }
         </div>
     );
 }

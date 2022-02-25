@@ -3,7 +3,9 @@ const cartReducer = (state = [], action) => {
         case 'ADD_CART': 
             return [...state, action.payload];
         case "DELETE_CART":
-            return state.filter(item => item.id !== action.payload);
+            let index = state.findIndex(item => item.id === action.payload);
+            state.splice(index, 1);
+            return state;
         case "CLEAR_CART":
             return [];
         default:
