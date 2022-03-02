@@ -77,7 +77,7 @@ export default function Form() {
                 >   Add Item Image 
                     <AiOutlineCamera size={45} style={{marginLeft: '10px'}}/>
                 </div>
-                <div style={{display: 'flex'}}>
+                <div>
                     <div className="Dropzone-Panel"><MyDropzone getFiles={getFiles}/></div>
                     <div id="preview-display">
                         {preview ?
@@ -89,7 +89,7 @@ export default function Form() {
                 </div>
             </div>
             <div id="input-section">
-                <div id="input-label" style={{ textShadow: '2px 2px gray', fontSize: '45px' }}>
+                <div id="input-label" style={{ textShadow: '2px 2px gray' }}>
                     Fill In Item Fields 
                     <BsPencilSquare size={45} style={{marginLeft: '10px'}}/>
                 </div>
