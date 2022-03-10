@@ -1,3 +1,4 @@
+import './styles/cart.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from 'react';

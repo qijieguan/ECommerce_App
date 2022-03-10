@@ -4,7 +4,6 @@ import { setSearch } from './actions/index.js';
 import Item from './Item.js';
 import Cart from './Cart.js';
 
-
 export default function View() {
 
     const dispatch = useDispatch();

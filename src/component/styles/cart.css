@@ -1,0 +1,49 @@
+#cart-items { width: 350px; border-radius: 3px; }
+
+#cart-item {
+  margin-bottom: 20px;
+  display: flex;
+  height: 100px;
+  width: 100%;
+  border: 2px solid rgb(161, 161, 161);
+  box-shadow: 0 0 3px rgb(128, 128, 128);
+}
+
+#cart-img { object-fit: auto; margin-right: auto; height: 100%; width: 30%; }
+#cart-details { 
+  display: grid;
+  grid-template-columns: 45% 45%;
+  margin-left: 5%;
+  height: 100%; 
+  width: 65%; 
+  color: grey;
+  overflow-y: hidden;
+}
+#cart-details * { font-family: 'Bebas Neue', cursive; }
+#cart-name { grid-column: 1 / 3; font-size: 20px; color: rgb(29, 29, 29); }
+#cart-price {  grid-column: 1 / 2; font-size: 16px;}
+#cart-price::before { content: "Price: "; }
+#trash-icon { grid-column: 2 / 3; margin: 0 10px 8px auto; font-size: 18px; }
+
+#review {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  width: 250px;
+  border: 2px solid gray;
+  box-shadow: 0 0 2px black;
+}
+
+#review div { font-size: 16px; color: gray; }
+#review-initial::before { content: "Subtotal: "; }
+#review-tax::before { content: "Tax: + "; }
+#review-final::before { content: "Total: "; color: black }
+
+#pay-btn {
+  min-height: 40px;
+  width: 80%;
+  color: white;
+  background: orange;
+  border-radius: 3px;
+  box-shadow: 0 0 5px darkorange;
+}

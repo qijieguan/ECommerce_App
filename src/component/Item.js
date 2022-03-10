@@ -1,3 +1,4 @@
+import './styles/item.css';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 

@@ -1,3 +1,4 @@
+import './styles/form.css';
 import { useState, useEffect } from 'react';
 import MyDropzone from './Dropzone.js';
 import { AiOutlineCamera } from 'react-icons/ai';
@@ -19,7 +20,7 @@ export default function Form() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        document.getElementById("header").style.background = 'black';
+        document.getElementById("header").style.background = 'teal';
         document.getElementById("search").style.display = 'none';
         if (!file) {return}
 
@@ -73,7 +74,7 @@ export default function Form() {
             <div id="error-msg">*Missing image or input fields are empty*</div>
             <div id="image-section">
                 <div id="image-label"
-                    style={{textShadow: '2px 2px rgb(90, 90, 90)', color: 'orange'}}
+                    style={{textShadow: '1px 1px rgb(90, 90, 90)', color: 'yellow'}}
                 >   Add Item Image 
                     <AiOutlineCamera size={45} style={{marginLeft: '10px'}}/>
                 </div>
@@ -89,7 +90,7 @@ export default function Form() {
                 </div>
             </div>
             <div id="input-section">
-                <div id="input-label" style={{ textShadow: '2px 2px gray' }}>
+                <div id="input-label" style={{ textShadow: '1px 1px grey' }}>
                     Fill In Item Fields 
                     <BsPencilSquare size={45} style={{marginLeft: '10px'}}/>
                 </div>
@@ -132,7 +133,7 @@ export default function Form() {
 
                     <div id="tag-label">Tag<span style={dotStyle}>*</span></div>
                     <select id="input-tag" required> 
-                        <option value="">----Please Select a Tag For The Item-----</option>
+                        <option value="">---- Please Select a Tag For The Item -----</option>
                         <option value="Beauty">Beauty</option>
                         <option value="Cleaning">Cleaning</option>
                         <option value="Clothed">Clothed</option>
@@ -146,7 +147,7 @@ export default function Form() {
             </div>
             <div id="submit-form">
                 <button className="btn">Cancel</button>
-                <button type="submit" className="btn" style={{color: 'white', background: 'limegreen'}}>Add</button>
+                <button type="submit" className="btn" style={{color: 'white', background: 'teal'}}>Add</button>
             </div>
         </form>   
     );

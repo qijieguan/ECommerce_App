@@ -1,3 +1,4 @@
+import './styles/home.css';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -16,7 +17,7 @@ export default function Home() {
                     <h1 className='fade-slide'>Welcome To My <span>Ecommerce</span> App</h1> 
                     <span>Post Items Effortlessly To Be Seen On The Webpage</span>
                 </div>
-                <Link to="/Account"><button id="about-btn">About Me</button></Link>
+                <Link to="/About"><button id="about-btn">About Me</button></Link>
             </div>
             <div id="home-background"/>
             <div id='home-slide'>

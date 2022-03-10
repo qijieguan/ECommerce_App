@@ -1,0 +1,9 @@
+#about-page { padding-top: 60px; display: flex; min-height: 700px; background: rgb(236, 236, 236); }
+#profile-img { height: 350px; box-shadow: 0 0 5px grey; border: 1px solid gray; border-radius: 200px; }
+#profile-info * { color: black; background: rgb(236, 236, 236); }
+#name { padding-top: 50px; font-size: 70px; text-shadow: 2px 2px gray; }
+
+@media (max-width: 700px) {
+    #account-page { flex-direction: column; }
+    #profile-img { height: 200px}
+}

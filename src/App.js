@@ -5,7 +5,7 @@ import View from './component/ViewItems.js';
 import ItemExpand from './component/ItemExpand.js';
 import Form from './component/Form.js';
 import Checkout from './component/Checkout.js';
-import Account from './component/Account.js';
+import About from './component/About.js';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { createStore } from 'redux';
 import allReducers from './component/reducers';
@@ -28,7 +28,7 @@ function App() {
             <Route path="/View/:id" exact component={ItemExpand}/>
             <Route path="/Form" exact component={Form}/>
             <Route path="/Checkout" exact component={Checkout}></Route>
-            <Route path="/Account" exact component={Account}/>
+            <Route path="/About" exact component={About}/>
           </Switch>
         </Router>
       </Provider>

@@ -1,3 +1,4 @@
+import './styles/nav.css';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setSearch } from './actions/index.js';
