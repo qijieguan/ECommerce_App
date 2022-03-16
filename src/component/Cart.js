@@ -36,7 +36,9 @@ const Cart = () => {
             <div id='cart-label'>Cart</div>
             {cart.map(item => <img src={getURL(item)} key={uuid()} className={item.id} id='cart-li' alt=""/>)}
             <div id='cost'>${parseFloat(total).toFixed(2)}</div>
-            <Link to={{pathname: "/Checkout", state: {cost: parseFloat(total).toFixed(2)}}}><button id='checkout-btn'>Proceed to Checkout</button></Link>
+            <Link to={{pathname: "/Checkout", state: {cost: parseFloat(total).toFixed(2)}}}>
+                <button id='checkout-btn'>Proceed to Checkout</button>
+            </Link>
         </div>     
     );
 }

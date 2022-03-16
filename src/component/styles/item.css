@@ -65,6 +65,7 @@
 .item-name {
     text-align: center;
     font-size: 24px;
+    font-family: 'Vidaloka', serif;
     word-wrap: break-word;
     color: black;
     overflow-y: hidden;

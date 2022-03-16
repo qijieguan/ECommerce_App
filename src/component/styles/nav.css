@@ -14,7 +14,7 @@
     width: 20%;
     font-family: 'Lobster', cursive;
     font-size: 24px;
-    color: white;
+    color: aquamarine;
     text-shadow: 0 0 3px grey;
 }
 
@@ -32,12 +32,13 @@
 #nav-links { margin-right: 50px; }
 #nav-links button { 
     margin-right: 30px; 
+    height: 100%;
     text-shadow: 0 0 3px grey; 
     color: white; 
     background: transparent;
     box-shadow: none; 
 }
-#nav-links button:hover { color: brown; }
+#nav-links button:hover { color: aquamarine; }
 
 @media (max-width: 700px) {
     #logo { margin: 0; font-size: 20px; }

@@ -6,7 +6,7 @@ export default function MyDropzone( {getFiles} ) {
     const onDrop = useCallback(acceptedFiles => {
         // Do something with the files
         getFiles(acceptedFiles);
-    })
+    }, [getFiles])
 
     const {getRootProps, getInputProps, isDragActive} = useDropzone({
         onDrop,

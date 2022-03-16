@@ -74,7 +74,7 @@ export default function Form() {
             <div id="error-msg">*Missing image or input fields are empty*</div>
             <div id="image-section">
                 <div id="image-label"
-                    style={{textShadow: '1px 1px rgb(90, 90, 90)', color: 'yellow'}}
+                    style={{ color: 'yellow'}}
                 >   Add Item Image 
                     <AiOutlineCamera size={45} style={{marginLeft: '10px'}}/>
                 </div>
@@ -90,7 +90,7 @@ export default function Form() {
                 </div>
             </div>
             <div id="input-section">
-                <div id="input-label" style={{ textShadow: '1px 1px grey' }}>
+                <div id="input-label">
                     Fill In Item Fields 
                     <BsPencilSquare size={45} style={{marginLeft: '10px'}}/>
                 </div>

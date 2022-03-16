@@ -26,8 +26,8 @@ function App() {
             <Route path="/" exact component={Home}/>
             <Route path="/View" exact component={View}/>
             <Route path="/View/:id" exact component={ItemExpand}/>
-            <Route path="/Form" exact component={Form}/>
             <Route path="/Checkout" exact component={Checkout}></Route>
+            <Route path="/Form" exact component={Form}/>
             <Route path="/About" exact component={About}/>
           </Switch>
         </Router>

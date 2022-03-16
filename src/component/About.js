@@ -10,18 +10,19 @@ export default function About() {
             <div id="profile-info">
                 <div id="name">Qi Jie Guan</div>
                 <div id="education" style={{paddingTop: '70px'}}>
-                    <span style={fontStyle}>Education</span><br/>
+                    <span style={fontStyle}>Education</span><br/><br/>
                     <span>Bachelor of Science in Computer Science</span><br/>
                     <span>University of California, Riverside</span><br/>
-                    <span style={{fontFamily: 'arial'}}>SEPT. 2015 TO MARCH 2020</span><br/>
+                    <span style={{fontFamily: 'arial'}}>SEPT. 2015 TO MARCH 2020</span>
                 </div>
                 <div id="contact" style={{paddingTop: '70px'}}>
-                    <span style={fontStyle}>Contact</span><br/>
+                    <span style={fontStyle}>Contact</span><br/><br/>
                     <span>qijieguan7@gmail.com</span><br/>
+                    <span>https://www.linkedin.com/in/qi-jie-guan-002924201/</span>
                 </div>
             </div>
         </div>
     )
 }
 
-const fontStyle = { fontSize: "24px", color: "green", }
+const fontStyle = { fontSize: "24px", color: "brown", }
