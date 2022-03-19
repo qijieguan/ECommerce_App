@@ -1,13 +1,17 @@
 import './styles/nav.css';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setSearch } from './actions/index.js';
 import Nav from './Nav.js';
 import { useHistory, useLocation } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
+import uuid from "react-uuid";
 
 export default function Header() {
 
+    const items = useSelector(state => state.itemList);
+
+    const [dropdown, setDropDown] = useState([]);
     const [word, setWord] = useState("");
     const dispatch = useDispatch();
     
@@ -55,13 +59,40 @@ export default function Header() {
     }
 
 
-    const handleChange = event => { setWord(event.target.value); }
+    const handleChange = event => { 
+        let result = [];
+        if (event.target.value) {
+            items.forEach(item => {
+                if (item.Name.toLowerCase().includes(event.target.value.toLowerCase())) {
+                    result.push(item.Name);
+                }
+            });
+            let search = document.getElementById('search-bar');
+            if (result.length) { search.style.borderBottom = 'none'; }
+            else { search.style.borderBottom = '2px solid orange'; }
+        }
+        else { document.getElementById('search-bar').style.border = '2px solid orange'; }
+        setDropDown(result);
+        setWord(event.target.value); 
+    }
+
+    const highlight = () => {
+        let search = document.getElementById('search-bar');
+        search.style.border = '2px solid orange'; 
+        search.style.outline = 'none';
+    }
 
     const handleSubmit = e => {
         e.preventDefault();
         if (!word) { return; }
-        dispatch(setSearch(word));   
+        if (e.target.innerText) { 
+            dispatch(setSearch(e.target.innerText)); 
+            document.getElementById('search-bar').style.border = '1px solid rgb(196,196,196)'; 
+        }
+        else { dispatch(setSearch(word)); }   
         history.push("/View");
+        setDropDown([]);
+        setWord("")
     }
 
     return (
@@ -73,10 +104,19 @@ export default function Header() {
                     placeholder="Search item here" 
                     value={word} 
                     onChange={handleChange}
+                    onFocus={() => highlight()}
                 /> 
                 <button id="search-btn" type="submit">
                     <AiOutlineSearch style={{display: 'flex'}} size={25} color='black'/>
-                </button>  
+                </button> 
+                {dropdown && dropdown.length ?
+                    <div id="dropdown-ul">
+                        {dropdown.map(name => 
+                            <div className='dropdown-li' key={uuid()} onClick={handleSubmit}>{name}</div>
+                        )}
+                    </div>
+                    :''
+                } 
             </form>
             <Nav/>
         </header>

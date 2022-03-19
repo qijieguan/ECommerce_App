@@ -15,7 +15,6 @@
   text-overflow: ellipsis;
   box-sizing: border-box;
   line-height: 1.5;
-  overflow-x: hidden;
 }
 
 #view-page { margin-top: 60px; min-height: 800px; background-color: slategrey; }

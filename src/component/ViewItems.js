@@ -27,7 +27,7 @@ export default function View() {
           
         if (!word || !word.length || status === "Filter") { setStatus("Done"); return; }   
         resetActive();
-        setList(items.filter(item => item.Name === word));
+        setList(items.filter(item => item.Name.toLowerCase() === word.toLowerCase()));
         dispatch(setSearch(""));
         
     }, [ dispatch, onLoad, word, update, status, items, cart]);
