@@ -58,41 +58,36 @@ export default function Header() {
         sliders.forEach(slider => { appearOnScroll.observe(slider); });
     }
 
-
     const handleChange = event => { 
         let result = [];
         if (event.target.value) {
             items.forEach(item => {
-                if (item.Name.toLowerCase().includes(event.target.value.toLowerCase())) {
-                    result.push(item.Name);
-                }
+                let parseName = item.Name.split(' ');
+                for (let i = 0; i < parseName.length; ++i) {
+                    if (parseName[i].toLowerCase().substr(0, event.target.value.length) === (event.target.value.toLowerCase())) {
+                        result.push(item.Name);
+                        break;
+                    } 
+                };
             });
             let search = document.getElementById('search-bar');
-            if (result.length) { search.style.borderBottom = 'none'; }
-            else { search.style.borderBottom = '2px solid orange'; }
+            if (result.length) { search.style.borderBottomWidth = '0'; }
+            else { search.style.borderBottomWidth = '2px'; }
         }
-        else { document.getElementById('search-bar').style.border = '2px solid orange'; }
+        else { document.getElementById('search-bar').style.borderBottomWidth = '2px'; }
         setDropDown(result);
         setWord(event.target.value); 
-    }
-
-    const highlight = () => {
-        let search = document.getElementById('search-bar');
-        search.style.border = '2px solid orange'; 
-        search.style.outline = 'none';
     }
 
     const handleSubmit = e => {
         e.preventDefault();
         if (!word) { return; }
-        if (e.target.innerText) { 
-            dispatch(setSearch(e.target.innerText)); 
-            document.getElementById('search-bar').style.border = '1px solid rgb(196,196,196)'; 
-        }
-        else { dispatch(setSearch(word)); }   
+        if (e.target.textContent) { dispatch(setSearch(e.target.textContent)); }
+        else { dispatch(setSearch(word)); } 
         history.push("/View");
         setDropDown([]);
-        setWord("")
+        setWord("");
+        document.getElementById('search-bar').style.borderBottomWidth = '2px';
     }
 
     return (
@@ -104,7 +99,7 @@ export default function Header() {
                     placeholder="Search item here" 
                     value={word} 
                     onChange={handleChange}
-                    onFocus={() => highlight()}
+                    style={{borderBottomWidth: '2px'}}
                 /> 
                 <button id="search-btn" type="submit">
                     <AiOutlineSearch style={{display: 'flex'}} size={25} color='black'/>

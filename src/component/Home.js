@@ -7,7 +7,8 @@ export default function Home() {
 
     useEffect(() => { 
         document.getElementById("header").style.background = 'transparent';
-        document.getElementById("search").style.display = 'none';
+        document.getElementById("search-bar").style.display = 'none';
+        document.getElementById("search-btn").style.display = 'none';
     }, []);
        
     return(

@@ -21,9 +21,10 @@ export default function Form() {
 
     useEffect(() => {
         document.getElementById("header").style.background = 'teal';
-        document.getElementById("search").style.display = 'none';
+        document.getElementById("search-bar").style.display = 'none';
+        document.getElementById("search-btn").style.display = 'none';
+        
         if (!file) {return}
-
         const reader = new FileReader();
         reader.addEventListener("load", () => {setPreview(reader.result);}, false);
         reader.readAsDataURL(file[0]);  

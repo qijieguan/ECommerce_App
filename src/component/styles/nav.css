@@ -18,12 +18,13 @@
     text-shadow: 0 0 3px grey;
 }
 
-#search { margin-right: auto; position: relative; padding:1px 0; width: 400px; display: inline-flex; justify-content: center; }
-#search-bar { width: 80%; border-radius: 3px 0 0 3px; }
+#search { margin-right: auto; position: relative; padding: 1px 0; width: 400px; display: inline-flex; justify-content: center; }
+#search-bar { width: 80%; border-radius: 3px 0 0 3px; outline: none; }
+#search-bar:focus { border: 2px solid orange; }
 #search-btn {
     margin-right: auto;
     display: inline-flex;
-    min-height: 40px;
+    height: 40px;
     width: 20%;
     background: orange;
     border-radius: 0 3px 3px 0;
@@ -39,6 +40,7 @@
     transform: translateY(100%);
     border: 2px solid orange;
     border-top: 0;
+    z-index: 5;
 }
 
 .dropdown-li {
@@ -66,7 +68,7 @@
 #nav-links button:hover { color: aquamarine; }
 
 @media (max-width: 700px) {
-    #logo { margin: 0; font-size: 20px; }
-    #search { height: 35px; margin-right: 0; }
+    #logo { margin: 0 0 0 8px; font-size: 20px; }
+    #search { height: 30px; margin-right: 10px; width: 300px; }
     #nav-links, #nav-links button  { margin-right: 0; }
 }

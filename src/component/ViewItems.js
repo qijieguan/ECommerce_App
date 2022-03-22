@@ -19,18 +19,20 @@ export default function View() {
     useEffect(() => {
         if (onLoad) {
             document.getElementById('header').style.background = 'slategrey';   
+            document.getElementById("search").style.display = 'flex';
+            document.getElementById("search-bar").style.display = 'inline-flex';
+            document.getElementById("search-btn").style.display = 'inline-flex';
             document.getElementById("All").style.color = "white";
             document.getElementById("All").style.background = "rgb(255, 174, 24)";
-            document.getElementById("search").style.display = 'flex';
             setLoad(false);
         }
           
         if (!word || !word.length || status === "Filter") { setStatus("Done"); return; }   
         resetActive();
-        setList(items.filter(item => item.Name.toLowerCase() === word.toLowerCase()));
+        setList(items.filter(item => item.Name.toLowerCase().includes(word.toLowerCase())));
         dispatch(setSearch(""));
         
-    }, [ dispatch, onLoad, word, update, status, items, cart]);
+    }, [dispatch, onLoad, word, update, status, items, cart]);
 
     const resetActive = () => {
         let list = document.querySelectorAll(".filter-li");

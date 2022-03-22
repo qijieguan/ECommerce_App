@@ -49,8 +49,8 @@ const Checkout = () => {
 
     return (
         <div style={{display: 'flex', marginTop: '100px'}}>
-            <div id="checkout-msg" style={{display: cart.length === 0 ? 'flex' : 'none', flexDirection: 'column'}}>   
-                <div style={{margin: '40px 0', fontSize: '50px', color: "gray"}}>{message}</div>
+            <div id="checkout-msg" style={{display: cart.length === 0 ? 'flex' : 'none'}}>   
+                <div>{message}</div>
                 <AiOutlineShoppingCart size={225} color='gray' style={{display: paid ? 'none' : 'block'}}/>
                 <BsCheckCircle size={225} color='green' style={{display: paid ? 'block' : 'none'}}/>
             </div>
@@ -74,9 +74,7 @@ const Checkout = () => {
                     <div id='review-initial'>${parseFloat(cost).toFixed(2)}</div>
                     <div id='review-tax'>${parseFloat(cost*.1).toFixed(2)}</div>
                     <div style={{border: '2px solid grey', width: '80%'}}/>
-                    <div id='review-final' style={{fontSize: '24px', color: 'black'}}>
-                        ${parseFloat(cost + (cost*.1)).toFixed(2)}
-                    </div>
+                    <div id='review-final'>${parseFloat(cost + (cost*.1)).toFixed(2)}</div>
                     <button id='pay-btn' onClick={handlePay}>Proceed to Pay</button>
                 </div>
                 </div>:''

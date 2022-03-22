@@ -1,3 +1,6 @@
+#checkout-msg { flex-direction: column; width: 90%;}
+#checkout-msg div { margin: 40px 0; font-size: 50px; color: gray; }
+
 #cart-items { width: 350px; border-radius: 3px; }
 
 #cart-item {
@@ -33,10 +36,10 @@
   border: 2px solid gray;
   box-shadow: 0 0 2px black;
 }
-
-#review div { font-size: 16px; color: gray; }
+#review-initial, #review-tax { font-size: 16px; color: gray; }
 #review-initial::before { content: "Subtotal: "; }
 #review-tax::before { content: "Tax: + "; }
+#review-final { font-size: 24px; color: black; }
 #review-final::before { content: "Total: "; color: black }
 
 #pay-btn {
@@ -46,4 +49,12 @@
   background: orange;
   border-radius: 3px;
   box-shadow: 0 0 5px darkorange;
+}
+#pay-btn:hover { box-shadow: 0 0 5px black; }
+
+@media (max-width: 700px) {
+  #cart-items {margin-right: 20px; }
+  #cart-name { font-size: 16px; }
+  #cart-price { font-size: 14px; }
+  #review-final { font-size: 20px; }
 }
