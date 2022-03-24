@@ -12,7 +12,7 @@ const ItemExpand = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        document.getElementById('header').style.background = 'orange';
+        document.getElementById('header').style.background = 'teal';
         if (typeof(item.ImageFile) === "string") {setURL(item.ImageFile);}
         else {
             const reader = new FileReader();  
