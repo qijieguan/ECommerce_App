@@ -14,16 +14,16 @@
   z-index: 1;  
 }
 
-#intro-text h1 { margin-bottom: 30px; font-family: 'Vidaloka', serif; font-size: 50px; color: wheat; }
-#intro-text h1 span { font-size: 50px; font-family: 'Vidaloka', serif; color: orange; }
+#intro-text h1 { margin-bottom: 30px; font-family: 'Vidaloka', serif; font-size: 50px; }
+#intro-text h1 span { font-size: 50px; font-family: 'Vidaloka', serif; color: yellowgreen; }
 #intro-text span { font-size: 18px; font-family: 'Vidaloka', serif; animation: fadeIn 0.5s linear; }
 
 #about-btn {
   padding: 10px 22px;
-  color: orange;
+  color: yellowgreen;
   background: transparent;
   border-radius: 5px;
-  border: 2px solid orange;
+  border: 2px solid yellowgreen;
   box-shadow: 0 0 5px;
 }
 
@@ -57,9 +57,9 @@
   color: white; 
 }
 
-#home-slide h1 span { font-size: 50px; font-family: 'Lobster', cursive; color: aquamarine; }
+#home-slide h1 span { font-size: 50px; font-family: 'Lobster', cursive; color: yellowgreen; }
 
-#home-content { display: flex; padding: 50px 0; background: rgb(231, 231, 231); border: 4px solid teal}
+#home-content { display: flex; padding: 50px 0; background: rgb(231, 231, 231); border: 4px solid green}
 
 .from-left {  
   display: flex;
@@ -69,14 +69,14 @@
   width: 30%;
   color: black;
   background: white;
-  border: 1px solid teal;
+  border: 1px solid green;
   transform: translateX(-80%);
   transition: transform 0.5s ease-in;
 }
 
-.from-left h1 { text-align: center; font-family: 'Vidaloka', serif; font-size: 30px; width: 80%; color: teal }
+.from-left h1 { text-align: center; font-family: 'Vidaloka', serif; font-size: 30px; width: 80%; color: green; }
 .from-left span { text-align: center; font-family: 'Vidaloka', serif; font-size: 16px; width: 80%; color: rgb(65, 65, 65); }
-.from-left > span > span { color: teal; }
+.from-left > span > span { color: green; }
 
 .from-right-1 {
   height: 400px;

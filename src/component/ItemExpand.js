@@ -13,7 +13,6 @@ const ItemExpand = () => {
 
     useEffect(() => {
         document.getElementById('header').style.background = 'orange';
-        
         if (typeof(item.ImageFile) === "string") {setURL(item.ImageFile);}
         else {
             const reader = new FileReader();  
@@ -22,10 +21,7 @@ const ItemExpand = () => {
         }
     }, [item]);
 
-    const handleAddCart = event => {
-        event.preventDefault();
-        dispatch(addCart(item));
-    };
+    const handleAddCart = e => { e.preventDefault(); dispatch(addCart(item)); };
  
     return(
         <div id="expand-page">

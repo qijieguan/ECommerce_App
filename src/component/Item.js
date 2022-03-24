@@ -14,8 +14,10 @@ const Item = ({item}) => {
             reader.addEventListener("load", () => {setURL(reader.result);}, false);
             reader.readAsDataURL(item.ImageFile[0]);
         }
-        
-        //set color for item tag
+        setTagColor(item);
+    }, [item]);
+
+    const setTagColor = (item) => {
         let background;
         if (item.Tag === "Beauty") {background = "plum"}
         else if (item.Tag === "Cleaning") {background = "royalblue"}
@@ -29,7 +31,7 @@ const Item = ({item}) => {
         
         let element = document.getElementById(item.id).querySelector(".item-tag");
         if (element) { element.style.background = background; }
-    }, [item]);
+    }
 
     const onEnter = () => {
         let element = document.getElementById(item.id);

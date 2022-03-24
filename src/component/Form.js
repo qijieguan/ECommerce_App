@@ -20,10 +20,6 @@ export default function Form() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        document.getElementById("header").style.background = 'teal';
-        document.getElementById("search-bar").style.display = 'none';
-        document.getElementById("search-btn").style.display = 'none';
-        
         if (!file) {return}
         const reader = new FileReader();
         reader.addEventListener("load", () => {setPreview(reader.result);}, false);
@@ -32,15 +28,15 @@ export default function Form() {
     
     const getFiles = (img) => {setFile(img);}
 
-    const handleChange = event => {
-        if (event.target.name === "name") {setName(event.target.value);}
-        else if (event.target.name === "description") {setDesc(event.target.value);}
-        else if (event.target.name === "stock") {setStock(event.target.value);}
-        else {setPrice(event.target.value);}
+    const handleChange = e => {
+        if (e.target.name === "name") {setName(e.target.value);}
+        else if (e.target.name === "description") {setDesc(e.target.value);}
+        else if (e.target.name === "stock") {setStock(e.target.value);}
+        else {setPrice(e.target.value);}
     }
 
-    const handleSubmit = event => {
-        event.preventDefault();
+    const handleSubmit = e => {
+        e.preventDefault();
 
         if (!file || document.getElementById("input-tag").value === "Default") {
             document.getElementById("error-msg").style.display = "flex";
@@ -74,9 +70,8 @@ export default function Form() {
         <form onSubmit={handleSubmit} id="form-container">
             <div id="error-msg">*Missing image or input fields are empty*</div>
             <div id="image-section">
-                <div id="image-label"
-                    style={{ color: 'yellow'}}
-                >   Add Item Image 
+                <div id="image-label" style={{ color: 'yellow'}}>  
+                    Add Item Image 
                     <AiOutlineCamera size={45} style={{marginLeft: '10px'}}/>
                 </div>
                 <div>
@@ -144,6 +139,7 @@ export default function Form() {
                         <option value="Drinks">Drinks</option>
                         <option value="Toy">Toy</option>
                     </select>
+
                 </div>  
             </div>
             <div id="submit-form">
@@ -155,6 +151,5 @@ export default function Form() {
 }
 
 const dotStyle = { fontSize: '20px',  color: 'red', }
-
 const inputStyle = { fontSize: '20px', background: 'rgb(236,236,236)' }
 

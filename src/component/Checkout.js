@@ -32,9 +32,7 @@ const Checkout = () => {
             const reader = new FileReader();  
             reader.addEventListener("load", () => {
                 let select = document.getElementsByClassName(item.id);
-                if (select) {
-                    for (let i = 0; i < select.length; ++i) { select[i].src = reader.result; }
-                }
+                if (select) { for (let i = 0; i < select.length; ++i) { select[i].src = reader.result; }}
             }, false);
             reader.readAsDataURL(item.ImageFile[0]);
         }

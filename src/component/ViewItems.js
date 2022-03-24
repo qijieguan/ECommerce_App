@@ -17,37 +17,26 @@ export default function View() {
     const [onLoad, setLoad] = useState(true);
     
     useEffect(() => {
-        if (onLoad) {
-            document.getElementById('header').style.background = 'slategrey';   
-            document.getElementById("search").style.display = 'flex';
-            document.getElementById("search-bar").style.display = 'inline-flex';
-            document.getElementById("search-btn").style.display = 'inline-flex';
-            document.getElementById("All").style.color = "white";
-            document.getElementById("All").style.background = "rgb(255, 174, 24)";
-            setLoad(false);
-        }
-          
-        if (!word || !word.length || status === "Filter") { setStatus("Done"); return; }   
+        if (onLoad) { document.querySelector("#All").classList.add('toggleColor'); setLoad(false); }
+        if (!word || !word.length || status === "Filter") { setStatus("Done"); return; }  
+
         resetActive();
         setList(items.filter(item => item.Name.toLowerCase().includes(word.toLowerCase())));
-        dispatch(setSearch(""));
-        
+        dispatch(setSearch(""));  
     }, [dispatch, onLoad, word, update, status, items, cart]);
 
     const resetActive = () => {
         let list = document.querySelectorAll(".filter-li");
-        list.forEach(el => { el.style.background = "white"; el.style.color = "black"; });
+        list.forEach(el => { el.classList.remove('toggleColor'); });
     }
 
-    const handleClick = event => {
-        event.preventDefault();
+    const handleClick = e => {
+        e.preventDefault();
         resetActive();
+        document.querySelector('#' + e.target.id).classList.add('toggleColor');
 
-        document.getElementById(event.target.id).style.color = "white";
-        document.getElementById(event.target.id).style.background = "rgb(255, 174, 24)";
-
-        if (event.target.id !== "All") {
-            let result = items.filter(item => event.target.id === item.Tag);
+        if (e.target.id !== "All") {
+            let result = items.filter(item => e.target.id === item.Tag);
             setList(result);
         }
         else { setList(items); }

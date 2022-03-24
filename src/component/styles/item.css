@@ -5,6 +5,7 @@
     height: 450px;
     margin: 6% 0 0 6%;
     width: 25%;
+    background: white;
     border-radius: 3px;
     border: 1px solid gray;
     overflow: unset;
@@ -17,6 +18,7 @@
     position: absolute;
     min-height: 500px;
     width: 500px;
+    background: white;
     box-shadow: 0 0 3px black;
     z-index: 2;
     transition-delay: 0.5s;
@@ -84,9 +86,9 @@
     border-radius: 3px;
 }
 #add-cart:hover { box-shadow: 0 0 10px green; }
-#expand-page { padding: 60px 0; display: flex; flex-direction: column; min-height: 700px; background: orange; }
+#expand-page { margin-top: 50px; padding: 60px 0; display: flex; flex-direction: column; min-height: 700px; background: orange; }
 #expand-item { display: flex; }
-#expand-image { max-height: 600px; max-width: 55%; box-shadow: 0 0 5px; border-radius: 3px; }
+#expand-image { max-height: 500px; max-width: 50%; box-shadow: 0 0 5px; border-radius: 3px; }
 #expand-details { align-self: flex-start; width: 40%; }
 #expand-details div { display: inline-flex; margin: 30px 150px 0 0; font-size: 18px; color: rgb(54, 54, 54); }
 #expand-name { font-size: 40px; font-weight: bolder; }

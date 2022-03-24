@@ -9,14 +9,14 @@ export default function About() {
             <img id="profile-img" src={source} alt=""></img>
             <div id="profile-info">
                 <div id="name">Qi Jie Guan</div>
-                <div id="education" style={{paddingTop: '70px'}}>
-                    <span style={fontStyle}>Education</span><br/><br/>
+                <div id="education">
+                    <h1>Education</h1><br/>
                     <span>Bachelor of Science in Computer Science</span><br/>
                     <span>University of California, Riverside</span><br/>
                     <span style={{fontFamily: 'arial'}}>SEPT. 2015 TO MARCH 2020</span>
                 </div>
-                <div id="contact" style={{paddingTop: '70px'}}>
-                    <span style={fontStyle}>Contact</span><br/><br/>
+                <div id="contact">
+                    <h1>Contact</h1>
                     <span>qijieguan7@gmail.com</span><br/>
                     <span>https://www.linkedin.com/in/qi-jie-guan-002924201/</span>
                 </div>
@@ -25,4 +25,3 @@ export default function About() {
     )
 }
 
-const fontStyle = { fontSize: "24px", color: "brown", }

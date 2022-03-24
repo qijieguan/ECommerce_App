@@ -17,7 +17,7 @@
   line-height: 1.5;
 }
 
-#view-page { margin-top: 60px; min-height: 800px; background-color: slategrey; }
+#view-page { margin-top: 60px; min-height: 800px; background-color: teal; }
 #items-display { padding-bottom: 100px; position: relative; min-height: 700px; width: 100%; }
 #view-default { display: flex;  text-align: center; margin-top: 150px; font-size: 60px; font-style: italic; color: white; }
 
@@ -25,17 +25,23 @@
 
 #filter-interface * {
   margin: 5% 0 5px 25px;
+  padding: 1px 0;
   display: inline-flex;
   min-height: 35px;
   width: 100px;
   font-size: 16px;
-  color: black;
+  color: teal;
   background: white;
-  box-shadow: 0 0 3px black;
+  box-shadow: 0 0 2px black;
   border-radius: 20px;
 }
 
-.filter-li:hover { opacity: 0.8; }
+.filter-li:hover { border: 2px solid teal; }
+.toggleColor {
+  color: white !important;  
+  background: rgb(255, 174, 24) !important;
+  pointer-events: none !important;
+}
 
 button { box-shadow: 0 0 3px grey; border: 0; }
 button:hover { box-shadow: 0 0 5px black; }

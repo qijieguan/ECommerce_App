@@ -6,14 +6,11 @@ import uuid from 'react-uuid';
 const Cart = () => {
 
     const cart = useSelector(state => state.cart);
-
     const [total, setTotal] = useState(0); 
 
     useEffect(() => {
         let result = 0;
-        cart.forEach(item => {
-            result += parseFloat(item.Price);
-        });
+        cart.forEach(item => { result += parseFloat(item.Price); });
         setTotal(result);
     }, [cart]);
 
@@ -23,9 +20,7 @@ const Cart = () => {
             const reader = new FileReader();  
             reader.addEventListener("load", () => {
                 let select = document.getElementsByClassName(item.id);
-                if (select) {
-                    for (let i = 0; i < select.length; ++i) { select[i].src = reader.result; }
-                }
+                if (select) {for (let i = 0; i < select.length; ++i) { select[i].src = reader.result; }}
             }, false);
             reader.readAsDataURL(item.ImageFile[0]);
         }

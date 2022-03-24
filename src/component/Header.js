@@ -20,25 +20,33 @@ export default function Header() {
 
     useEffect(() => { 
         activeObserver(); 
-        //toggle color for active link
-        if (location.state && location.state.prev) {  
-            let prevPath = '/'+ location.state.prev.split('/')[1];
-            
-            if (prevPath !== '/' && prevPath !== '/View' && prevPath !== '/Form') { 
-                if (prevPath === '/About') { prevPath = '/' }
-                if (prevPath === '/Checkout') { prevPath = '/View' }
-            }
-            document.getElementById(prevPath).style.color = 'white'; 
-            document.getElementById(prevPath).style.borderBottom = '0';
-        }
-            
-        let element = document.getElementById(location.pathname);
-        if (element) { 
-            element.style.color = 'aquamarine'; 
-            element.style.pointerEvents = 'none';
-            element.style.borderBottom = '2px solid aquamarine';
-        };
+        toggleLinks(location);
+        toggleSearchBar(location);
     }, [history, location]);
+
+    const toggleLinks = (location) => {
+        let pathname = "/" + location.pathname.split('/')[1];
+        if (pathname === '/About') { pathname = '/' }
+        if (pathname === '/Checkout') { pathname = '/View' }
+        let elements = document.querySelectorAll('.nav-link');
+        elements.forEach(el => el.classList.remove('active'))
+        let element = document.getElementById(pathname);
+        if (element) { element.classList.add('active'); };
+    }
+
+    const toggleSearchBar = (location) => {
+        let pathname = "/" + location.pathname.split('/')[1];
+        if (pathname === '/' || pathname === '/Form') {  
+            document.getElementById("header").style.background = 'transparent';
+            document.getElementById("search-bar").style.display = 'none';
+            document.getElementById("search-btn").style.display = 'none';
+        }
+        else {
+            document.getElementById('header').style.background = 'teal';   
+            document.getElementById("search-bar").style.display = 'inline-flex';
+            document.getElementById("search-btn").style.display = 'inline-flex';
+        }
+    }
 
     const activeObserver = () => {
         const faders = document.querySelectorAll('.fade-slide');
@@ -58,25 +66,24 @@ export default function Header() {
         sliders.forEach(slider => { appearOnScroll.observe(slider); });
     }
 
-    const handleChange = event => { 
+    const handleChange = e => { 
         let result = [];
-        if (event.target.value) {
+        if (e.target.value) {
             items.forEach(item => {
                 let parseName = item.Name.split(' ');
                 for (let i = 0; i < parseName.length; ++i) {
-                    if (parseName[i].toLowerCase().substr(0, event.target.value.length) === (event.target.value.toLowerCase())) {
-                        result.push(item.Name);
-                        break;
+                    if (parseName[i].toLowerCase().substr(0, e.target.value.length) === (e.target.value.toLowerCase())) {
+                        result.push(item.Name); break;
                     } 
                 };
             });
-            let search = document.getElementById('search-bar');
-            if (result.length) { search.style.borderBottomWidth = '0'; }
-            else { search.style.borderBottomWidth = '2px'; }
+            let search = document.querySelector('#search-bar');
+            if (result.length) { search.classList.add('removeBottom'); }
+            else { search.classList.remove('removeBottom'); }
         }
-        else { document.getElementById('search-bar').style.borderBottomWidth = '2px'; }
+        else { document.querySelector('#search-bar').classList.remove('removeBottom'); }
         setDropDown(result);
-        setWord(event.target.value); 
+        setWord(e.target.value); 
     }
 
     const handleSubmit = e => {
@@ -87,7 +94,7 @@ export default function Header() {
         history.push("/View");
         setDropDown([]);
         setWord("");
-        document.getElementById('search-bar').style.borderBottomWidth = '2px';
+        document.querySelector('#search-bar').classList.remove('removeBottom');
     }
 
     return (
@@ -102,7 +109,7 @@ export default function Header() {
                     style={{borderBottomWidth: '2px'}}
                 /> 
                 <button id="search-btn" type="submit">
-                    <AiOutlineSearch style={{display: 'flex'}} size={25} color='black'/>
+                    <AiOutlineSearch style={{display: 'flex'}} size={25} color='grey'/>
                 </button> 
                 {dropdown && dropdown.length ?
                     <div id="dropdown-ul">
