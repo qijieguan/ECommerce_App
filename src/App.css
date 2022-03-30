@@ -6,7 +6,7 @@
 
 * {
   font-family: 'Poppin', sans-serif;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: bold;
   width: auto;
   height: auto;
@@ -17,26 +17,27 @@
   line-height: 1.5;
 }
 
-#view-page { margin-top: 60px; min-height: 800px; background-color: teal; }
-#items-display { padding-bottom: 100px; position: relative; min-height: 700px; width: 100%; }
+body { overflow-x: hidden; }
+
+#view-page { margin-top: 3.5rem; min-height: 800px; background-color: teal; }
+#items-display { padding-bottom: 6rem; position: relative; min-height: 700px; width: 100%; }
 #view-default { display: flex;  text-align: center; margin-top: 150px; font-size: 60px; font-style: italic; color: white; }
 
-#filter-interface { display: block; min-height: 60px; width: 100%; z-index: 3; }
+#filter { display: block; min-height: 60px; width: 100%; z-index: 3; }
 
-#filter-interface * {
-  margin: 5% 0 5px 25px;
-  padding: 1px 0;
+.filter-btn {
+  margin: 5% 0 5px 2rem;
+  padding: clamp(0.25rem, 2.5vw, 0.5rem) 0;
+  width: max(7rem, 4vw);
   display: inline-flex;
-  min-height: 35px;
-  width: 100px;
-  font-size: 16px;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
   color: teal;
   background: white;
   box-shadow: 0 0 2px black;
-  border-radius: 20px;
+  border-radius: 1.25rem;
 }
 
-.filter-li:hover { border: 2px solid teal; }
+.filter-btn:hover { border: 2px solid teal; }
 .toggleColor {
   color: white !important;  
   background: rgb(255, 174, 24) !important;
@@ -47,19 +48,15 @@ button { box-shadow: 0 0 3px grey; border: 0; }
 button:hover { box-shadow: 0 0 5px black; }
 input, textarea { 
   text-indent: 8px;
-  min-height: 40px; 
+  min-height: 2.3rem; 
   width: 90%; 
   border: 1px solid rgb(196, 196, 196); 
   border-radius: 5px;
 }
 input:focus, textarea:focus, select:focus { outline-color: teal; }
 
-select { min-height: 35px; border-radius: 5px; }
+select { min-height: 2.3rem; border-radius: 5px; }
 a { text-decoration: none; }
-
-@media (max-width: 700px) {
-  #filter-interface * { height: 30px; width: 80px; font-size: 14px; }
-}
 
 @keyframes fadeIn {
   0% { opacity: 0; }

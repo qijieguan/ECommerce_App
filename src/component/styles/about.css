@@ -1,12 +1,11 @@
-#about-page { padding-top: 60px; display: flex; min-height: 700px; background: teal; }
-#profile-img { height: 350px; box-shadow: 0 0 5px grey; border: 2px solid yellowgreen; border-radius: 200px; }
+#about-page { padding: 4.5rem 0; display: flex; background: teal; }
+#profile-img { margin-top: 3rem; width: max(18rem, 30%); box-shadow: 0 0 5px grey; border: 2px solid yellowgreen; border-radius: 200px; }
 #profile-info * { color: black; background: teal; }
-#name { padding-top: 50px; font-size: 70px; text-shadow: 2px 2px yellowgreen; }
-#education, #contact { padding-top: 70px; }
-#education h1, #contact h1 { font-size: 24px; color: yellowgreen; }
+#name { text-align: center; padding-top: 3rem; font-size: clamp(3rem, 5vw, 5rem); text-shadow: 2px 2px yellowgreen; }
+#education, #contact { padding-top:4.5rem; }
+#education h1, #contact h1 { font-size: 1.6rem; color: yellowgreen; }
 #education span,#contact span { color: wheat; }
 
 @media (max-width: 700px) {
     #about-page { flex-direction: column; padding-bottom: 20px;}
-    #profile-img { height: 250px; margin-top: 50px; }
 }

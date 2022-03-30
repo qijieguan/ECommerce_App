@@ -15,7 +15,7 @@ export default function Home() {
             <div id="home-background"/>
             <div id='home-slide'>
                 <h1 className='fade-slide'>
-                    The <span>Right</span> Furnitures Can <span>Enrich</span> Your Living Environment
+                    Buy Your <span>Dream</span> Furnitures To <span>Furnish</span> Your Living Space
                 </h1>
             </div>
             <div id="home-content">
@@ -23,7 +23,7 @@ export default function Home() {
                     <h1>Values Of Furnitures</h1>
                     <span>
                         Your Living Space Can Influence Your <span> Emotion</span> And 
-                        <span> Mind</span> On A Daily Basis. Furnish Your Home To Give You 
+                        <span> Mind</span> On A Daily Basis. Furnish Your Home To Fulfill Your 
                         <span> Inner Satisfaction</span>. Furnitures Can Create 
                         Your <span>Ideal Atmosphere </span> And Give You A Peace Of Mind.
                     </span>

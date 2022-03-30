@@ -2,9 +2,9 @@
     position: relative;
     display: inline-flex;
     flex-direction: column;
-    height: 450px;
+    height: 28rem;
     margin: 6% 0 0 6%;
-    width: 25%;
+    width: max(25%, 20rem);
     background: white;
     border-radius: 3px;
     border: 1px solid gray;
@@ -16,8 +16,8 @@
 
 .item:hover {
     position: absolute;
-    min-height: 500px;
-    width: 500px;
+    min-height: 32rem;
+    width: 32rem;
     background: white;
     box-shadow: 0 0 3px black;
     z-index: 2;
@@ -41,12 +41,8 @@
     padding: 0 3px;
     top: 0;
     right: 0;
-    display: flex;
-    font-size: 18px;
-    font-family: italic;
-    min-height: 30px;
-    line-height: 30px;
-    min-width: 80px;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    font-family: italic;   
     color: white;
     border-radius: 5px;
     box-shadow: 0 0 3px grey;
@@ -66,72 +62,68 @@
 
 .item-name {
     text-align: center;
-    font-size: 24px;
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
     font-family: 'Vidaloka', serif;
     word-wrap: break-word;
     color: black;
     overflow-y: hidden;
 }
 
-.item-description { display: none; font-style: italic; overflow-y: hidden; }
-.item-price, .item-stock { font-size: 18px; }
+.item-description { display: none; font-size: clamp(1rem, 2.5vw, 1.25rem); font-style: italic; overflow-y: hidden; }
+.item-price, .item-stock { font-size: clamp(0.75rem, 2.5vw, 1.125rem); }
+.item-price span, .item-stock span { font-size: clamp(1rem, 2.5vw, 1.125rem); }
 
 #add-cart {
-    margin: 30px 135px 0 0;
+    margin: 1.8rem 9rem 0 0;
     padding: 0 10px;
-    min-height: 40px;
+    min-height: 3.3rem;
     color: white;
     background: limegreen;
     box-shadow: 0 0 5px green;
     border-radius: 3px;
 }
 #add-cart:hover { box-shadow: 0 0 10px green; }
-#expand-page { margin-top: 50px; padding: 60px 0; display: flex; flex-direction: column; min-height: 700px; background: teal; }
-#expand-item { display: flex; }
-#expand-image { max-height: 500px; max-width: 50%; box-shadow: 0 0 5px; border-radius: 3px; }
+#expand-page { margin-top: 50px; padding: 3rem 0; display: flex; flex-direction: column; min-height: 47rem; background: teal; }
+#expand-item { display: flex; padding-top: 1rem; }
+#expand-image { max-height: 35rem; max-width: 50%; box-shadow: 0 0 5px; border-radius: 3px; }
 #expand-details { align-self: flex-start; width: 40%; }
-#expand-details div { display: inline-flex; margin: 30px 150px 0 0; font-size: 18px; color: wheat; }
-#expand-name { font-size: 40px; font-weight: bolder; color: wheat; }
-#expand-description { margin: 125px 0; font-size: 20px; font-family: 'Roboto', sans-serif; color: antiquewhite; }
+#expand-details div { 
+    display: inline-flex; 
+    margin: 2rem 9rem 0 0; 
+    font-size: clamp(1rem, 2.5vw, 1.2rem); 
+    color: wheat; 
+}
+#expand-name { font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: bolder; color: wheat; }
+#expand-description { margin: 125px 0; font-size: clamp(1rem, 2.5vw, 1.3rem); font-family: 'Roboto', sans-serif; color: antiquewhite; }
 
 #cart {
     position: relative;
     display: none;
     justify-content: flex-end;
-    margin: 10px 0;
-    height: 100px;
+    margin: 10px 0 50px 0;
+    height: 6.5rem;
     width: 100%;
     background: white;
     box-shadow: 0 0 3px black;
     overflow-y: hidden;
 }
-
 #cart-label {
     margin-right: auto;
     display: flex;
     font-family: copperplate;
-    font-size: 30px;
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
     height: 100%;
-    width: 200px;
+    width: max(7rem, 12%);
     color: white;
     background: brown;
     box-shadow: 0 0 3px rgb(65, 65, 65);
 }
-
-#cart-li {
-    margin-right: 40px;
-    color: white;
-    max-height: 95px;
-    max-width: 100px;
-    box-shadow: 0 0 3px black;
-}
-
-#cost { margin-right: 30px; display: flex; font-size: 30px; color: limegreen; }
-
+#cart-li { margin-right: 2.75rem; color: white; max-width: 6.5rem; box-shadow: 0 0 3px black; }
+#cost { margin-right: 30px; display: flex; font-size: clamp(1.25rem, 2.5vw, 2rem); color: limegreen; }
 #checkout-btn {
     margin: 5px 30px 5px 5px;
-    min-height: 50px;
-    font-size: 16px;
+    min-height: 3rem;
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
     color: white;
     background: brown;
     border-radius: 10px;
@@ -141,17 +133,8 @@
 #checkout-btn:hover { box-shadow: 0 0 5px 1px brown; }
 
 @media (max-width: 700px) {
-    .item-container { width: 50% }
-    .item-name { font-size: 20px; }
-    #expand-item { padding-top: 100px; flex-direction: column; }
+    #expand-item { flex-direction: column; }
     #expand-details { align-self: center; }
     #expand-details * { width: 100%;}
     #expand-details h1 { margin: 50px 0 20px 0; }
-    #expand-details div { margin: 30px 0 0 0; }
-    #expand-name { font-size: 30px; }
-    #expand-description { font-size: 20px; }
-    #cart { margin-top: 50px; height: 70px;}
-    #cart-label { width: 70px; font-size: 14px; }
-    #cost { font-size: 14px; }
-    #checkout-btn { height: 40px; width: 100px; font-size: 12px; overflow-y: hidden;}
 }

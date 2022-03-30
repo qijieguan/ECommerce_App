@@ -8,30 +8,36 @@
   justify-content: space-evenly;
   flex-direction: column;
   font-family: 'Vidaloka', serif;
-  height: 700px; 
+  height: 47rem; 
   width: 45%; 
   color: white;
   z-index: 1;  
 }
 
-#intro-text h1 { margin-bottom: 30px; font-family: 'Vidaloka', serif; font-size: 50px; }
-#intro-text h1 span { font-size: 50px; font-family: 'Vidaloka', serif; color: yellowgreen; }
-#intro-text span { font-size: 18px; font-family: 'Vidaloka', serif; animation: fadeIn 0.5s linear; }
+#intro-text > h1 { font-size: clamp(1.75rem, 5vw, 3rem); margin-bottom: 30px; font-family: 'Vidaloka', serif; }
+#intro-text > h1 > span { 
+  font-size: clamp(1.75rem, 5vw, 3rem);  
+  color: yellowgreen; 
+  font-family: 'Vidaloka', serif; 
+  text-shadow: 2px 2px  rgb(9, 87, 9); 
+  animation: fadeIn 0.5s linear; 
+}
+#intro-text > span { font-size: clamp(0.875rem, 2.5vw, 1rem); font-family: 'Vidaloka', serif; }
 
 #about-btn {
-  padding: 10px 22px;
+  padding: clamp(0rem, 2.5vw, 0.5rem) clamp(1rem, 2.5vw, 1rem);
+  font-size: clamp(0.5rem, 2.5vw, 0.9rem);
   color: yellowgreen;
   background: transparent;
   border-radius: 5px;
   border: 2px solid yellowgreen;
   box-shadow: 0 0 5px;
 }
-
 #about-btn:hover { background: rgb(255, 239, 208); }
 
 #home-background {
   display: inline-flex;
-  height: 700px;
+  height: 47rem;
   width: 50%;
   background: url("https://images.pexels.com/photos/264547/pexels-photo-264547.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-size: cover;
@@ -40,7 +46,7 @@
 #home-slide {
   position: relative;
   display: flex;
-  min-height: 900px;
+  min-height: 55rem;
   width: 100%;
   background: url("https://images.pexels.com/photos/4553278/pexels-photo-4553278.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-size: cover;
@@ -52,12 +58,16 @@
 #home-slide h1 { 
   text-align: center; 
   font-family: 'Lobster', cursive; 
-  font-size: 50px; 
-  width: 60%; 
+  font-size: clamp(2rem, 5vw, 3.5rem); 
+  width: max(20rem, 60%); 
   color: white; 
 }
-
-#home-slide h1 span { font-size: 50px; font-family: 'Lobster', cursive; color: yellowgreen; }
+#home-slide h1 span { 
+  font-size: clamp(2rem, 5vw, 3.5rem); 
+  font-family: 'Lobster', cursive; 
+  color: yellowgreen; 
+  text-shadow: 2px 2px 5px rgb(9, 87, 9); 
+}
 
 #home-content { display: flex; padding: 50px 0; background: rgb(231, 231, 231); border: 4px solid green}
 
@@ -65,22 +75,21 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 500px;
-  width: 30%;
+  height: 36rem;
+  width: max(20rem, 30%);
   color: black;
   background: white;
   border: 1px solid green;
   transform: translateX(-80%);
   transition: transform 0.5s ease-in;
 }
-
-.from-left h1 { text-align: center; font-family: 'Vidaloka', serif; font-size: 30px; width: 80%; color: green; }
-.from-left span { text-align: center; font-family: 'Vidaloka', serif; font-size: 16px; width: 80%; color: rgb(65, 65, 65); }
+.from-left h1 { text-align: center; font-family: 'Vidaloka', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); width: 80%; color: green; }
+.from-left span { margin-bottom: 2rem; text-align: center; font-family: 'Vidaloka', serif; font-size: clamp(0.875rem, 2.5vw, 1rem); width: 80%; color: rgb(65, 65, 65); }
 .from-left > span > span { color: green; }
 
 .from-right-1 {
-  height: 400px;
-  width: 40%;
+  height: 33rem;
+  width: max(20rem, 40%);
   background: url("https://images.pexels.com/photos/4498220/pexels-photo-4498220.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-size: cover;
   background-position: center;
@@ -90,8 +99,8 @@
 }
 
 .from-right-2 {
-  height: 500px;
-  width: 30%;
+  height: 33rem;
+  width: max(20rem, 40%);
   background: url("https://images.pexels.com/photos/3965514/pexels-photo-3965514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-size: cover;
   background-position: bottom;
@@ -102,11 +111,4 @@
 
 .slide-side.appear { transform: translateX(0); }
 
-@media (max-width: 700px) {
-  #intro-text span { font-size: 16px; }
-  #intro-text h1, #intro-text h1 span { font-size: 30px; }
-  #home-slide { min-height: 400px; }
-  #home-slide h1, #home-slide h1 span { font-size: 30px; }
-  .from-left, .from-right-1, .from-right-2 { width: 100%; }
-  .slide-side h1 { font-size: 20px; }
-}
+@media (max-width: 700px) { #home-slide { min-height: 25rem; } }

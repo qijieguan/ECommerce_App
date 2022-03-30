@@ -18,7 +18,7 @@ export default function View() {
     
     useEffect(() => {
         if (onLoad) { document.querySelector("#All").classList.add('toggleColor'); setLoad(false); }
-        if (!word || !word.length || status === "Filter") { setStatus("Done"); return; }  
+        if (!word || !word.length || status === "onFilter") { setStatus("Done"); return; }  
 
         resetActive();
         setList(items.filter(item => item.Name.toLowerCase().includes(word.toLowerCase())));
@@ -26,7 +26,7 @@ export default function View() {
     }, [dispatch, onLoad, word, update, status, items, cart]);
 
     const resetActive = () => {
-        let list = document.querySelectorAll(".filter-li");
+        let list = document.querySelectorAll(".filter-btn");
         list.forEach(el => { el.classList.remove('toggleColor'); });
     }
 
@@ -40,7 +40,7 @@ export default function View() {
             setList(result);
         }
         else { setList(items); }
-        setStatus("Filter");
+        setStatus("onFilter");
         setUpdate(!update);
         dispatch(setSearch(""));
     }
@@ -49,16 +49,16 @@ export default function View() {
         <div id="view-page">
             <Cart/>
             <div id="items-display">
-                <div id="filter-interface">
-                    <div className="filter-li" id="All" onClick={handleClick}>All</div>
-                    <div className='filter-li' id= "Beauty" onClick={handleClick}>Beauty</div>
-                    <div className="filter-li" id="Cleaning" onClick={handleClick}>Cleaning</div>
-                    <div className="filter-li" id="Clothes" onClick={handleClick}>Clothes</div>
-                    <div className="filter-li" id="Electronic" onClick={handleClick}>Electronic</div>
-                    <div className="filter-li" id="Furniture" onClick={handleClick}>Furniture</div>
-                    <div className="filter-li" id="Food" onClick={handleClick}>Food</div>
-                    <div className='filter-li' id="Drinks" onClick={handleClick}>Drinks</div>
-                    <div className='filter-li' id="Toy" onClick={handleClick}>Toy</div>
+                <div id="filter">
+                    <div className="filter-btn" id="All" onClick={handleClick}>All</div>
+                    <div className='filter-btn' id= "Beauty" onClick={handleClick}>Beauty</div>
+                    <div className="filter-btn" id="Cleaning" onClick={handleClick}>Cleaning</div>
+                    <div className="filter-btn" id="Clothes" onClick={handleClick}>Clothes</div>
+                    <div className="filter-btn" id="Electronic" onClick={handleClick}>Electronic</div>
+                    <div className="filter-btn" id="Furniture" onClick={handleClick}>Furniture</div>
+                    <div className="filter-btn" id="Food" onClick={handleClick}>Food</div>
+                    <div className='filter-btn' id="Drinks" onClick={handleClick}>Drinks</div>
+                    <div className='filter-btn' id="Toy" onClick={handleClick}>Toy</div>
                 </div>
                 {list && list.length  ?
                     list.map(item => <Item key={item.id} item={item} />)

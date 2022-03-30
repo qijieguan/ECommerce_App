@@ -2,7 +2,7 @@
     position: absolute; 
     top: 0; 
     display: flex; 
-    min-height: 60px; 
+    min-height: 3.5rem; 
     width: 100%;  
     background: transparent; 
     z-index: 1; 
@@ -10,22 +10,23 @@
 
 #logo {
     display: inline-flex;
-    margin: 0 50px 0 20px;
+    margin: 0 clamp(0rem, 2.5vw, 2rem) 0 clamp(0.1rem, 2.5vw, 3rem);
     width: 20%;
     font-family: 'Lobster', cursive;
-    font-size: 24px;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
     color: aquamarine;
     text-shadow: 0 0 3px grey;
 }
 
-#search { margin-right: auto; position: relative; display: inline-flex; justify-content: center; padding: 1px 0; width: 400px; }
+#search { margin-right: auto; position: relative; display: inline-flex; justify-content: center; padding: 1px 0; width: 28rem; }
 #search-bar { width: 80%; border-radius: 3px 0 0 3px; outline: none; }
 #search-bar:focus { border: 2px solid orange; }
+#search-bar::placeholder { font-size: clamp(0.875rem, 2.5vw, 1rem); }
 .removeBottom { border-bottom-width: 0 !important; }
 #search-btn {
     margin-right: auto;
     display: inline-flex;
-    height: 40px;
+    height: 2.45rem;
     width: 20%;
     background: orange;
     border-radius: 0 3px 3px 0;
@@ -45,30 +46,29 @@
 }
 
 .dropdown-li {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
     text-indent: 10px;
-    height: 35px;
-    line-height: 35px;
+    height: 2.5rem;
+    line-height: 2.5rem;
     width: 100%;
     background: white;
     border: 1px solid rgb(221, 221, 221);
 }
 .dropdown-li:hover { color: white; background: orange; }
 
-#nav-links { margin-right: 50px; }
+#nav-links { margin-right: clamp(0rem, 2.5vw, 3rem) }
 #nav-links button { 
-    margin-right: 30px; 
+    margin-right: clamp(0rem, 2.5vw, 2rem); 
     height: 100%;
     text-shadow: 0 0 3px grey; 
     color: white; 
     background: transparent;
     box-shadow: none; 
 }
-
 #nav-links button:hover { color: aquamarine; }
 .active { color: aquamarine !important; border-bottom: 2px solid aquamarine; }
+.nav-link { font-size: clamp(0.8rem, 2.5vw, 0.9rem); }
 
 @media (max-width: 700px) {
-    #logo { margin: 0 0 0 8px; font-size: 20px; }
-    #search { height: 30px; margin-right: 10px; width: 300px; }
-    #nav-links, #nav-links button  { margin-right: 0; }
+    #search { height: 30px; margin-right: 10px; width: 20rem; }
 }

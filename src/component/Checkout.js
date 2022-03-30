@@ -49,8 +49,8 @@ const Checkout = () => {
         <div style={{display: 'flex', marginTop: '100px'}}>
             <div id="checkout-msg" style={{display: cart.length === 0 ? 'flex' : 'none'}}>   
                 <div>{message}</div>
-                <AiOutlineShoppingCart size={225} color='gray' style={{display: paid ? 'none' : 'block'}}/>
-                <BsCheckCircle size={225} color='green' style={{display: paid ? 'block' : 'none'}}/>
+                <AiOutlineShoppingCart id='cart-icon' color='gray' style={{display: paid ? 'none' : 'block'}}/>
+                <BsCheckCircle id='checkmark-icon' color='green' style={{display: paid ? 'block' : 'none'}}/>
             </div>
             {cart && cart.length ?
                 <div style={{display: 'flex', width: '80%'}}>

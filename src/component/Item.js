@@ -35,8 +35,8 @@ const Item = ({item}) => {
 
     const onEnter = () => {
         let element = document.getElementById(item.id);
-        if (element.getClientRects()[0].x < 100) {element.style.marginLeft = '175px';}
-        else if (element.getClientRects()[0].x > 800) {element.style.marginRight = '175px';}
+        if (element.getClientRects()[0].x < 100) {element.style.marginLeft = '10.5rem';}
+        else if (element.getClientRects()[0].x > 800) {element.style.marginRight = '10.5rem';}
         element.getElementsByClassName("item-description")[0].style.display = "flex";
     }
 
@@ -54,15 +54,15 @@ const Item = ({item}) => {
                 <div className="item-details">
                     <h1 className="item-name">{item.Name} </h1>
                     <div className="item-description">{item.Description}</div>
-                    <div style={{display: 'flex', justifyContent: 'space-between', width: '95%', height: '50px'}}>
+                    <div style={{display: 'flex', justifyContent: 'space-between', width: '95%', height: '3.2rem'}}>
                         <div className="item-price">
-                            Price: <span style={{fontSize: "20px", color: "rgb(4, 165, 4)", fontWeight: 'bold'}}>$</span>
-                            <span style={{color: "rgb(4, 165, 4)", fontSize: '20px'}}>
+                            Price: <span style={{color: "rgb(4, 165, 4)"}}>$</span>
+                            <span style={{color: "rgb(4, 165, 4)"}}>
                                 {parseFloat(item.Price).toFixed(2)}
                             </span>
                         </div>
                         <div className="item-stock">
-                            Stock: <span style={{color: "navy", fontSize: '20px', fontWeight: 'bold'}}>{item.Stock}</span>
+                            Stock: <span style={{color: "navy"}}>{item.Stock}</span>
                         </div>
                     </div>
                 </div>
