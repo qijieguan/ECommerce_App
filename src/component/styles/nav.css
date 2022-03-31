@@ -5,7 +5,7 @@
     min-height: 3.5rem; 
     width: 100%;  
     background: transparent; 
-    z-index: 1; 
+    z-index: 3; 
 }
 
 #logo {
@@ -19,18 +19,18 @@
 }
 
 #search { margin-right: auto; position: relative; display: inline-flex; justify-content: center; padding: 1px 0; width: 28rem; }
-#search-bar { width: 80%; border-radius: 3px 0 0 3px; outline: none; }
-#search-bar:focus { border: 2px solid orange; }
-#search-bar::placeholder { font-size: clamp(0.875rem, 2.5vw, 1rem); }
-.removeBottom { border-bottom-width: 0 !important; }
+#search-bar { width: 80%; min-height: 2.5rem; border-radius: 3px 0 0 3px; outline: none; }
+#search-bar:focus { border-bottom: 2px solid yellowgreen; }
+#search-bar::placeholder { font-size: clamp(0.75rem, 2.5vw, 0.875rem); }
 #search-btn {
     margin-right: auto;
     display: inline-flex;
-    height: 2.45rem;
+    padding: clamp(0.25rem, 2.5vw, 0.45rem) 0;
     width: 20%;
-    background: orange;
+    background: yellowgreen;
     border-radius: 0 3px 3px 0;
 }
+#search-btn:hover { box-shadow: 0 0 5px green; }
 
 #dropdown-ul {
     position: absolute;
@@ -40,21 +40,19 @@
     flex-direction: column;
     width: 80%;
     transform: translateY(100%);
-    border: 2px solid orange;
+    border: 1px solid rgb(199, 199, 199);
     border-top: 0;
-    z-index: 5;
+    background: white;
 }
-
 .dropdown-li {
     font-size: clamp(0.875rem, 2.5vw, 1rem);
     text-indent: 10px;
     height: 2.5rem;
     line-height: 2.5rem;
     width: 100%;
-    background: white;
-    border: 1px solid rgb(221, 221, 221);
+    border-bottom: 1px solid rgb(199, 199, 199);
 }
-.dropdown-li:hover { color: white; background: orange; }
+.dropdown-li:hover { color: white; background: yellowgreen; }
 
 #nav-links { margin-right: clamp(0rem, 2.5vw, 3rem) }
 #nav-links button { 

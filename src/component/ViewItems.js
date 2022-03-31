@@ -3,9 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setSearch } from './actions/index.js';
 import Item from './Item.js';
 import Cart from './Cart.js';
+//import uuid from 'react-uuid';
 
 export default function View() {
 
+    //const tagName = ["All", "Beauty", "Cleaning", "Clothes", "Electronic", "Furniture", "Food", "Drinks", "Toy"];
     const dispatch = useDispatch();
     const items = useSelector(state => state.itemList);
     const word = useSelector(state => state.word);
@@ -17,7 +19,7 @@ export default function View() {
     const [onLoad, setLoad] = useState(true);
     
     useEffect(() => {
-        if (onLoad) { document.querySelector("#All").classList.add('toggleColor'); setLoad(false); }
+        if (onLoad) { document.querySelector("#All").classList.add('toggleTag'); setLoad(false); }
         if (!word || !word.length || status === "onFilter") { setStatus("Done"); return; }  
 
         resetActive();
@@ -27,16 +29,16 @@ export default function View() {
 
     const resetActive = () => {
         let list = document.querySelectorAll(".filter-btn");
-        list.forEach(el => { el.classList.remove('toggleColor'); });
+        list.forEach(el => { el.classList.remove('toggleTag'); });
     }
 
     const handleClick = e => {
         e.preventDefault();
-        resetActive();
-        document.querySelector('#' + e.target.id).classList.add('toggleColor');
 
-        if (e.target.id !== "All") {
-            let result = items.filter(item => e.target.id === item.Tag);
+        resetActive();
+        document.querySelector('#' + e.currentTarget.id).classList.add('toggleTag');
+        if (e.currentTarget.id !== "All") {
+            let result = items.filter(item => e.currentTarget.id === item.Tag);
             setList(result);
         }
         else { setList(items); }
@@ -50,15 +52,42 @@ export default function View() {
             <Cart/>
             <div id="items-display">
                 <div id="filter">
-                    <div className="filter-btn" id="All" onClick={handleClick}>All</div>
-                    <div className='filter-btn' id= "Beauty" onClick={handleClick}>Beauty</div>
-                    <div className="filter-btn" id="Cleaning" onClick={handleClick}>Cleaning</div>
-                    <div className="filter-btn" id="Clothes" onClick={handleClick}>Clothes</div>
-                    <div className="filter-btn" id="Electronic" onClick={handleClick}>Electronic</div>
-                    <div className="filter-btn" id="Furniture" onClick={handleClick}>Furniture</div>
-                    <div className="filter-btn" id="Food" onClick={handleClick}>Food</div>
-                    <div className='filter-btn' id="Drinks" onClick={handleClick}>Drinks</div>
-                    <div className='filter-btn' id="Toy" onClick={handleClick}>Toy</div>
+                    <div className="filter-btn" id="All" onClick={handleClick}>
+                        <span>All</span>
+                        <div className='filter-overlay'/>
+                    </div>
+                    <div className='filter-btn' id= "Beauty" onClick={handleClick}>
+                        <span>Beauty</span>
+                        <div className='filter-overlay'/>
+                    </div>
+                    <div className="filter-btn" id="Cleaning" onClick={handleClick}>
+                        <span>Cleaning</span>
+                        <div className='filter-overlay'/>
+                    </div>
+                    <div className="filter-btn" id="Clothes" onClick={handleClick}>
+                        <span>Clothes</span>
+                        <div className='filter-overlay'/>
+                    </div>
+                    <div className="filter-btn" id="Electronic" onClick={handleClick}>
+                        <span>Electronic</span>
+                        <div className='filter-overlay'/>
+                    </div>
+                    <div className="filter-btn" id="Furniture" onClick={handleClick}>
+                        <span>Furniture</span>
+                        <div className='filter-overlay'/>
+                    </div>
+                    <div className="filter-btn" id="Food" onClick={handleClick}>
+                        <div>Food</div>
+                        <div className='filter-overlay'/>
+                    </div>
+                    <div className='filter-btn' id="Drinks" onClick={handleClick}>
+                        <span>Drinks</span>
+                        <div className='filter-overlay'/>
+                    </div>
+                    <div className='filter-btn' id="Toy" onClick={handleClick}>
+                        <span>Toy</span>
+                        <div className='filter-overlay'/>
+                    </div>
                 </div>
                 {list && list.length  ?
                     list.map(item => <Item key={item.id} item={item} />)
@@ -69,3 +98,4 @@ export default function View() {
         </div>
     );
 }
+

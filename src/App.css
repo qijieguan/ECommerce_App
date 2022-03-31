@@ -20,27 +20,52 @@
 body { overflow-x: hidden; }
 
 #view-page { margin-top: 3.5rem; min-height: 800px; background-color: teal; }
-#items-display { padding-bottom: 6rem; position: relative; min-height: 700px; width: 100%; }
-#view-default { display: flex;  text-align: center; margin-top: 150px; font-size: 60px; font-style: italic; color: white; }
+#items-display { padding: 1rem 0 6rem 0; position: relative; width: 100%; }
+#view-default { 
+  display: flex;  
+  text-align: center; 
+  margin-top: 9rem; 
+  font-size: clamp(3rem, 5vw, 4.5rem); 
+  font-style: italic; 
+  color: white; 
+}
 
-#filter { display: block; min-height: 60px; width: 100%; z-index: 3; }
+#filter { display: block; min-height: 3.5rem; width: 100%; z-index: 3; }
 
 .filter-btn {
+  position: relative;
   margin: 5% 0 5px 2rem;
-  padding: clamp(0.25rem, 2.5vw, 0.5rem) 0;
+  padding: clamp(0rem, 1vw, 0.375rem) 0;
   width: max(7rem, 4vw);
   display: inline-flex;
-  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  font-size: clamp(0.5rem, 1vw, 1rem);
   color: teal;
   background: white;
   box-shadow: 0 0 2px black;
   border-radius: 1.25rem;
+  overflow: hidden;
+  z-index: 2; 
+}
+.filter-btn span { z-index: 2; }
+
+.filter-overlay { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  background: greenyellow;
+  transition: all 0.3s ease-in;
+  border-radius: 2.5rem;
+  opacity: 0.5;
+  z-index: 1;
 }
 
-.filter-btn:hover { border: 2px solid teal; }
-.toggleColor {
+.filter-btn:hover .filter-overlay { height: 100%; width: 100%; border-radius: 1.25rem; }
+
+.toggleTag {
   color: white !important;  
-  background: rgb(255, 174, 24) !important;
+  background: yellowgreen !important;
   pointer-events: none !important;
 }
 

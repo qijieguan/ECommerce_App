@@ -40,6 +40,8 @@ export default function Header() {
             document.getElementById("header").style.background = 'transparent';
             document.getElementById("search-bar").style.display = 'none';
             document.getElementById("search-btn").style.display = 'none';
+            setWord('');
+            setDropDown('');
         }
         else {
             document.getElementById('header').style.background = 'teal';   
@@ -77,11 +79,7 @@ export default function Header() {
                     } 
                 };
             });
-            let search = document.querySelector('#search-bar');
-            if (result.length) { search.classList.add('removeBottom'); }
-            else { search.classList.remove('removeBottom'); }
         }
-        else { document.querySelector('#search-bar').classList.remove('removeBottom'); }
         setDropDown(result);
         setWord(e.target.value); 
     }
@@ -94,7 +92,6 @@ export default function Header() {
         history.push("/View");
         setDropDown([]);
         setWord("");
-        document.querySelector('#search-bar').classList.remove('removeBottom');
     }
 
     return (
@@ -109,7 +106,7 @@ export default function Header() {
                     style={{borderBottomWidth: '2px'}}
                 /> 
                 <button id="search-btn" type="submit">
-                    <AiOutlineSearch style={{display: 'flex'}} size={25} color='grey'/>
+                    <AiOutlineSearch style={{display: 'flex'}} size={25} color='green'/>
                 </button> 
                 {dropdown && dropdown.length ?
                     <div id="dropdown-ul">
