@@ -69,26 +69,62 @@
   text-shadow: 2px 2px 5px rgb(9, 87, 9); 
 }
 
-#home-content { display: flex; padding: 50px 0; background: rgb(231, 231, 231); border: 4px solid green}
+#home-content {
+  position: relative;
+  display: flex; 
+  justify-content: space-between;
+  background: rgb(231, 231, 231); 
+}
 
-.from-left {  
+#home-content > h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 20px;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-family: 'Vidaloka', serif; 
+  color: burlywood;
+  z-index: 2;
+}
+
+#slide-card {
+  padding: 50px 0; 
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background: seagreen;
+  border-right: 2px solid gray;
+}
+
+.from-left { 
+  margin: 10rem 10rem 0 auto; 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 36rem;
-  width: max(20rem, 30%);
+  min-height: 22rem;
+  width: max(16rem, 45%);
   color: black;
   background: white;
   border: 1px solid green;
   transform: translateX(-80%);
   transition: transform 0.5s ease-in;
+  box-shadow: 0 0 5px black;
+  z-index: 2;
 }
 .from-left h1 { text-align: center; font-family: 'Vidaloka', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); width: 80%; color: green; }
 .from-left span { margin-bottom: 2rem; text-align: center; font-family: 'Vidaloka', serif; font-size: clamp(0.875rem, 2.5vw, 1rem); width: 80%; color: rgb(65, 65, 65); }
 .from-left > span > span { color: green; }
 
+#slide-image { 
+  min-height: 50rem;
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  min-height: 30rem;
+  width: 50%;
+}
 .from-right-1 {
-  height: 33rem;
+  min-height: 25rem;
   width: max(20rem, 40%);
   background: url("https://images.pexels.com/photos/4498220/pexels-photo-4498220.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-size: cover;
@@ -99,8 +135,9 @@
 }
 
 .from-right-2 {
-  height: 33rem;
-  width: max(20rem, 40%);
+  margin-top: 10rem;
+  min-height: 25rem;
+  width: max(20rem, 70%);
   background: url("https://images.pexels.com/photos/3965514/pexels-photo-3965514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-size: cover;
   background-position: bottom;
