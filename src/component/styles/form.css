@@ -11,26 +11,26 @@
   border: 1px solid red;
 }
 
-#image-section { min-height: 33rem; padding: 50px 0 100px 0; width: 100%; background: teal; }
+#image-section { min-height: 33rem; padding: 3rem 0 6rem 0; width: 100%; background: teal; }
 
-.Dropzone-Panel { vertical-align: top; display: inline-flex; height: 31rem; width: 25%; margin: 3.2rem; }
+.Dropzone-Panel { height: 15rem; width: 80%; margin-left: 10%; }
 
 .Dropzone {
   display: flex;
-  text-align: center;
   font-size: clamp(1.3rem, 2.5vw, 1.5rem);
   text-shadow: 1px 1px rgb(90, 90, 90);
-  height: 31rem;
-  width: 90%;
-  color: yellow;
+  height: 100%;
+  width: 100%;
+  color: teal;
   background: rgb(230, 230, 230);
   border-radius: 10px;
-  box-shadow: 0 0 4px rgb(53, 53, 53);
+  border: 3px dotted teal;
 }
 
 #preview-display {
-  display: inline-flex;
+  display: flex;
   height: 37rem;
+  margin: 5rem 0 0 17.5%;
   width: 65%;
   background: white;
   border-radius: 10px;
@@ -38,16 +38,15 @@
 }
 
 #preview-default {
-  font-size: 30px;
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
   text-shadow: 1px 1px rgb(160, 160, 160);
-  color: rgb(180, 180, 180);
+  color: teal;
   background: white;
 }
 
 #preview-image { height: 100%; width: 100%; object-fit: contain; border-radius: 10px; }
 
-#input-section { padding-bottom: 3.2rem; width: 100%; background: white; }
-#input-section * { color: teal; font-size: 18px; background: white; }
+#input-section { padding-bottom: 3.2rem; width: 100%; color:teal; background: white; }
 
 #input-fields {
   display: grid;
@@ -56,7 +55,7 @@
   grid-template-rows: repeat(7, auto);
 }
 
-#name-label, #description-label, #stock-label, #price-label, #tag-label { text-align: right; }
+#name-label, #description-label, #stock-label, #price-label, #tag-label { text-align: right; font-size: clamp(0.5rem, 5vw, 1rem); }
 
 #input-tag { width: 50%; background: rgb(236, 236, 236); }
 #input-tag * { text-align: center; background: rgb(236, 236, 236);}
@@ -64,7 +63,7 @@
 #submit-form { display: flex; width: 100%; min-height: 10rem; background: rgb(218, 218, 218); }
 
 #image-label, #input-label {
-  margin: 60px 0 100px 50px;
+  margin: 4.5rem 0 6rem 3.2rem;
   display: flex;
   justify-content: unset;
   font-size: clamp(2rem, 5vw, 3rem); 

@@ -54,9 +54,9 @@
 }
 .dropdown-li:hover { color: white; background: yellowgreen; }
 
-#nav-links { margin-right: clamp(0rem, 2.5vw, 3rem) }
+#nav-links { margin-right: clamp(0.25rem, 2.5vw, 3rem) }
 #nav-links button { 
-    margin-right: clamp(0rem, 2.5vw, 2rem); 
+    margin-right: clamp(0.25rem, 2.5vw, 2rem); 
     height: 100%;
     text-shadow: 0 0 3px grey; 
     color: white; 

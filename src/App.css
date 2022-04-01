@@ -35,7 +35,7 @@ body { overflow-x: hidden; }
 .filter-btn {
   position: relative;
   margin: 5% 0 5px 2rem;
-  padding: clamp(0rem, 1vw, 0.375rem) 0;
+  padding: clamp(0.125rem, 1vw, 0.375rem) 0;
   width: max(7rem, 4vw);
   display: inline-flex;
   font-size: clamp(0.5rem, 1vw, 1rem);
@@ -79,6 +79,9 @@ input, textarea {
   border-radius: 5px;
 }
 input:focus, textarea:focus, select:focus { outline-color: teal; }
+input::placeholder, textarea::placeholder, option {
+  font-size: clamp(0.875rem, 2.5vw, 1rem); 
+}
 
 select { min-height: 2.3rem; border-radius: 5px; }
 a { text-decoration: none; }

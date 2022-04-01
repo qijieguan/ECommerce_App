@@ -14,7 +14,7 @@ export default function Form() {
     const [name, setName] = useState("");
     const [description, setDesc] = useState("")
     const [stock, setStock] = useState("");
-    const [price, setPrice] = useState(0);
+    const [price, setPrice] = useState("");
     const [isSubmit, setSubmit] = useState(false);
 
     const dispatch = useDispatch();
@@ -93,7 +93,7 @@ export default function Form() {
                 <div id="input-fields">
 
                     <div id="name-label">Name<span style={dotStyle}>*</span></div>
-                    <input id="input-name" name="name" style={Object.assign({height: '50px'}, inputStyle)} 
+                    <input id="input-name" name="name" style={{height: '3rem'}} 
                         value={name}
                         placeholder="Enter name here..."
                         onChange={handleChange}
@@ -102,7 +102,7 @@ export default function Form() {
 
                     <div id="description-label">Description<span style={dotStyle}>*</span></div>
                     <textarea id="input-description" name="description" 
-                        style={Object.assign({height: '200px'}, inputStyle)} 
+                        style={{height: '15rem'}} 
                         value={description}
                         placeholder="Enter description here..."
                         onChange={handleChange} 
@@ -111,7 +111,7 @@ export default function Form() {
 
                     <div id="stock-label">Stock<span style={dotStyle}>*</span></div>
                     <input id="input-stock" name="stock" type="number" min="0"
-                        style={Object.assign({width: '25%'}, inputStyle)}
+                        style={{width: '25%'}}
                         value={stock}
                         placeholder="0"
                         onChange={handleChange}
@@ -120,7 +120,7 @@ export default function Form() {
 
                     <div id="price-label">Price<span style={dotStyle}>*</span></div>
                     <input id="input-price" name="price" type="number" min="0.00" step=".01"
-                        style={Object.assign({width: '25%'}, inputStyle)}
+                        style={{width: '25%'}}
                         value={price}
                         placeholder="$0.00"
                         onChange={handleChange}
@@ -150,6 +150,5 @@ export default function Form() {
     );
 }
 
-const dotStyle = { fontSize: '20px',  color: 'red', }
-const inputStyle = { fontSize: '20px', background: 'rgb(236,236,236)' }
+const dotStyle = { fontSize: '1.5rem',  color: 'red', }
 
