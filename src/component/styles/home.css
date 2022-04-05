@@ -59,6 +59,7 @@
   font-size: clamp(2rem, 5vw, 3.5rem); 
   width: max(20rem, 60%); 
   color: white; 
+  border: 1px solid white;
 }
 #home-slide h1 span { 
   font-size: clamp(2rem, 5vw, 3.5rem); 

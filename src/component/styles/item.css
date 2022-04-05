@@ -73,28 +73,38 @@
 .item-price, .item-stock { font-size: clamp(0.75rem, 2.5vw, 1.125rem); }
 .item-price span, .item-stock span { font-size: clamp(1rem, 2.5vw, 1.125rem); }
 
+#expand-page { margin-top: 3.3rem; padding: 3rem 0; display: flex; flex-direction: column; min-height: 47rem; background: rgb(43, 40, 40); }
+#expand-item { 
+    display: flex; 
+    justify-content: space-around; 
+    padding: 2rem 0; 
+    width: 95%; 
+    background: black;
+    box-shadow: 0 0 5px;
+    border-radius: 1rem;
+}
+#expand-image { margin-bottom: auto; max-height: 35rem; width: max(16rem, 45%); box-shadow: 0 0 5px; border-radius: 3px; }
+#expand-details { display: grid; grid-template-columns: 50% 50%; width: max(16rem, 45%); }
+#expand-name { grid-column: 1/ 3; font-size: clamp(2rem, 5vw, 2.5rem); font-weight: bolder; color: wheat; }
+#expand-description { grid-column: 1/ 3; margin: 8rem 0; font-size: clamp(1rem, 2.5vw, 1.3rem); font-family: 'Roboto', sans-serif; color: antiquewhite; }
 #add-cart {
     margin: 1.8rem 9rem 0 0;
-    padding: 0 10px;
-    min-height: 3.3rem;
+    grid-column: 1 / 2;
+    padding: clamp(1rem, 2.5vw, 1.25rem) 0;
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
     color: white;
+    width: max(6rem, 50%);
     background: limegreen;
     box-shadow: 0 0 5px green;
     border-radius: 3px;
 }
 #add-cart:hover { box-shadow: 0 0 10px green; }
-#expand-page { margin-top: 50px; padding: 3rem 0; display: flex; flex-direction: column; min-height: 47rem; background: teal; }
-#expand-item { display: flex; padding-top: 1rem; }
-#expand-image { max-height: 35rem; max-width: 50%; box-shadow: 0 0 5px; border-radius: 3px; }
-#expand-details { align-self: flex-start; width: 40%; }
 #expand-details div { 
-    display: inline-flex; 
     margin: 2rem 9rem 0 0; 
     font-size: clamp(1rem, 2.5vw, 1.2rem); 
+    width: 100%;
     color: wheat; 
 }
-#expand-name { font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: bolder; color: wheat; }
-#expand-description { margin: 125px 0; font-size: clamp(1rem, 2.5vw, 1.3rem); font-family: 'Roboto', sans-serif; color: antiquewhite; }
 
 #cart {
     position: relative;
@@ -134,7 +144,5 @@
 
 @media (max-width: 700px) {
     #expand-item { flex-direction: column; }
-    #expand-details { align-self: center; }
-    #expand-details * { width: 100%;}
-    #expand-details h1 { margin: 50px 0 20px 0; }
+    #expand-details h1 { margin: 3.3rem 0 1.25rem 0; }
 }

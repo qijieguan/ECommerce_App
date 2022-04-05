@@ -17,7 +17,7 @@
 
 body { overflow-x: hidden; }
 
-#view-page { margin-top: 3.5rem; min-height: 52rem; background-color: teal; }
+#view-page { margin-top: 3.5rem; min-height: 52rem; background: rgb(43, 40, 40); }
 #items-display { padding: 1rem 0 6rem 0; position: relative; width: 100%; }
 #view-default { 
   display: flex;  

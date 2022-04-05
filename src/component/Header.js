@@ -36,7 +36,7 @@ export default function Header() {
 
     const toggleSearchBar = (location) => {
         let pathname = "/" + location.pathname.split('/')[1];
-        if (pathname === '/' || pathname === '/Form') {  
+        if (pathname === '/' || pathname === '/Form' || pathname === "/About") {  
             document.getElementById("header").style.background = 'transparent';
             document.getElementById("search-bar").style.display = 'none';
             document.getElementById("search-btn").style.display = 'none';
@@ -44,7 +44,7 @@ export default function Header() {
             setDropDown('');
         }
         else {
-            document.getElementById('header').style.background = 'teal';   
+            document.getElementById('header').style.background = 'black';   
             document.getElementById("search-bar").style.display = 'inline-flex';
             document.getElementById("search-btn").style.display = 'inline-flex';
         }
