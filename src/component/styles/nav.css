@@ -31,6 +31,7 @@
     border-radius: 0 3px 3px 0;
 }
 #search-btn:hover { box-shadow: 0 0 5px green; }
+#search-btn * { font-size: 1.6rem; color: rgb(28, 128, 28) }
 
 #dropdown-ul {
     position: absolute;

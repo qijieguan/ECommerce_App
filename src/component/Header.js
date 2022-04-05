@@ -52,7 +52,7 @@ export default function Header() {
 
     const activeObserver = () => {
         const faders = document.querySelectorAll('.fade-slide');
-        const sliders = document.querySelectorAll('.from-left');
+        //const sliders = document.querySelectorAll('.from-left');
         const appearOptions = { threshold: 0, rootMargin: '0px 0px 0px 0px' }; 
 
         const appearOnScroll = new IntersectionObserver (
@@ -64,7 +64,7 @@ export default function Header() {
         appearOptions);  
 
         faders.forEach(fader => { appearOnScroll.observe(fader); });
-        sliders.forEach(slider => { appearOnScroll.observe(slider); });
+        //sliders.forEach(slider => { appearOnScroll.observe(slider); });
     }
 
     const handleChange = e => { 
@@ -104,9 +104,7 @@ export default function Header() {
                     onChange={handleChange}
                     style={{borderBottomWidth: '2px'}}
                 /> 
-                <button id="search-btn" type="submit">
-                    <AiOutlineSearch style={{display: 'flex'}} size={25} color='green'/>
-                </button> 
+                <button id="search-btn" type="submit"><AiOutlineSearch/></button> 
                 {dropdown && dropdown.length ?
                     <div id="dropdown-ul">
                         {dropdown.map(name => 

@@ -52,40 +52,31 @@ export default function View() {
             <Cart/>
             <div id="items-display">
                 <div id="filter">
-                    <div className="filter-btn" id="All" onClick={handleClick}>
-                        <span>All</span>
+                    <div className="filter-btn" id="All" onClick={handleClick}>All
                         <div className='filter-overlay'/>
                     </div>
-                    <div className='filter-btn' id= "Beauty" onClick={handleClick}>
-                        <span>Beauty</span>
+                    <div className='filter-btn' id= "Beauty" onClick={handleClick}>Beauty
                         <div className='filter-overlay'/>
                     </div>
-                    <div className="filter-btn" id="Cleaning" onClick={handleClick}>
-                        <span>Cleaning</span>
+                    <div className="filter-btn" id="Cleaning" onClick={handleClick}>Cleaning
                         <div className='filter-overlay'/>
                     </div>
-                    <div className="filter-btn" id="Clothes" onClick={handleClick}>
-                        <span>Clothes</span>
+                    <div className="filter-btn" id="Clothes" onClick={handleClick}>Clothes
                         <div className='filter-overlay'/>
                     </div>
-                    <div className="filter-btn" id="Electronic" onClick={handleClick}>
-                        <span>Electronic</span>
+                    <div className="filter-btn" id="Electronic" onClick={handleClick}>Electronic
                         <div className='filter-overlay'/>
                     </div>
-                    <div className="filter-btn" id="Furniture" onClick={handleClick}>
-                        <span>Furniture</span>
+                    <div className="filter-btn" id="Furniture" onClick={handleClick}>Furniture
                         <div className='filter-overlay'/>
                     </div>
-                    <div className="filter-btn" id="Food" onClick={handleClick}>
-                        <div>Food</div>
+                    <div className="filter-btn" id="Food" onClick={handleClick}>Food
                         <div className='filter-overlay'/>
                     </div>
-                    <div className='filter-btn' id="Drinks" onClick={handleClick}>
-                        <span>Drinks</span>
+                    <div className='filter-btn' id="Drinks" onClick={handleClick}>Drinks
                         <div className='filter-overlay'/>
                     </div>
-                    <div className='filter-btn' id="Toy" onClick={handleClick}>
-                        <span>Toy</span>
+                    <div className='filter-btn' id="Toy" onClick={handleClick}>Toy
                         <div className='filter-overlay'/>
                     </div>
                 </div>

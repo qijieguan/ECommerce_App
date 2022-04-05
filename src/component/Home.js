@@ -23,7 +23,7 @@ export default function Home() {
                 <h1 className="fade-slide">More About Us</h1>
             </div>
             <div id="left-wrapper">
-                <div className='slide-side from-left'>
+                <div className='fade-slide from-left'>
                     <h1>Values Of Furnitures</h1>
                     <span>
                         Your Living Space Can Influence Your <span> Emotion</span> And 
@@ -37,7 +37,7 @@ export default function Home() {
                 <div className='from-right-1'/>  
             </div>
             <div id="left-wrapper">
-                <div className='slide-side from-left'>
+                <div className='fade-slide from-left'>
                     <h1>Become A Client Today</h1>
                     <span>
                         We Offer A Large Variety Of Furnitures <span> In-Store and Online</span>. 
