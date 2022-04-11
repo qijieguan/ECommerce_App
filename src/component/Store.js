@@ -5,7 +5,7 @@ import Item from './Item.js';
 import Cart from './Cart.js';
 //import uuid from 'react-uuid';
 
-export default function View() {
+export default function Store() {
 
     //const tagName = ["All", "Beauty", "Cleaning", "Clothes", "Electronic", "Furniture", "Food", "Drinks", "Toy"];
     const dispatch = useDispatch();
@@ -48,7 +48,7 @@ export default function View() {
     }
 
     return (
-        <div className="view-page">
+        <div className="store">
             <div className='overlay'/>
             <Cart/>
             <div className="items-display">
@@ -81,11 +81,11 @@ export default function View() {
                         <div className='filter-overlay'/>
                     </div>
                 </div>
-                <h1 className='view-label'>Browse Store</h1>
+                <h1 className='store-label'>Browse Store</h1>
                 {list && list.length  ?
                     list.map(item => <Item key={item.id} item={item} />)
                     :
-                    <div className="view-default flex">No Items to Display</div>
+                    <div className="store-default flex">No Items to Display</div>
                 }
             </div>
         </div>

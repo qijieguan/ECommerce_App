@@ -9,7 +9,7 @@
 }
 
 .logo {
-    margin: 0 clamp(0rem, 2.5vw, 2rem) 0 clamp(0.1rem, 2.5vw, 3rem);
+    margin: 0 clamp(0.1rem, 2.5vw, 2rem) 0 clamp(1rem, 2.5vw, 3rem);
     width: 20%;
     font-family: 'Lobster', cursive;
     font-size: clamp(1.2rem, 2.5vw, 1.5rem);
@@ -52,7 +52,7 @@
 }
 .dropdown-li:hover { color: white; background: yellowgreen; }
 
-.nav-links { margin-right: clamp(0.25rem, 2.5vw, 3rem); padding: 0.75rem 0.75rem; }
+.nav-links { margin-right: clamp(0.1rem, 2.5vw, 3rem); padding: 0.75rem 0.75rem; }
 .nav-links button { 
     margin-right: clamp(0.25rem, 2.5vw, 2rem); 
     height: 100%;

@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './component/Header.js';
 import Home from './component/Home.js';
-import View from './component/ViewItems.js';
+import Store from './component/Store.js';
 import ItemExpand from './component/ItemExpand.js';
 import Form from './component/Form.js';
 import Checkout from './component/Checkout.js';
@@ -24,8 +24,8 @@ function App() {
           <Header/>
           <Switch>
             <Route path="/" exact component={Home}/>
-            <Route path="/View" exact component={View}/>
-            <Route path="/View/:id" exact component={ItemExpand}/>
+            <Route path="/Store" exact component={Store}/>
+            <Route path="/Store/:id" exact component={ItemExpand}/>
             <Route path="/Checkout" exact component={Checkout}></Route>
             <Route path="/Form" exact component={Form}/>
             <Route path="/About" exact component={About}/>

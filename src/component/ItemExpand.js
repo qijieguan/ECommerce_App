@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { addCart } from './actions/index.js';
 import Cart from './Cart.js';
+import Comment from './Comment.js';
 
 const ItemExpand = () => {
 
@@ -37,6 +38,7 @@ const ItemExpand = () => {
                     <div className='expand-3'>Tag: {item.Tag}</div>
                 </div>
             </div>
+            <Comment/>
         </div>    
     );
 }

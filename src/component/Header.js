@@ -27,7 +27,7 @@ export default function Header() {
     const toggleLinks = (location) => {
         let pathname = "/" + location.pathname.split('/')[1];
         if (pathname === '/About') { pathname = '/' }
-        if (pathname === '/Checkout') { pathname = '/View' }
+        if (pathname === '/Checkout') { pathname = '/Store' }
         let elements = document.querySelectorAll('.nav-link');
         elements.forEach(el => el.classList.remove('active'))
         let element = document.getElementById(pathname);
@@ -99,7 +99,7 @@ export default function Header() {
         if (!word) { return; }
         if (e.target.textContent) { dispatch(setSearch(e.target.textContent)); }
         else { dispatch(setSearch(word)); } 
-        history.push("/View");
+        history.push("/Store");
         setDropDown([]); 
         setWord("");
         document.querySelector(".overlay").style.display = 'none'; 
