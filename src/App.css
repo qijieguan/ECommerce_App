@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Vidaloka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
 
 * {
   font-family: 'Poppin', sans-serif;
@@ -19,7 +19,15 @@
 
 .grid { display: grid; }
 
-.view-page { margin-top: 3.5rem; min-height: 52rem; background: rgb(43, 40, 40); }
+.view-page { position: relative; margin-top: 3.5rem; min-height: 52rem; background: rgb(43, 40, 40); }
+.view-label {
+  margin: 5rem 0 4rem 2rem;
+  font-size: clamp(2.75rem, 5vw, 3.5rem);
+  font-family: 'Playfair Display', serif;
+  color: wheat;
+  width: max(25rem, 40%);
+  border-bottom: 4px solid wheat;
+}
 .items-display { padding: 1rem 0 6rem 0; position: relative; width: 100%; }
 .view-default { 
   text-align: center; 
@@ -29,7 +37,7 @@
   color: white; 
 }
 
-.filter { display: block; min-height: 3.5rem; width: 100%; z-index: 3; }
+.filter { display: block; min-height: 3.5rem; width: 100%; }
 
 .filter-btn {
   position: relative;
@@ -43,7 +51,7 @@
   box-shadow: 0 0 2px black;
   border-radius: 1.25rem;
   overflow: hidden;
-  z-index: 2;
+  z-index: 1;
 }
 
 .filter-overlay { 
@@ -64,6 +72,17 @@
   color: white !important;  
   background: yellowgreen !important;
   pointer-events: none !important;
+}
+
+.overlay {
+  position: absolute;
+  display: none;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0.7;
+  z-index: 2;
 }
 
 button { box-shadow: 0 0 3px grey; border: 0; }

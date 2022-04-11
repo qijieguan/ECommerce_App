@@ -78,9 +78,20 @@ export default function Header() {
                     } 
                 };
             });
+            document.querySelector(".overlay").style.display = 'unset';
         }
+        else { document.querySelector(".overlay").style.display = 'none'; }
         setDropDown(result);
         setWord(e.target.value); 
+    }
+
+    const exitSearch = document.querySelector('.overlay');
+
+    if (exitSearch) {
+        exitSearch.addEventListener("click", () => {
+            exitSearch.style.display = 'none';
+            setDropDown([]);
+        });
     }
 
     const handleSubmit = e => {
@@ -89,10 +100,11 @@ export default function Header() {
         if (e.target.textContent) { dispatch(setSearch(e.target.textContent)); }
         else { dispatch(setSearch(word)); } 
         history.push("/View");
-        setDropDown([]);
+        setDropDown([]); 
         setWord("");
+        document.querySelector(".overlay").style.display = 'none'; 
     }
-
+    
     return (
         <header className='header flex'>
             <div className="logo flex">Shopping App</div>

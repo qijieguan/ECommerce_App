@@ -24,6 +24,7 @@ const ItemExpand = () => {
  
     return(
         <div className="expand-page flex">
+            <div className='overlay'/>
             <Cart/>
             <div className='expand-item flex'>
                 <img className="expand-image" src={url} alt=""/>

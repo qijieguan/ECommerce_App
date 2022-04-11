@@ -49,6 +49,7 @@ export default function View() {
 
     return (
         <div className="view-page">
+            <div className='overlay'/>
             <Cart/>
             <div className="items-display">
                 <div className="filter">
@@ -80,6 +81,7 @@ export default function View() {
                         <div className='filter-overlay'/>
                     </div>
                 </div>
+                <h1 className='view-label'>Browse Store</h1>
                 {list && list.length  ?
                     list.map(item => <Item key={item.id} item={item} />)
                     :

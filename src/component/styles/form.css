@@ -63,7 +63,7 @@
   margin: 4.5rem 0 6rem 3.2rem;
   justify-content: unset;
   font-size: clamp(2rem, 5vw, 3rem); 
-  font-family: 'Vidaloka', serif;
+  font-family: 'Playfair Display', serif;
   animation: fadeSlideRight 0.5s ease-in;
 }
 

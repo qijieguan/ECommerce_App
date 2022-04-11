@@ -35,8 +35,8 @@ const Item = ({item}) => {
 
     const onEnter = () => {
         let element = document.getElementById(item.id);
-        if (element.getClientRects()[0].x < 100) {element.style.marginLeft = '10.5rem';}
-        else if (element.getClientRects()[0].x > 800) {element.style.marginRight = '10.5rem';}
+        if (element.getClientRects()[0].x < 100) {element.style.marginLeft = '8.75rem';}
+        else if (element.getClientRects()[0].x > 800) {element.style.marginRight = '8.75rem';}
         element.getElementsByClassName("item-description")[0].style.display = "flex";
     }
 

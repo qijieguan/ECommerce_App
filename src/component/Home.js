@@ -16,7 +16,7 @@ export default function Home() {
             <div className='home-slide flex'>
                 <h1 className='fade-slide right'>
                     Buy Your <span>Dream</span> Furnitures to 
-                    <span>Furnish</span> Your Living Space
+                    <span> Furnish</span> Your Living Space 
                 </h1>
             </div>
             <div className="about-content grid">
