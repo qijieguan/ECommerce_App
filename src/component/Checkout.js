@@ -47,6 +47,7 @@ const Checkout = () => {
 
     return (
         <div style={{display: 'flex', marginTop: '100px'}}>
+            <div className='overlay'/>
             <div className="checkout-msg" style={{display: cart.length === 0 ? 'flex' : 'none'}}>   
                 <div>{message}</div>
                 <AiOutlineShoppingCart className='cart-icon' style={{display: paid ? 'none' : 'block'}}/>

@@ -85,15 +85,6 @@ export default function Header() {
         setWord(e.target.value); 
     }
 
-    const exitSearch = document.querySelector('.overlay');
-
-    if (exitSearch) {
-        exitSearch.addEventListener("click", () => {
-            exitSearch.style.display = 'none';
-            setDropDown([]);
-        });
-    }
-
     const handleSubmit = e => {
         e.preventDefault();
         if (!word) { return; }
@@ -105,6 +96,15 @@ export default function Header() {
         document.querySelector(".overlay").style.display = 'none'; 
     }
     
+    const exitSearch = document.querySelector('.overlay');
+
+    if (exitSearch) {
+        exitSearch.addEventListener("click", () => {
+            exitSearch.style.display = 'none';
+            setDropDown([]);
+        });
+    }
+
     return (
         <header className='header flex'>
             <div className="logo flex">Shopping App</div>
