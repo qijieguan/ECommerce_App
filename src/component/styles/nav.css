@@ -1,7 +1,6 @@
-#header { 
+.header { 
     position: absolute; 
     top: 0; 
-    display: flex; 
     min-height: 3.5rem; 
     width: 100%;  
     background: transparent;
@@ -9,8 +8,7 @@
     z-index: 3; 
 }
 
-#logo {
-    display: inline-flex;
+.logo {
     margin: 0 clamp(0rem, 2.5vw, 2rem) 0 clamp(0.1rem, 2.5vw, 3rem);
     width: 20%;
     font-family: 'Lobster', cursive;
@@ -19,11 +17,11 @@
     text-shadow: 0 0 3px grey;
 }
 
-#search { margin-right: auto; position: relative; display: inline-flex; justify-content: center; padding: 1px 0; width: 28rem; }
-#search-bar { width: 80%; min-height: 2.5rem; border-radius: 3px 0 0 3px; outline: none; }
-#search-bar:focus { border-bottom: 2px solid yellowgreen; }
-#search-bar::placeholder { font-size: clamp(0.75rem, 2.5vw, 0.875rem); }
-#search-btn {
+.search { margin-right: auto; position: relative; justify-content: center; padding: 1px 0; width: 28rem; }
+.search-bar { width: 80%; min-height: 2.5rem; border-radius: 3px 0 0 3px; outline: none; }
+.search-bar:focus { border-bottom: 2px solid yellowgreen; }
+.search-bar::placeholder { font-size: clamp(0.75rem, 2.5vw, 0.875rem); }
+.search-btn {
     margin-right: auto;
     display: inline-flex;
     padding: clamp(0.25rem, 2.5vw, 0.45rem) 0;
@@ -31,14 +29,12 @@
     background: yellowgreen;
     border-radius: 0 3px 3px 0;
 }
-#search-btn:hover { box-shadow: 0 0 5px green; }
-#search-btn * { font-size: 1.6rem; color: rgb(28, 128, 28) }
+.search-btn:hover { box-shadow: 0 0 5px green; }
+.search-btn * { font-size: 1.6rem; color: rgb(28, 128, 28) }
 
-#dropdown-ul {
+.dropdown-ul {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
+    inset: auto auto 0 0;
     flex-direction: column;
     width: 80%;
     transform: translateY(100%);
@@ -56,8 +52,8 @@
 }
 .dropdown-li:hover { color: white; background: yellowgreen; }
 
-#nav-links { margin-right: clamp(0.25rem, 2.5vw, 3rem) }
-#nav-links button { 
+.nav-links { margin-right: clamp(0.25rem, 2.5vw, 3rem); padding: 0.75rem 0.75rem; }
+.nav-links button { 
     margin-right: clamp(0.25rem, 2.5vw, 2rem); 
     height: 100%;
     text-shadow: 0 0 3px grey; 
@@ -65,10 +61,10 @@
     background: transparent;
     box-shadow: none; 
 }
-#nav-links button:hover { color: aquamarine; }
+.nav-links button:hover { color: aquamarine; }
 .active { color: aquamarine !important; border-bottom: 2px solid aquamarine; }
 .nav-link { font-size: clamp(0.8rem, 2.5vw, 0.9rem); }
 
-@media (max-width: 700px) {
-    #search { height: 30px; margin-right: 10px; width: 20rem; }
+@media (max-width: 50rem) {
+    .search { height: 30px; margin-right: 10px; width: 20rem; }
 }

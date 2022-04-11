@@ -39,8 +39,7 @@
     position: absolute;
     margin: 10px 10px 0 0;
     padding: 0 3px;
-    top: 0;
-    right: 0;
+    inset: 0 0 auto auto;
     font-size: clamp(1rem, 2.5vw, 1.125rem);
     font-family: italic;   
     color: white;
@@ -50,7 +49,6 @@
 
 .item-details {
     padding: 5px;
-    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     height: 30%;
@@ -73,9 +71,8 @@
 .item-price, .item-stock { font-size: clamp(0.75rem, 2.5vw, 1.125rem); }
 .item-price span, .item-stock span { font-size: clamp(1rem, 2.5vw, 1.125rem); }
 
-#expand-page { margin-top: 3.3rem; padding: 3rem 0; display: flex; flex-direction: column; min-height: 47rem; background: rgb(43, 40, 40); }
-#expand-item { 
-    display: flex; 
+.expand-page { margin-top: 3.3rem; padding: 3rem 0; flex-direction: column; min-height: 47rem; background: rgb(43, 40, 40); }
+.expand-item { 
     justify-content: space-around; 
     padding: 2rem 0; 
     width: 95%; 
@@ -83,11 +80,11 @@
     box-shadow: 0 0 5px;
     border-radius: 1rem;
 }
-#expand-image { margin-bottom: auto; max-height: 35rem; width: max(16rem, 45%); box-shadow: 0 0 5px; border-radius: 3px; }
-#expand-details { display: grid; grid-template-columns: 50% 50%; width: max(16rem, 45%); }
-#expand-name { grid-column: 1/ 3; font-size: clamp(2rem, 5vw, 2.5rem); font-weight: bolder; color: wheat; }
-#expand-description { grid-column: 1/ 3; margin: 8rem 0; font-size: clamp(1rem, 2.5vw, 1.3rem); font-family: 'Roboto', sans-serif; color: antiquewhite; }
-#add-cart {
+.expand-image { margin-bottom: auto; max-height: 35rem; width: max(16rem, 45%); box-shadow: 0 0 5px; border-radius: 3px; }
+.expand-details { grid-template-columns: 50% 50%; width: max(16rem, 45%); }
+.expand-name { grid-column: 1/ 3; font-size: clamp(2rem, 5vw, 2.5rem); font-weight: bolder; color: wheat; }
+.expand-description { grid-column: 1/ 3; margin: 8rem 0; font-size: clamp(1rem, 2.5vw, 1.3rem); font-family: 'Roboto', sans-serif; color: antiquewhite; }
+.add-cart {
     margin: 1.8rem 9rem 0 0;
     grid-column: 1 / 2;
     padding: clamp(1rem, 2.5vw, 1.25rem) 0;
@@ -98,51 +95,39 @@
     box-shadow: 0 0 5px green;
     border-radius: 3px;
 }
-#add-cart:hover { box-shadow: 0 0 10px green; }
-#expand-details div { 
+.add-cart:hover { box-shadow: 0 0 10px green; }
+.expand-details div { 
     margin: 2rem 9rem 0 0; 
     font-size: clamp(1rem, 2.5vw, 1.2rem); 
     width: 100%;
     color: wheat; 
 }
 
-#cart {
+.cart {
     position: relative;
-    display: none;
-    justify-content: flex-end;
-    margin: 10px 0 50px 0;
+    margin: 0.75rem 0 3.3rem 0;
     height: 6.5rem;
     width: 100%;
     background: white;
     box-shadow: 0 0 3px black;
     overflow-y: hidden;
-}
-#cart-label {
-    margin-right: auto;
-    display: flex;
-    font-family: copperplate;
-    font-size: clamp(1.25rem, 2.5vw, 2rem);
-    height: 100%;
-    width: max(7rem, 12%);
-    color: white;
-    background: brown;
-    box-shadow: 0 0 3px rgb(65, 65, 65);
+    overflow-x: auto;
 }
 #cart-li { margin-right: 2.75rem; color: white; max-width: 6.5rem; box-shadow: 0 0 3px black; }
-#cost { margin-right: 30px; display: flex; font-size: clamp(1.25rem, 2.5vw, 2rem); color: limegreen; }
-#checkout-btn {
-    margin: 5px 30px 5px 5px;
+.cost { margin-right: 2rem; font-size: clamp(1.25rem, 2.5vw, 2rem); color: limegreen; }
+.checkout-btn {
+    margin: 5px 2.25rem 5px 5px;
     min-height: 3rem;
-    font-size: clamp(0.75rem, 2.5vw, 1rem);
+    font-size: clamp(0.5rem, 2.5vw, 1rem);
     color: white;
     background: brown;
     border-radius: 10px;
     box-shadow: 0 0 5px gray;
 }
 
-#checkout-btn:hover { box-shadow: 0 0 5px 1px brown; }
+.checkout-btn:hover { box-shadow: 0 0 5px 1px brown; }
 
-@media (max-width: 700px) {
-    #expand-item { flex-direction: column; }
-    #expand-details h1 { margin: 3.3rem 0 1.25rem 0; }
+@media (max-width: 50rem) {
+    .expand-item { flex-direction: column; }
+    .expand-details h1 { margin: 3.3rem 0 1.25rem 0; }
 }

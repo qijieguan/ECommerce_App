@@ -1,11 +1,10 @@
-#about-page { padding: 4.5rem 0; display: flex; background: teal; }
-#profile-img { margin-top: 3rem; width: max(18rem, 30%); box-shadow: 0 0 5px grey; border: 2px solid yellowgreen; border-radius: 200px; }
-#profile-info * { color: black; background: teal; }
+.about-page { min-height: 50rem; padding: 4.5rem 0; background: teal; }
+#profile-img { margin-top: 3rem; width: max(18rem, 30%); box-shadow: 0 0 5px grey; border: 2px solid yellowgreen; border-radius: 15rem; }
 #name { text-align: center; padding-top: 3rem; font-size: clamp(3rem, 5vw, 5rem); text-shadow: 2px 2px yellowgreen; }
 #education, #contact { padding-top:4.5rem; }
 #education h1, #contact h1 { font-size: 1.6rem; color: yellowgreen; }
 #education span,#contact span { color: wheat; }
 
-@media (max-width: 700px) {
-    #about-page { flex-direction: column; padding-bottom: 20px;}
+@media (max-width: 50rem) {
+    .about-page { flex-direction: column; padding-bottom: 20px;}
 }

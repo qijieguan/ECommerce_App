@@ -67,30 +67,30 @@ export default function Form() {
     }
 
     return (
-        <form onSubmit={handleSubmit} id="form-container">
+        <form onSubmit={handleSubmit} className="form-container flex">
             <div id="error-msg">*Missing image or input fields are empty*</div>
             <div id="image-section">
-                <div id="image-label" style={{ color: 'yellow'}}>  
+                <div className="image-label flex" style={{ color: 'yellow'}}>  
                     Add Item Image 
                     <AiOutlineCamera size={45} style={{marginLeft: '10px'}}/>
                 </div>
                 <div>
                     <div className="Dropzone-Panel"><MyDropzone getFiles={getFiles}/></div>
-                    <div id="preview-display">
+                    <div className="preview-display flex">
                         {preview ?
                             <img id="preview-image" src={preview} alt=""/>
                             :
-                            <div id="preview-default">Item Preview Here</div>
+                            <div className="preview-default">Item Preview Here</div>
                         }       
                     </div> 
                 </div>
             </div>
             <div id="input-section">
-                <div id="input-label">
+                <div className="input-label flex">
                     Fill In Item Fields 
                     <BsPencilSquare size={45} style={{marginLeft: '10px'}}/>
                 </div>
-                <div id="input-fields">
+                <div className="input-fields grid">
 
                     <div id="name-label">Name<span style={dotStyle}>*</span></div>
                     <input id="input-name" name="name" style={{height: '3rem'}} 
@@ -142,7 +142,7 @@ export default function Form() {
 
                 </div>  
             </div>
-            <div id="submit-form">
+            <div className="submit-form flex">
                 <button className="btn">Cancel</button>
                 <button type="submit" className="btn" style={{color: 'white', background: 'teal'}}>Add</button>
             </div>

@@ -51,7 +51,7 @@ const Item = ({item}) => {
             <div className="item" id={item.id} onMouseEnter={onEnter} onMouseLeave={onLeave}>
                 <img className="item-image" src={url} alt=""/>
                 <div className="item-tag">{item.Tag}</div>
-                <div className="item-details">
+                <div className="item-details flex">
                     <h1 className="item-name">{item.Name} </h1>
                     <div className="item-description">{item.Description}</div>
                     <div style={{display: 'flex', justifyContent: 'space-between', width: '95%', height: '3.2rem'}}>

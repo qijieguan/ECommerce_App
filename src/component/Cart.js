@@ -27,12 +27,12 @@ const Cart = () => {
     };
 
     return (
-        <div id='cart' style={{display: cart.length > 0 ? "flex" : "none"}}>
-            <div id='cart-label'>Cart</div>
+        <div className='cart' style={{display: cart.length > 0 ? "flex" : "none"}}>
+            <div style={{marginRight: 'auto'}}/>
             {cart.map(item => <img src={getURL(item)} key={uuid()} className={item.id} id='cart-li' alt=""/>)}
-            <div id='cost'>${parseFloat(total).toFixed(2)}</div>
+            <div className='cost flex'>${parseFloat(total).toFixed(2)}</div>
             <Link to={{pathname: "/Checkout", state: {cost: parseFloat(total).toFixed(2)}}}>
-                <button id='checkout-btn'>Proceed to Checkout</button>
+                <button className='checkout-btn'>Proceed to Checkout</button>
             </Link>
         </div>     
     );

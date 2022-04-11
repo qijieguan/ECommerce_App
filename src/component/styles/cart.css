@@ -1,12 +1,11 @@
-#checkout-msg { flex-direction: column; width: 90%;}
-#checkout-msg div { margin: 2.5rem 0; font-size:  clamp(2.5rem, 5vw, 3rem); color: gray; }
-#cart-icon, #checkmark-icon { font-size: clamp(10rem, 25vw, 17.5rem); }
+.checkout-msg { flex-direction: column; width: 90%;}
+.checkout-msg div { margin: 2.5rem 0; font-size:  clamp(2.5rem, 5vw, 3rem); color: gray; }
+.cart-icon { color: gray; font-size: clamp(10rem, 25vw, 17.5rem); }
+.checkmark-icon { color: green; font-size: clamp(10rem, 25vw, 17.5rem);  }
+.cart-items { width: 23rem; border-radius: 3px; }
 
-#cart-items { width: 23rem; border-radius: 3px; }
-
-#cart-item {
+.cart-item {
   margin-bottom: 1.5rem;
-  display: flex;
   height: 6.3rem;
   width: 100%;
   border: 2px solid rgb(161, 161, 161);
@@ -14,37 +13,36 @@
 }
 
 #cart-img { object-fit: auto; margin-right: auto; height: 100%; width: 30%; }
-#cart-details { 
-  display: grid;
-  grid-template-columns: 45% 45%;
+.cart-details { 
+  grid-template-columns: 47% 45%;
   margin-left: 5%;
   height: 100%; 
   width: 65%; 
   color: grey;
   overflow-y: hidden;
 }
-#cart-details * { font-family: 'Bebas Neue', cursive; }
-#cart-name { grid-column: 1 / 3; font-size: clamp(1rem, 2.5vw, 1.25rem); color: rgb(29, 29, 29); }
-#cart-price {  grid-column: 1 / 2; font-size: clamp(0.875rem, 2.5vw, 1rem);}
-#cart-price::before { content: "Price: "; }
-#trash-icon { grid-column: 2 / 3; margin: 0 10px 8px auto; font-size: clamp(1.1rem, 2.5vw, 1.2rem); color: rgb(235, 176, 176); }
-#trash-icon:hover { color: brown; }
+.cart-details * { font-family: 'Bebas Neue', cursive; }
+.cart-name { grid-column: 1 / 3; font-size: clamp(1rem, 2.5vw, 1.25rem); color: rgb(29, 29, 29); }
+.cart-price { grid-column: 1 / 2; font-size: clamp(0.875rem, 2.5vw, 1rem);}
+.cart-price::before { content: "Price: "; }
+.trash-icon { grid-column: 2 / 3; margin: 0 10px 8px auto; font-size: clamp(1.1rem, 2.5vw, 1.2rem); color: rgb(235, 176, 176); }
+.trash-icon:hover { color: brown; }
 
-#review {
-  display: flex;
+.review {
+  margin: 2rem 0 auto 0;
   flex-direction: column;
   min-height: 25rem;
   width: 16rem;
   border: 2px solid gray;
   box-shadow: 0 0 2px black;
 }
-#review-initial, #review-tax { font-size: 1rem; color: gray; }
-#review-initial::before { content: "Subtotal: "; }
-#review-tax::before { content: "Tax: + "; }
-#review-final { font-size: clamp(1.25rem, 2.5vw, 1.5rem); color: black; }
-#review-final::before { content: "Total: "; color: black }
+.review-initial, .review-tax { font-size: 1rem; color: gray; }
+.review-initial::before { content: "Subtotal: "; }
+.review-tax::before { content: "Tax: + "; }
+.review-final { font-size: clamp(1.25rem, 2.5vw, 1.5rem); color: black; }
+.review-final::before { content: "Total: "; color: black }
 
-#pay-btn {
+.pay-btn {
   padding: clamp(0.25rem, 2.5vw, 0.75rem) clamp(0.5rem, 2.5vw, 1.5rem);
   font-size: clamp(0.75rem, 2.5vw, 1rem);
   color: white;
@@ -52,6 +50,6 @@
   border-radius: 3px;
   box-shadow: 0 0 5px darkorange;
 }
-#pay-btn:hover { box-shadow: 0 0 5px orangered; }
+.pay-btn:hover { box-shadow: 0 0 5px orangered; }
 
-@media (max-width: 700px) { #cart-items {margin-right: 20px; } }
+@media (max-width: 50rem) { .cart-items {margin-right: 20px; } }

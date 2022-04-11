@@ -37,16 +37,16 @@ export default function Header() {
     const toggleSearchBar = (location) => {
         let pathname = "/" + location.pathname.split('/')[1];
         if (pathname === '/' || pathname === '/Form' || pathname === "/About") {  
-            document.getElementById("header").style.background = 'transparent';
-            document.getElementById("search-bar").style.display = 'none';
-            document.getElementById("search-btn").style.display = 'none';
+            document.querySelector(".header").style.background = 'transparent';
+            document.querySelector(".search-bar").style.display = 'none';
+            document.querySelector(".search-btn").style.display = 'none';
             setWord('');
             setDropDown('');
         }
         else {
-            document.getElementById('header').style.background = 'black';   
-            document.getElementById("search-bar").style.display = 'inline-flex';
-            document.getElementById("search-btn").style.display = 'inline-flex';
+            document.querySelector(".header").style.background = 'black';   
+            document.querySelector(".search-bar").style.display = 'flex';
+            document.querySelector(".search-btn").style.display = 'flex';
         }
     }
 
@@ -94,19 +94,19 @@ export default function Header() {
     }
 
     return (
-        <header id='header'>
-            <div id="logo">Shopping App</div>
-            <form id="search" onSubmit={handleSubmit}>
+        <header className='header flex'>
+            <div className="logo flex">Shopping App</div>
+            <form className="search flex" onSubmit={handleSubmit}>
                 <input 
-                    id="search-bar" 
+                    className="search-bar" 
                     placeholder="Search item here" 
                     value={word} 
                     onChange={handleChange}
                     style={{borderBottomWidth: '2px'}}
                 /> 
-                <button id="search-btn" type="submit"><AiOutlineSearch/></button> 
+                <button className="search-btn" type="submit"><AiOutlineSearch/></button> 
                 {dropdown && dropdown.length ?
-                    <div id="dropdown-ul">
+                    <div className="dropdown-ul flex">
                         {dropdown.map(name => 
                             <div className='dropdown-li' key={uuid()} onClick={handleSubmit}>{name}</div>
                         )}

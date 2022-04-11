@@ -48,10 +48,10 @@ export default function View() {
     }
 
     return (
-        <div id="view-page">
+        <div className="view-page">
             <Cart/>
-            <div id="items-display">
-                <div id="filter">
+            <div className="items-display">
+                <div className="filter">
                     <div className="filter-btn" id="All" onClick={handleClick}>All
                         <div className='filter-overlay'/>
                     </div>
@@ -83,7 +83,7 @@ export default function View() {
                 {list && list.length  ?
                     list.map(item => <Item key={item.id} item={item} />)
                     :
-                    <div id="view-default">No Items to Display</div>
+                    <div className="view-default flex">No Items to Display</div>
                 }
             </div>
         </div>

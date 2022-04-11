@@ -23,17 +23,17 @@ const ItemExpand = () => {
     const handleAddCart = e => { e.preventDefault(); dispatch(addCart(item)); };
  
     return(
-        <div id="expand-page">
+        <div className="expand-page flex">
             <Cart/>
-            <div id='expand-item'>
-                <img id="expand-image" src={url} alt=""/>
-                <div id="expand-details">
-                    <h1 id="expand-name">{item.Name}</h1>
-                    <h1 id='expand-description'>{item.Description}</h1><br/>
-                    <button id='add-cart' onClick={handleAddCart}>Add to Cart</button>
-                    <div id='expand-1'>Price: ${parseFloat(item.Price).toFixed(2)}</div>
-                    <div id='expand-2'>Stock: {item.Stock}</div>
-                    <div id='expand-3'>Tag: {item.Tag}</div>
+            <div className='expand-item flex'>
+                <img className="expand-image" src={url} alt=""/>
+                <div className="expand-details grid">
+                    <h1 className="expand-name">{item.Name}</h1>
+                    <h1 className='expand-description'>{item.Description}</h1><br/>
+                    <button className='add-cart' onClick={handleAddCart}>Add to Cart</button>
+                    <div className='expand-1'>Price: ${parseFloat(item.Price).toFixed(2)}</div>
+                    <div className='expand-2'>Stock: {item.Stock}</div>
+                    <div className='expand-3'>Tag: {item.Tag}</div>
                 </div>
             </div>
         </div>    
