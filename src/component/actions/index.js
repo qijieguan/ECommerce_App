@@ -1,7 +1,21 @@
 export const addList = item => {
     return {
-        type: 'ADD_LIST',
+        type: 'INSERT_LIST',
         payload: item
+    }
+}
+
+export const addComment = comment => {
+    return {
+        type: 'INSERT_COMMENT',
+        payload: comment
+    }
+}
+
+export const setComments = comments => {
+    return {
+        type: 'SET_COMMENTS',
+        payload: comments
     }
 }
 
@@ -14,7 +28,7 @@ export const setSearch = word => {
 
 export const addCart = item => {
     return {
-        type: 'ADD_CART',
+        type: 'INSERT_CART',
         payload: item
     }
 }

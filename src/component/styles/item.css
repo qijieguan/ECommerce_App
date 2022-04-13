@@ -1,4 +1,4 @@
-.item-container {
+.item-wrapper {
     position: relative;
     display: inline-flex;
     flex-direction: column;
@@ -6,13 +6,20 @@
     margin: 6% 0 0 6%;
     width: max(25%, 20rem);
     background: white;
-    border-radius: 3px;
     border: 1px solid gray;
     overflow: unset;
-    animation: fadeIn 0.5s linear;
+    border-radius: 0.25rem;
+    animation: fadeIn 0.5s ease-in;
 }
 
-.item { height: 100%; width: 100%; box-shadow: 0 0 3px black; overflow-y: hidden; transition: 0.5s all; }
+.item { 
+    height: 100%; 
+    width: 100%; 
+    box-shadow: 0 0 3px 
+    black; overflow-y: hidden; 
+    transition: 0.5s all ease-in;
+    border-radius: 0.25rem; 
+}
 
 .item:hover {
     position: absolute;
@@ -73,6 +80,7 @@
 
 .expand-page { margin-top: 3.3rem; padding: 3rem 0; flex-direction: column; min-height: 47rem; background: rgb(43, 40, 40); }
 .expand-item { 
+    margin-top: 2rem;
     justify-content: space-around; 
     padding: 2rem 0; 
     width: 95%; 

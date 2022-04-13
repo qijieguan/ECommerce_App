@@ -2,16 +2,16 @@ import './styles/comment.css';
 import { useState } from 'react';
 import uuid from 'react-uuid';
 
-const Comment = () => {
+const Comment = ({comments, newComment}) => {
 
     const [commentInp, setCommentInp] = useState("");
-    const [comments, SetComments] = useState([]);
-
+ 
     const handleChange = (e) => { setCommentInp(e.target.value); };
     const handleSubmit = (e) => {
         e.preventDefault();
-        SetComments([...comments, commentInp]);
+        let result = commentInp;
         setCommentInp("");
+        return newComment(result);
     }
 
     return (

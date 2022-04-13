@@ -1,7 +1,7 @@
 import './styles/nav.css';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setSearch } from './actions/index.js';
+import { setSearch, setComments } from './actions/index.js';
 import Nav from './Nav.js';
 import { useHistory, useLocation } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
@@ -22,7 +22,8 @@ export default function Header() {
         activeObserver(); 
         toggleLinks(location);
         toggleSearchBar(location);
-    }, [history, location]);
+        dispatch(setComments([]));
+    }, [history, location, dispatch]);
 
     const toggleLinks = (location) => {
         let pathname = "/" + location.pathname.split('/')[1];

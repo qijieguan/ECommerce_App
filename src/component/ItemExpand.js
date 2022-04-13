@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from "react-router-dom";
-import { useDispatch } from 'react-redux';
-import { addCart } from './actions/index.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { addCart, setComments, addComment } from './actions/index.js';
 import Cart from './Cart.js';
 import Comment from './Comment.js';
 
 const ItemExpand = () => {
 
     const item = useLocation().state.item;
+    const commentList = useSelector(state => state.commentList);
+
     const [url, setURL] = useState("");
 
     const dispatch = useDispatch();
+    dispatch(setComments(item.Comments));
 
     useEffect(() => {
         if (typeof(item.ImageFile) === "string") {setURL(item.ImageFile);}
@@ -22,7 +25,12 @@ const ItemExpand = () => {
     }, [item]);
 
     const handleAddCart = e => { e.preventDefault(); dispatch(addCart(item)); };
- 
+
+    const newComment = (comment) => { 
+        dispatch(addComment([item.Name, comment]));
+        dispatch(setComments([...commentList, comment]));
+    }
+
     return(
         <div className="expand-page flex">
             <div className='overlay'/>
@@ -38,7 +46,7 @@ const ItemExpand = () => {
                     <div className='expand-3'>Tag: {item.Tag}</div>
                 </div>
             </div>
-            <Comment/>
+            <Comment comments={commentList} newComment={newComment}/>
         </div>    
     );
 }

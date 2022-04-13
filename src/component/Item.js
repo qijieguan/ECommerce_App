@@ -47,7 +47,7 @@ const Item = ({item}) => {
     }
 
     return(
-        <Link className="item-container" to={{pathname: `/Store/${item.id}`, state: {item: item}}}>
+        <Link className="item-wrapper" to={{pathname: `/Store/${item.id}`, state: {item: item}}}>
             <div className="item" id={item.id} onMouseEnter={onEnter} onMouseLeave={onLeave}>
                 <img className="item-image" src={url} alt=""/>
                 <div className="item-tag">{item.Tag}</div>

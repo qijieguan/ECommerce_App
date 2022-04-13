@@ -38,8 +38,8 @@ export default function Form() {
     const handleSubmit = e => {
         e.preventDefault();
 
-        if (!file || document.getElementById("input-tag").value === "Default") {
-            document.getElementById("error-msg").style.display = "flex";
+        if (!file || document.querySelector(".input-tag").value === "Default") {
+            document.querySelector(".error-msg").style.display = "flex";
             document.body.scrollTop = document.documentElement.scrollTop = 0;
             return;
         }
@@ -50,7 +50,8 @@ export default function Form() {
             Description: description,
             Stock: stock,
             Price: price,
-            Tag: document.getElementById("input-tag").value
+            Tag: document.querySelector(".input-tag").value,
+            Comments: []
         }
         setFile("");
         setPreview("");
@@ -59,8 +60,8 @@ export default function Form() {
         setStock("");
         setPrice("");
         
-        document.getElementById("input-tag").value = "Default";
-        document.getElementById("error-msg").style.display = "none";
+        document.querySelector(".input-tag").value = "Default";
+        document.querySelector(".error-msg").style.display = "none";
 
         dispatch(addList(addItem));
         setSubmit(!isSubmit);
@@ -68,8 +69,8 @@ export default function Form() {
 
     return (
         <form onSubmit={handleSubmit} className="form-container flex">
-            <div id="error-msg">*Missing image or input fields are empty*</div>
-            <div id="image-section">
+            <div className="error-msg">*Missing image or input fields are empty*</div>
+            <div className="image-section">
                 <div className="image-label flex" style={{ color: 'yellow'}}>  
                     Add Item Image 
                     <AiOutlineCamera size={45} style={{marginLeft: '10px'}}/>
@@ -78,30 +79,30 @@ export default function Form() {
                     <div className="Dropzone-Panel"><MyDropzone getFiles={getFiles}/></div>
                     <div className="preview-display flex">
                         {preview ?
-                            <img id="preview-image" src={preview} alt=""/>
+                            <img className="preview-image" src={preview} alt=""/>
                             :
                             <div className="preview-default">Item Preview Here</div>
                         }       
                     </div> 
                 </div>
             </div>
-            <div id="input-section">
+            <div className="input-section">
                 <div className="input-label flex">
                     Fill In Item Fields 
                     <BsPencilSquare size={45} style={{marginLeft: '10px'}}/>
                 </div>
                 <div className="input-fields grid">
 
-                    <div id="name-label">Name<span style={dotStyle}>*</span></div>
-                    <input id="input-name" name="name" style={{height: '3rem'}} 
+                    <div className="name-label">Name<span style={dotStyle}>*</span></div>
+                    <input className="input-name" name="name" style={{height: '3rem'}} 
                         value={name}
                         placeholder="Enter name here..."
                         onChange={handleChange}
                         required
                     />
 
-                    <div id="description-label">Description<span style={dotStyle}>*</span></div>
-                    <textarea id="input-description" name="description" 
+                    <div className="description-label">Description<span style={dotStyle}>*</span></div>
+                    <textarea className="input-description" name="description" 
                         style={{height: '15rem'}} 
                         value={description}
                         placeholder="Enter description here..."
@@ -109,8 +110,8 @@ export default function Form() {
                         required
                     />
 
-                    <div id="stock-label">Stock<span style={dotStyle}>*</span></div>
-                    <input id="input-stock" name="stock" type="number" min="0"
+                    <div className="stock-label">Stock<span style={dotStyle}>*</span></div>
+                    <input className="input-stock" name="stock" type="number" min="0"
                         style={{width: '25%'}}
                         value={stock}
                         placeholder="0"
@@ -118,8 +119,8 @@ export default function Form() {
                         required
                     />
 
-                    <div id="price-label">Price<span style={dotStyle}>*</span></div>
-                    <input id="input-price" name="price" type="number" min="0.00" step=".01"
+                    <div className="price-label">Price<span style={dotStyle}>*</span></div>
+                    <input className="input-price" name="price" type="number" min="0.00" step=".01"
                         style={{width: '25%'}}
                         value={price}
                         placeholder="$0.00"
@@ -127,8 +128,8 @@ export default function Form() {
                         required
                     />
 
-                    <div id="tag-label">Tag<span style={dotStyle}>*</span></div>
-                    <select id="input-tag" required> 
+                    <div className="tag-label">Tag<span style={dotStyle}>*</span></div>
+                    <select className="input-tag" required> 
                         <option value="">---- Please Select a Tag For The Item -----</option>
                         <option value="Beauty">Beauty</option>
                         <option value="Cleaning">Cleaning</option>

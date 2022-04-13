@@ -8,7 +8,8 @@ const defaultList = [
         Description: 'Very Sturdy Sofa For Multiple People To Bounce On',
         Stock: 10,
         Price: 300.00,
-        Tag: 'Furniture'
+        Tag: 'Furniture',
+        Comments: []
     },
     {
         id: uuid(),
@@ -17,7 +18,8 @@ const defaultList = [
         Description: 'Soft and Comfy Bed To Sleep On Forever',
         Stock: 10,
         Price: 800.00,
-        Tag: 'Furniture'
+        Tag: 'Furniture',
+        Comments: []
     },
     {
         id: uuid(),
@@ -26,7 +28,8 @@ const defaultList = [
         Description: 'A Desk, A Lamp And A Chair To Help Pass Time And Become Smart',
         Stock: 20,
         Price: 400.00,
-        Tag: 'Furniture'
+        Tag: 'Furniture',
+        Comments: []
     },
     {
         id: uuid(),
@@ -35,7 +38,8 @@ const defaultList = [
         Description: '6 Chairs And 1 Table To Eat Meals On',
         Stock: 20,
         Price: 700.00,
-        Tag: 'Furniture'
+        Tag: 'Furniture',
+        Comments: []
     },
     {
         id: uuid(),
@@ -44,14 +48,24 @@ const defaultList = [
         Description: 'Large Shelf With 10 Large + 8 Small Compartments',
         Stock: 20,
         Price: 500.00,
-        Tag: 'Furniture'
+        Tag: 'Furniture',
+        Comments: []
     }
 ]
 
 const listReducer = (state = defaultList, action) => {
     switch (action.type) {
-        case 'ADD_LIST': 
+        case 'INSERT_LIST': 
             return [...state, action.payload];
+        case 'INSERT_COMMENT':
+            for (let i = 0; i < state.length; ++i) {
+                if (state[i].Name === action.payload[0]) {
+                    state[i].Comments.push(action.payload[1]);
+                    break;
+                }
+            }
+            console.log(state);
+            return state;
         default:
             return state;
     }

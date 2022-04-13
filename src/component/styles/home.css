@@ -20,7 +20,7 @@
   font-family: 'Playfair Display', serif;
   color: yellowgreen;  
   text-shadow: 2px 2px seagreen; 
-  animation: fadeIn 0.5s linear; 
+  animation: fadeIn 0.5s ease-in; 
 }
 .intro-text > h2 { font-size: clamp(0.875rem, 2.5vw, 1rem); font-family: 'Playfair Display', serif; }
 
