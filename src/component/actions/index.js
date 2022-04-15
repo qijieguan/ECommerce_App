@@ -12,10 +12,10 @@ export const addComment = comment => {
     }
 }
 
-export const setComments = comments => {
+export const setItem = item => {
     return {
-        type: 'SET_COMMENTS',
-        payload: comments
+        type: 'SET_ITEM',
+        payload: item
     }
 }
 

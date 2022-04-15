@@ -1,7 +1,7 @@
 import './styles/nav.css';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setSearch, setComments } from './actions/index.js';
+import { setSearch } from './actions/index.js';
 import Nav from './Nav.js';
 import { useHistory, useLocation } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
@@ -9,11 +9,11 @@ import uuid from "react-uuid";
 
 export default function Header() {
 
-    const items = useSelector(state => state.itemList);
-
     const [dropdown, setDropDown] = useState([]);
     const [word, setWord] = useState("");
+    
     const dispatch = useDispatch();
+    const items = useSelector(state => state.itemList);
     
     const history = useHistory();
     const location = useLocation();
@@ -22,7 +22,6 @@ export default function Header() {
         activeObserver(); 
         toggleLinks(location);
         toggleSearchBar(location);
-        dispatch(setComments([]));
     }, [history, location, dispatch]);
 
     const toggleLinks = (location) => {

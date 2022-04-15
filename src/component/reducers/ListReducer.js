@@ -64,7 +64,6 @@ const listReducer = (state = defaultList, action) => {
                     break;
                 }
             }
-            console.log(state);
             return state;
         default:
             return state;

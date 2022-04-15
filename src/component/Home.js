@@ -8,7 +8,7 @@ export default function Home() {
             <div className="home-intro">
                 <div className="intro-text">
                     <h1 className='fade-slide right'> Save Big Now</h1> 
-                    <h2 className='fade-slide up'>Buy a variety of high quality furnitures to furnish your home</h2>
+                    <h2 className='fade-slide right-delay'>Buy a variety of high quality furnitures to furnish your home</h2>
                 </div>
                 <Link to="/About"><button className="about-btn">About Me</button></Link>
             </div>

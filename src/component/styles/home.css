@@ -82,7 +82,7 @@
   font-family: 'Playfair Display', serif;
 }
 
-.left-wrapper { grid-column: 1 / 2; padding-bottom: 10rem; height: 100%; background: seagreen; }
+.left-wrapper { grid-column: 1 / 2; padding-bottom: 10rem; height: 100%; background: seagreen; z-index: 1; }
 .from-left {
   margin: clamp(2rem, 2.5vw, 8rem) 10rem 0 auto; 
   flex-direction: column;
@@ -93,6 +93,7 @@
   background: white;
   border: 1px solid green;
   box-shadow: 0 0 5px black;
+  border-radius: 0.25rem;
 }
 .from-left h1 { text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); width: 80%; color: green; }
 .from-left span { margin-bottom: 2rem; font-family: 'Playfair Display', serif; font-size: clamp(0.875rem, 2.5vw, 1rem); width: 80%; color: rgb(65, 65, 65); }
@@ -106,6 +107,7 @@
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 5px gray;
+  border-radius: 0.25rem;
 }
 .from-right-2 {
   min-height: 25rem;
@@ -114,6 +116,7 @@
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 5px gray;
+  border-radius: 0.25rem;
 }
 .from-right-3 {
   min-height: 22rem;
@@ -122,11 +125,12 @@
   background-size: cover;
   background-position: bottom;
   box-shadow: 0 0 5px gray;
+  border-radius: 0.25rem;
 }
 
 .fade-slide.appear{ animation: fadeSlideDown 1s ease-in; }
-.fade-slide.appear.up{ animation: fadeSlideUp 0.75s ease-in; }
 .fade-slide.appear.right{ animation: fadeSlideRight 1s ease-in; }
+.fade-slide.appear.right-delay{ animation: fadeSlideRight 1.25s ease-out; }
 .fade-slide.appear.from-left { animation: fadeSlideDown 0.75s ease-in; }
 
 @media (max-width: 50rem) { .home-slide { min-height: 25rem; } }

@@ -9,6 +9,7 @@ const Comment = ({comments, newComment}) => {
     const handleChange = (e) => { setCommentInp(e.target.value); };
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!commentInp) { return; }
         let result = commentInp;
         setCommentInp("");
         return newComment(result);

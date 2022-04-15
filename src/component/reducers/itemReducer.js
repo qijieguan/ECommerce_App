@@ -1,10 +1,10 @@
-const commentReducer = (state = [], action) => {
+const itemReducer = (state = [], action) => {
     switch (action.type) {
-        case 'SET_COMMENTS': 
+        case 'SET_ITEM': 
             return action.payload;
         default:
             return state;
     }
 }
 
-export default commentReducer;
+export default itemReducer;

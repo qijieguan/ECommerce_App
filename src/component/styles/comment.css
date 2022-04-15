@@ -22,7 +22,7 @@
     border: 2px solid rgb(13, 66, 36);
     border-radius: 1rem 1rem 0 1rem;
 }
-.comment-content { width: 95%; color: orange; word-break: break-all; }
+.comment-content { width: 95%; color: white; word-break: break-all; }
 .comment-user {
     margin: 0.25rem 1rem 0 0;
     align-self: flex-end;
@@ -33,4 +33,4 @@
 .comment-line { margin: 1rem 0 1rem 2.5%; height: 1px; width: 95%; background: wheat; }
 .comment-input { margin: 0 0 2rem 5%; height: 10rem; width: 60%; background: wheat; }
 .comment-input:focus { outline-color: orange; }
-.comment-submit > button { background: orange; color: black; }
+.comment-submit > button { background: orange; color: rgb(32, 32, 32); }
