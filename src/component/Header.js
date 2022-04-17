@@ -22,6 +22,7 @@ export default function Header() {
         activeObserver(); 
         toggleLinks(location);
         toggleSearchBar(location);
+        window.scrollTo({top: 0, behavior: 'smooth'});
     }, [history, location, dispatch]);
 
     const toggleLinks = (location) => {

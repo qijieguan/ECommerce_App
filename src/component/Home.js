@@ -8,7 +8,7 @@ export default function Home() {
             <div className="home-intro">
                 <div className="intro-text">
                     <h1 className='fade-slide right'> MAKE YOUR DREAM HOME A REALITY</h1> 
-                    <h2 className='fade-slide right-delay'>SHOP FOR AFFORDABLE FURNITURE TO FURNISH YOUR HOME</h2>
+                    <h2 className='fade-slide right-delay'>SHOP FOR AFFORDABLE FURNITURES TO FURNISH YOUR HOME</h2>
                 </div>
                 <Link to="/About"><button className="about-btn">About Me</button></Link>
             </div>
