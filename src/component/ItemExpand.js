@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
-import { addCart, setItem, addComment } from './actions/index.js';
+import { useDispatch } from 'react-redux';
+import { addCart, addComment } from './actions/index.js';
 import Cart from './Cart.js';
 import Comment from './Comment.js';
 
+
 const ItemExpand = () => {
 
+    var item = JSON.parse(sessionStorage.getItem("item"));
+
     const [url, setURL] = useState("");
+    const [comments, setComments] = useState(item.Comments);
     const dispatch = useDispatch();
 
-    dispatch(setItem(useLocation().state.item));
-    const item = useSelector(state => state.item);
 
     useEffect(() => {
         if (typeof(item.ImageFile) === "string") {setURL(item.ImageFile);}
@@ -21,10 +22,16 @@ const ItemExpand = () => {
             reader.readAsDataURL(item.ImageFile[0]);
         }
     }, [item]);
-
+    
     const handleAddCart = e => { e.preventDefault(); dispatch(addCart(item)); };
 
-    const newComment = (comment) => { dispatch(addComment([item.Name, comment])); }
+    const newComment = (comment) => { 
+        item.Comments.push(comment); 
+        setComments(item.Comments);
+        sessionStorage.setItem('item', JSON.stringify(item));
+        item = JSON.parse(sessionStorage.getItem("item"));
+        dispatch(addComment([item.Name, item.Comments]));
+    }
 
     return(
         <div className="expand-page flex">
@@ -41,7 +48,7 @@ const ItemExpand = () => {
                     <div className='expand-3'>Tag: {item.Tag}</div>
                 </div>
             </div>
-            <Comment comments={item.Comments} newComment={newComment}/>
+            <Comment comments={comments} newComment={newComment}/>
         </div>    
     );
 }

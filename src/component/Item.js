@@ -1,11 +1,11 @@
 import './styles/item.css';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-
+import { useHistory } from 'react-router-dom';
 
 const Item = ({item}) => {
 
     const [url, setURL] = useState("");
+    const history = useHistory();
 
     useEffect(() => {
         if (typeof(item.ImageFile) === "string") {setURL(item.ImageFile);}
@@ -46,8 +46,13 @@ const Item = ({item}) => {
         element.getElementsByClassName("item-description")[0].style.display = "none";
     }
 
+    const handleClick = () => {
+        sessionStorage.setItem('item', JSON.stringify(item));
+        history.push(`/Store/${item.id}`);
+    }
+
     return(
-        <Link className="item-wrapper" to={{pathname: `/Store/${item.id}`, state: {item: item}}}>
+        <div className="item-wrapper" onClick={handleClick}>
             <div className="item" id={item.id} onMouseEnter={onEnter} onMouseLeave={onLeave}>
                 <img className="item-image" src={url} alt=""/>
                 <div className="item-tag">{item.Tag}</div>
@@ -67,7 +72,7 @@ const Item = ({item}) => {
                     </div>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 }
 

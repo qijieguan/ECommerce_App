@@ -60,7 +60,7 @@ const listReducer = (state = defaultList, action) => {
         case 'INSERT_COMMENT':
             for (let i = 0; i < state.length; ++i) {
                 if (state[i].Name === action.payload[0]) {
-                    state[i].Comments.push(action.payload[1]);
+                    state[i].Comments = (action.payload[1]);
                     break;
                 }
             }

@@ -1,10 +1,14 @@
 import './styles/comment.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import uuid from 'react-uuid';
 
 const Comment = ({comments, newComment}) => {
 
     const [commentInp, setCommentInp] = useState("");
+
+    useEffect(() => {
+
+    }, [comments])
  
     const handleChange = (e) => { setCommentInp(e.target.value); };
     const handleSubmit = (e) => {

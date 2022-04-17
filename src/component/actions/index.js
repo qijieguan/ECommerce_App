@@ -12,13 +12,6 @@ export const addComment = comment => {
     }
 }
 
-export const setItem = item => {
-    return {
-        type: 'SET_ITEM',
-        payload: item
-    }
-}
-
 export const setSearch = word => {
     return {
         type: 'SET_WORD',
