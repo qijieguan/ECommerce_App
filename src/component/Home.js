@@ -10,7 +10,7 @@ export default function Home() {
                     <h1 className='fade-slide right'> MAKE YOUR DREAM HOME A REALITY</h1> 
                     <h2 className='fade-slide right-delay'>SHOP FOR AFFORDABLE FURNITURES TO FURNISH YOUR HOME</h2>
                 </div>
-                <Link to="/About"><button className="about-btn">About Me</button></Link>
+                <Link to="/About"><button className="about-btn">ABOUT ME</button></Link>
             </div>
             <div className="home-background"/>
             <div className='home-body flex'>
@@ -29,8 +29,8 @@ export default function Home() {
                     <div className='fade-slide from-left flex'>
                         <h1>Power of Furnitures</h1>
                         <span>
-                            Your indoor and outdoor furnishings can influnece your <span> mood </span> 
-                            and <span> mind</span> on a daily basis. Furnish your home to fulfill your 
+                            Indoor and outdoor furnishings can influnece your <span> mood </span> 
+                            and <span> mind</span>. Furnish your home to fulfill your 
                             <span> inner satisfaction</span>. Achieve your <span>ideal home </span> 
                             to give yourself a sense of <span>comfort</span>.
                         </span>
@@ -42,7 +42,7 @@ export default function Home() {
                         <h1>Become a Client Today</h1>
                         <span>
                             We offer a large variety of furnitures <span> in-store and online</span>. 
-                            Most of our furnitures are imported <span> from foreign companies</span>.
+                            Many of our furnitures are imported <span> from foreign companies</span>.
                             What you can find are furnitures with <span>special architectures </span>. 
                             We also have non-furnishings in-store.
                         </span>

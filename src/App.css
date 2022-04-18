@@ -114,6 +114,7 @@ a { text-decoration: none; }
 
 @keyframes fadeSlideDown {
   0% { opacity: 0; transform: translateY(-20%);}
+  75% { opacity: 0.4; }
   100% { opacity: 1; transform: translateY(0);}
 }
 
