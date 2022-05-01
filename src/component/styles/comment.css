@@ -18,19 +18,19 @@
     align-self: flex-end; 
     min-height: 7rem; 
     width: max(20rem, 70%); 
-    background: seagreen; 
-    border: 2px solid rgb(13, 66, 36);
-    border-radius: 1rem 1rem 0 1rem;
+    background: aquamarine; 
+    border-radius: 0.75rem 0.75rem 0 0.75rem;
 }
-.comment-content { width: 95%; color: white; word-break: break-all; }
+.comment-content { font-weight: bold; width: 95%; color: black; word-break: break-all; }
 .comment-user {
     margin: 0.25rem 1rem 0 0;
     align-self: flex-end;
-    color: wheat;
+    font-weight: bold;
+    color: navy;
     font-style: italic;
 }
 .comment-default { font-size: 1.5rem; font-style: italic; color: wheat; }
 .comment-line { margin: 1rem 0 1rem 2.5%; height: 1px; width: 95%; background: wheat; }
 .comment-input { margin: 0 0 2rem 5%; height: 10rem; width: 60%; background: wheat; }
 .comment-input:focus { outline-color: orange; }
-.comment-submit > button { background: orange; color: rgb(32, 32, 32); }
+.comment-submit > button { font-weight: bold; background: orange; color: rgb(32, 32, 32); }

@@ -27,7 +27,7 @@ const Cart = () => {
     };
 
     return (
-        <div className='cart' style={{display: cart.length > 0 ? "flex" : "none"}}>
+        <div className='cart flex' style={{display: !cart.length ? "none" : ""}}>
             <div style={{marginRight: 'auto'}}/>
             {cart.map(item => <img src={getURL(item)} key={uuid()} className={item.id} id='cart-li' alt=""/>)}
             <div className='cost flex'>${parseFloat(total).toFixed(2)}</div>

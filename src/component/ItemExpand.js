@@ -43,9 +43,9 @@ const ItemExpand = () => {
                     <h1 className="expand-name">{item.Name}</h1>
                     <h1 className='expand-description'>{item.Description}</h1><br/>
                     <button className='add-cart' onClick={handleAddCart}>Add to Cart</button>
-                    <div className='expand-1'>Price: ${parseFloat(item.Price).toFixed(2)}</div>
-                    <div className='expand-2'>Stock: {item.Stock}</div>
-                    <div className='expand-3'>Tag: {item.Tag}</div>
+                    <div className='expand-1'>${parseFloat(item.Price).toFixed(2)}</div>
+                    <div className='expand-2'>{item.Stock}</div>
+                    <div className='expand-3'>{item.Tag}</div>
                 </div>
             </div>
             <Comment comments={comments} newComment={newComment}/>

@@ -52,7 +52,7 @@
   grid-template-rows: repeat(7, auto);
 }
 
-.name-label, .description-label, .stock-label, .price-label, .tag-label { text-align: right; }
+.name-label, .description-label, .stock-label, .price-label, .tag-label { text-align: right; font-weight: bold; }
 
 .input-tag { width: 50%; background: rgb(236, 236, 236); }
 .input-tag * { text-align: center; background: rgb(236, 236, 236);}
@@ -64,6 +64,7 @@
   justify-content: unset;
   font-size: clamp(2rem, 5vw, 3rem); 
   font-family: 'Playfair Display', serif;
+  font-weight: bold;
   animation: fadeSlideRight 0.5s ease-in;
 }
 

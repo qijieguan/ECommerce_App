@@ -46,38 +46,38 @@ const Checkout = () => {
     };
 
     return (
-        <div style={{display: 'flex', marginTop: '100px'}}>
+        <div className="checkout-page grid">
             <div className='overlay'/>
-            <div className="checkout-msg" style={{display: cart.length === 0 ? 'flex' : 'none'}}>   
+            <div className="checkout-msg flex" style={{display: !cart.length ? '' : 'none'}}>   
                 <div>{message}</div>
                 <AiOutlineShoppingCart className='cart-icon' style={{display: paid ? 'none' : 'block'}}/>
                 <BsCheckCircle className='checkmark-icon' style={{display: paid ? 'block' : 'none'}}/>
             </div>
-            {cart && cart.length ?
-                <div style={{display: 'flex', width: '80%'}}>
-                <div className='cart-items'>
-                    {cart.map(item => 
-                        <div className='cart-item flex' key={uuid()}>
-                            <img src={getURL(item)} className={item.id} id="cart-img" alt=""/>
-                            <div className='cart-details grid'>
-                                <h1 className='cart-name'>{item.Name}</h1>
-                                <div className='cart-price'>${parseFloat(item.Price).toFixed(2)}</div>
-                                <FaTrashAlt className="trash-icon" 
-                                    onClick={() => {dispatch(deleteCart(item.id)); setUpdate(!update)}}
-                                />
-                            </div>
+            
+                
+            <div className='cart-items' style={{display: !cart && !cart.length ? 'none' : ''}}>
+                {cart.map(item => 
+                    <div className='cart-item flex' key={uuid()}>
+                        <img src={getURL(item)} className={item.id} id="cart-img" alt=""/>
+                        <div className='cart-details grid'>
+                            <h1 className='cart-name'>{item.Name}</h1>
+                            <div className='cart-price'>${parseFloat(item.Price).toFixed(2)}</div>
+                            <FaTrashAlt className="trash-icon" 
+                                onClick={() => {dispatch(deleteCart(item.id)); setUpdate(!update)}}
+                            />
                         </div>
-                    )}
-                </div>
-                <div className="review flex">
-                    <div className='review-initial'>${parseFloat(cost).toFixed(2)}</div>
-                    <div className='review-tax'>${parseFloat(cost*.1).toFixed(2)}</div>
-                    <div style={{background: 'grey', height: '2px', width: '80%'}}/>
-                    <div className='review-final'>${parseFloat(cost + (cost*.1)).toFixed(2)}</div>
-                    <button className='pay-btn' onClick={handlePay}>Proceed to Pay</button>
-                </div>
-                </div>:''
-            }
+                    </div>
+                )}
+            </div>
+            <div className="review flex" style={{display: !cart.length ? 'none' : ''}}>
+                <div className='review-initial'>${parseFloat(cost).toFixed(2)}</div>
+                <div className='review-tax'>${parseFloat(cost*.1).toFixed(2)}</div>
+                <div style={{background: 'grey', height: '2px', width: '80%'}}/>
+                <div className='review-final'>${parseFloat(cost + (cost*.1)).toFixed(2)}</div>
+                <button className='pay-btn' onClick={handlePay}>Proceed to Pay</button>
+            </div>
+                
+            
         </div>
     );
 }

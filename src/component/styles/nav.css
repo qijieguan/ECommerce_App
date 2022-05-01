@@ -24,6 +24,7 @@
 .search-btn {
     margin-right: auto;
     display: inline-flex;
+    justify-content: center;
     padding: clamp(0.25rem, 2.5vw, 0.45rem) 0;
     width: 20%;
     background: yellowgreen;

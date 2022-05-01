@@ -15,12 +15,8 @@ export default function Home() {
             <div className="home-background"/>
             <div className='home-body flex'>
                 <h1>
-                    
-                        DISCOVER YOUR <span className='fade-slide up'>DREAM</span> FURNISHINGS
-                    <br/>
-                    
-                        STYLE YOUR HOME TO BRING<span className='fade-slide up'> COZINESS AND COMFORT</span> TO YOUR INDOOR SPACE
-                    
+                    DISCOVER YOUR <span className='fade-slide up'>DREAM</span> FURNISHINGS <br/>
+                    STYLE YOUR HOME TO BRING<span className='fade-slide up'> COZINESS AND COMFORT</span> TO YOUR INDOOR SPACE
                 </h1>
             </div>
             <div className="about-content grid">

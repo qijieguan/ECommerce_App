@@ -35,8 +35,8 @@ const Item = ({item}) => {
 
     const onEnter = () => {
         let element = document.getElementById(item.id);
-        if (element.getClientRects()[0].x < 100) {element.style.marginLeft = '8.75rem';}
-        else if (element.getClientRects()[0].x > 800) {element.style.marginRight = '8.75rem';}
+        if (element.getClientRects()[0].x < 50) {element.style.marginLeft = '11rem';}
+        else if (element.getClientRects()[0].x > 850) {element.style.marginRight = '11rem';}
         element.getElementsByClassName("item-description")[0].style.display = "flex";
     }
 
@@ -52,7 +52,7 @@ const Item = ({item}) => {
     }
 
     return(
-        <div className="item-wrapper" onClick={handleClick}>
+        <div className="item-wrapper flex" onClick={handleClick}>
             <div className="item" id={item.id} onMouseEnter={onEnter} onMouseLeave={onLeave}>
                 <img className="item-image" src={url} alt=""/>
                 <div className="item-tag">{item.Tag}</div>

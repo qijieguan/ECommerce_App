@@ -83,7 +83,9 @@ export default function Store() {
                 </div>
                 <h1 className='store-label'>Browse Store</h1>
                 {list && list.length  ?
-                    list.map(item => <Item key={item.id} item={item} />)
+                    <div className='item-listing grid'>
+                        {list.map(item => <Item key={item.id} item={item} />)}
+                    </div>
                     :
                     <div className="store-default flex">No Items to Display</div>
                 }

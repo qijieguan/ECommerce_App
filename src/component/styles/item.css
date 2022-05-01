@@ -1,10 +1,10 @@
+.item-listing { grid-template-columns: 22% 22% 22% 22%; row-gap: 5rem;}
+
 .item-wrapper {
     position: relative;
-    display: inline-flex;
     flex-direction: column;
     height: 28rem;
-    margin: 6% 0 0 6%;
-    width: max(25%, 20rem);
+    width: 100%;
     background: white;
     border: 1px solid gray;
     overflow: unset;
@@ -24,7 +24,7 @@
 .item:hover {
     position: absolute;
     min-height: 32rem;
-    width: 32rem;
+    width: 30rem;
     background: white;
     box-shadow: 0 0 3px black;
     z-index: 1;
@@ -81,7 +81,6 @@
 .expand-page { margin-top: 3.3rem; padding: 3rem 0; flex-direction: column; min-height: 47rem; background: rgb(43, 40, 40); }
 .expand-item { 
     margin-top: 2rem;
-    justify-content: space-around; 
     padding: 2rem 0; 
     width: 95%; 
     background: black;
@@ -95,8 +94,9 @@
 .add-cart {
     margin: 1.8rem 9rem 0 0;
     grid-column: 1 / 2;
-    padding: clamp(1rem, 2.5vw, 1.25rem) 0;
+    padding: clamp(0.875rem, 2.5vw, 1rem) 0;
     font-size: clamp(0.75rem, 2.5vw, 1rem);
+    font-weight: bold;
     color: white;
     width: max(6rem, 50%);
     background: limegreen;
@@ -106,10 +106,16 @@
 .add-cart:hover { box-shadow: 0 0 10px green; }
 .expand-details div { 
     margin: 2rem 9rem 0 0; 
-    font-size: clamp(1rem, 2.5vw, 1.2rem); 
+    font-size: clamp(1rem, 2.5vw, 1.25rem); 
     width: 100%;
-    color: wheat; 
+    color: white;
 }
+.expand-1::before { content: "Price: "; color: white; }
+.expand-1 { color: limegreen !important; font-weight: bold; }
+.expand-2::before { content: "Stock: "; color: white; }
+.expand-2 { color: blue !important; }
+.expand-3::before { content: "Tag: "; color: white;}
+.expand-3 { color: brown !important; }
 
 .cart {
     position: relative;
@@ -135,7 +141,9 @@
 
 .checkout-btn:hover { box-shadow: 0 0 5px 1px brown; }
 
+@media (max-width: 70rem) { .item-listing { grid-template-columns: 45% 45%; } }
 @media (max-width: 50rem) {
+    .item-listing { grid-template-columns: 75%; }
     .expand-item { flex-direction: column; }
     .expand-details h1 { margin: 3.3rem 0 1.25rem 0; }
 }
